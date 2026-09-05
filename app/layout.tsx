@@ -2,15 +2,15 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "横丁メディア",
+  title: "ヨコチョナビ",
   description:
-    "日本全国の横丁の「今」を毎日拾い集め、記録し、伝えていくためのメディア・プロトタイプ（Next.js版）。",
+    "今夜行ける横丁を探す入口。全国の横丁の「今」を毎朝更新して届けるメディア・プロトタイプ（Next.js版）。",
   // 公開前のプロトタイプのため検索エンジンには乗せない。公開判断が出たら外すこと。
   robots: { index: false, follow: false },
   openGraph: {
-    title: "横丁メディア",
+    title: "ヨコチョナビ",
     description:
-      "日本全国の横丁の「今」を毎日拾い集め、記録し、伝えていくためのメディア・プロトタイプ。",
+      "今夜行ける横丁を探す入口。全国の横丁の「今」を毎朝更新して届けるメディア・プロトタイプ。",
     locale: "ja_JP",
     type: "website",
   },

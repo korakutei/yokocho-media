@@ -24,15 +24,18 @@ export default function Hero({ digestCount, venueCount, updatedAt }: HeroProps) 
         <span className="ember"></span>
       </div>
       <div className="wrap">
-        <p className="eyebrow">Yokocho Media Prototype</p>
+        <p className="eyebrow">Yokocho Navi Prototype</p>
         <h1 className="wordmark">
-          横丁メディア
-          <span className="wordmark-en">YOKOCHO MEDIA</span>
+          ヨコチョナビ
+          <span className="wordmark-en">YOKOCHO NAVI</span>
         </h1>
         <p className="hero-copy">
-          今夜、どこの横丁が賑わっているか。<strong>日本全国の横丁の今</strong>
-          を毎日拾い集め、記録し、伝えていくためのメディア・プロトタイプです。
+          今夜、どの横丁の灯りをくぐろう。<strong>全国の横丁の「今」</strong>
+          を毎朝更新——迷ったら、ここから探せばいい。
         </p>
+        <a className="hero-cta" href="#venues">
+          今夜行ける横丁を探す →
+        </a>
         <div className="hero-meta">
           <div>
             <b>{digestCount}</b>本日の収集記事

@@ -55,7 +55,7 @@ function VenueCard({ venue }: { venue: Venue }) {
 
 export default function Venues({ data }: { data: VenuesData }) {
   return (
-    <Reveal as="section">
+    <Reveal as="section" id="venues">
       <div className="wrap">
         <div className="section-head">
           <div>

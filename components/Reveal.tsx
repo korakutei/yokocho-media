@@ -11,10 +11,12 @@ export default function Reveal({
   children,
   className = "",
   as = "div",
+  id,
 }: {
   children: React.ReactNode;
   className?: string;
   as?: keyof JSX.IntrinsicElements;
+  id?: string;
 }) {
   const ref = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
@@ -43,7 +45,7 @@ export default function Reveal({
 
   return createElement(
     as,
-    { ref, className: `reveal ${visible ? "in" : ""} ${className}`.trim() },
+    { ref, id, className: `reveal ${visible ? "in" : ""} ${className}`.trim() },
     children
   );
 }

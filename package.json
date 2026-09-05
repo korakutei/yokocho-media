@@ -2,7 +2,7 @@
   "name": "yokocho-media",
   "version": "0.1.0",
   "private": true,
-  "description": "横丁メディア構想 — 全国の横丁の「今」を毎日集めて伝えるメディアのNext.js実装（MVP）",
+  "description": "ヨコチョナビ（旧:横丁メディア構想）— 全国の横丁の「今」を毎日集めて伝え、各横丁への入口となるメディアのNext.js実装（MVP）",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
