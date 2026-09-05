@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
+import ConnectSignup from "./ConnectSignup";
 
 const pillars = [
   {
@@ -24,11 +25,11 @@ const pillars = [
   {
     jp: "つながる",
     en: "Connect — Community",
-    body: "常連、店主、旅行者。横丁で生まれる縁をSNS・メール配信でゆるくつなぎ続ける——現在準備中。",
+    body: "新着の横丁ニュースをメールでお届け予定。SNSは開設が決まり次第リンクします。",
     photo: "/images/pillar-connect.jpg",
     alt: "常連客と店主がグラスを掲げて乾杯する様子を伝えるイメージカット",
     href: null,
-    linkLabel: "近日公開",
+    linkLabel: null,
   },
 ];
 
@@ -47,42 +48,42 @@ export default function Pillars() {
         </div>
         <div className="pillars">
           {pillars.map((p) => {
-            const content = (
-              <>
-                <div className="pillar-photo">
-                  <span className="pillar-photo-tag">イメージ</span>
-                  <Image
-                    src={p.photo}
-                    alt={p.alt}
-                    fill
-                    sizes="(max-width: 760px) 100vw, 33vw"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="pillar-body">
-                  <p className="pillar-jp">{p.jp}</p>
-                  <span className="pillar-en">{p.en}</span>
-                  <p>{p.body}</p>
-                  <span
-                    className={`pillar-link${p.href ? "" : " pillar-link-soon"}`}
-                  >
-                    {p.linkLabel}
-                  </span>
-                </div>
-              </>
+            const body = (
+              <div className="pillar-body">
+                <p className="pillar-jp">{p.jp}</p>
+                <span className="pillar-en">{p.en}</span>
+                <p>{p.body}</p>
+                {p.linkLabel && <span className="pillar-link">{p.linkLabel}</span>}
+                {p.jp === "つながる" && <ConnectSignup />}
+              </div>
+            );
+
+            const photo = (
+              <div className="pillar-photo">
+                <span className="pillar-photo-tag">イメージ</span>
+                <Image
+                  src={p.photo}
+                  alt={p.alt}
+                  fill
+                  sizes="(max-width: 760px) 100vw, 33vw"
+                  loading="lazy"
+                />
+              </div>
             );
 
             if (p.href) {
               return (
                 <Link className="pillar" href={p.href} key={p.jp}>
-                  {content}
+                  {photo}
+                  {body}
                 </Link>
               );
             }
 
             return (
               <div className="pillar pillar-disabled" key={p.jp}>
-                {content}
+                {photo}
+                {body}
               </div>
             );
           })}

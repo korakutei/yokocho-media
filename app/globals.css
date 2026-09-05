@@ -248,6 +248,21 @@ section.raised .pillar-disabled:hover{background:var(--bg-raised);}
   letter-spacing:0.08em;color:var(--gold);
 }
 .pillar-link-soon{color:var(--paper-dim);opacity:0.6;}
+.pillar-signup{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;}
+.pillar-signup-input{
+  flex:1;min-width:140px;padding:9px 11px;font-size:13px;font-family:var(--font-body);
+  background:transparent;border:1px solid var(--line-strong);border-radius:2px;color:var(--paper);
+  cursor:text;
+}
+.pillar-signup-input::placeholder{color:var(--paper-dim);}
+.pillar-signup-input:focus{outline:none;border-color:var(--gold);}
+.pillar-signup-button{
+  padding:9px 14px;font-family:var(--font-label);font-size:11px;letter-spacing:0.06em;
+  background:var(--gold-fill);color:var(--bg);border:none;border-radius:2px;
+  cursor:pointer;white-space:nowrap;transition:background 0.2s ease;
+}
+.pillar-signup-button:hover{background:var(--gold-bright);}
+.pillar-signup-done{margin:16px 0 0;font-size:12.5px;color:var(--gold-bright);}
 
 /* ---------- digest ---------- */
 .digest-updated{
