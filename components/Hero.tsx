@@ -13,6 +13,16 @@ export default function Hero({ digestCount, venueCount, updatedAt }: HeroProps) 
         <span className="lantern"></span>
         <span className="lantern"></span>
       </div>
+      <div className="embers" aria-hidden="true">
+        <span className="ember"></span>
+        <span className="ember"></span>
+        <span className="ember"></span>
+        <span className="ember"></span>
+        <span className="ember"></span>
+        <span className="ember"></span>
+        <span className="ember"></span>
+        <span className="ember"></span>
+      </div>
       <div className="wrap">
         <p className="eyebrow">Yokocho Media Prototype</p>
         <h1 className="wordmark">

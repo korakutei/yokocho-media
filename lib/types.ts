@@ -23,6 +23,8 @@ export type DigestData = {
 export type Venue = {
   name: string;
   area: string;
+  /** 公式サイト掲載の看板ロゴ画像パス。未確認の横丁は null。 */
+  logo: string | null;
 };
 
 export type VenuesData = {

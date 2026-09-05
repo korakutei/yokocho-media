@@ -1,4 +1,29 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
+
+const pillars = [
+  {
+    jp: "読む",
+    en: "Read — Articles & Features",
+    body: "新規開店、店主の想い、その日の賑わい。横丁ごとの記事・特集で背景まで届ける。",
+    photo: "/images/pillar-read.jpg",
+    alt: "取材ノートを片手に店主へ話を聞くライターとカメラマンの様子を伝えるイメージカット",
+  },
+  {
+    jp: "探す・行く",
+    en: "Find — Map Search",
+    body: "今夜行ける横丁を地図から探す。エリア・時間帯・雰囲気で絞り込める案内板に育てる。",
+    photo: "/images/pillar-find.jpg",
+    alt: "店先のメニューを覗き込み今夜行く店を選ぶ旅行者たちの様子を伝えるイメージカット",
+  },
+  {
+    jp: "つながる",
+    en: "Connect — Community",
+    body: "常連、店主、旅行者。横丁で生まれる縁をSNS・コミュニティ機能でゆるくつなぎ続ける。",
+    photo: "/images/pillar-connect.jpg",
+    alt: "常連客と店主がグラスを掲げて乾杯する様子を伝えるイメージカット",
+  },
+];
 
 export default function Pillars() {
   return (
@@ -14,21 +39,25 @@ export default function Pillars() {
           </p>
         </div>
         <div className="pillars">
-          <div className="pillar">
-            <p className="pillar-jp">読む</p>
-            <span className="pillar-en">Read — Articles &amp; Features</span>
-            <p>新規開店、店主の想い、その日の賑わい。横丁ごとの記事・特集で背景まで届ける。</p>
-          </div>
-          <div className="pillar">
-            <p className="pillar-jp">探す・行く</p>
-            <span className="pillar-en">Find — Map Search</span>
-            <p>今夜行ける横丁を地図から探す。エリア・時間帯・雰囲気で絞り込める案内板に育てる。</p>
-          </div>
-          <div className="pillar">
-            <p className="pillar-jp">つながる</p>
-            <span className="pillar-en">Connect — Community</span>
-            <p>常連、店主、旅行者。横丁で生まれる縁をSNS・コミュニティ機能でゆるくつなぎ続ける。</p>
-          </div>
+          {pillars.map((p) => (
+            <div className="pillar" key={p.jp}>
+              <div className="pillar-photo">
+                <span className="pillar-photo-tag">イメージ</span>
+                <Image
+                  src={p.photo}
+                  alt={p.alt}
+                  fill
+                  sizes="(max-width: 760px) 100vw, 33vw"
+                  loading="lazy"
+                />
+              </div>
+              <div className="pillar-body">
+                <p className="pillar-jp">{p.jp}</p>
+                <span className="pillar-en">{p.en}</span>
+                <p>{p.body}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </Reveal>
