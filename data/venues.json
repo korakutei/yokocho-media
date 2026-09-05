@@ -1,16 +1,82 @@
 {
   "operator": "株式会社浜倉的商店製作所グループ",
   "venues": [
-    { "name": "恵比寿横丁", "area": "渋谷区・恵比寿", "logo": "/images/venues/ebisu.jpg" },
-    { "name": "渋谷横丁", "area": "渋谷区・渋谷", "logo": "/images/venues/shibuya.jpg" },
-    { "name": "大宮横丁", "area": "さいたま市・大宮", "logo": "/images/venues/omiya.jpg" },
-    { "name": "有楽町産直横丁", "area": "千代田区・有楽町", "logo": "/images/venues/yurakucho.jpg" },
-    { "name": "龍乃都飲食街", "area": "新宿区・新宿東口", "logo": "/images/venues/ryunomiyako.jpg" },
-    { "name": "新宿カブキHALL", "area": "新宿区・歌舞伎町", "logo": "/images/venues/kabukihall.jpg" },
-    { "name": "新橋ガード下横丁", "area": "港区・新橋", "logo": "/images/venues/shinbashi.jpg" },
-    { "name": "立ち寿司横丁", "area": "— エリア確認中", "logo": "/images/venues/tachizushi.jpg" },
-    { "name": "ハマ横丁", "area": "— エリア確認中", "logo": "/images/venues/hama.jpg" },
-    { "name": "アメ横ガード下飲食街", "area": "台東区・上野", "logo": "/images/venues/ameyoko.jpg" },
-    { "name": "ピット・イン", "area": "2024年11月開業予定として確認済み", "logo": null }
+    {
+      "name": "恵比寿横丁",
+      "area": "渋谷区・恵比寿",
+      "logo": "/images/venues/ebisu.jpg",
+      "photo": "/images/venues/photo-ebisu.jpg",
+      "url": "https://www.hamakura-style.com/works/ebisu_yokocho/"
+    },
+    {
+      "name": "渋谷横丁",
+      "area": "渋谷区・渋谷",
+      "logo": "/images/venues/shibuya.jpg",
+      "photo": "/images/venues/photo-shibuya.jpg",
+      "url": "https://www.hamakura-style.com/works/shibuyayokocho/"
+    },
+    {
+      "name": "大宮横丁",
+      "area": "さいたま市・大宮",
+      "logo": "/images/venues/omiya.jpg",
+      "photo": "/images/venues/photo-omiya.jpg",
+      "url": "https://www.hamakura-style.com/works/omiyayokocho/"
+    },
+    {
+      "name": "有楽町産直横丁",
+      "area": "千代田区・有楽町",
+      "logo": "/images/venues/yurakucho.jpg",
+      "photo": "/images/venues/photo-yurakucho.jpg",
+      "url": "https://www.hamakura-style.com/works/yurakuchosanchokuyokocho/"
+    },
+    {
+      "name": "龍乃都飲食街",
+      "area": "新宿区・新宿東口",
+      "logo": "/images/venues/ryunomiyako.jpg",
+      "photo": "/images/venues/photo-ryunomiyako.jpg",
+      "url": "https://www.hamakura-style.com/works/ryunomiyakoinshokugai/"
+    },
+    {
+      "name": "新宿カブキHALL",
+      "area": "新宿区・歌舞伎町",
+      "logo": "/images/venues/kabukihall.jpg",
+      "photo": "/images/venues/photo-kabukihall.jpg",
+      "url": "https://www.hamakura-style.com/works/kabukihall/"
+    },
+    {
+      "name": "新橋ガード下横丁",
+      "area": "港区・新橋",
+      "logo": "/images/venues/shinbashi.jpg",
+      "photo": "/images/venues/photo-shinbashi.jpg",
+      "url": "https://www.hamakura-style.com/works/shinbashi_yokocho/"
+    },
+    {
+      "name": "立ち寿司横丁",
+      "area": "— エリア確認中",
+      "logo": "/images/venues/tachizushi.jpg",
+      "photo": "/images/venues/photo-tachizushi.jpg",
+      "url": "https://www.hamakura-style.com/works/tachizushiyokocho/"
+    },
+    {
+      "name": "ハマ横丁",
+      "area": "— エリア確認中",
+      "logo": "/images/venues/hama.jpg",
+      "photo": "/images/venues/photo-hama.jpg",
+      "url": "https://www.hamakura-style.com/works/hama_yokocho/"
+    },
+    {
+      "name": "アメ横ガード下飲食街",
+      "area": "台東区・上野",
+      "logo": "/images/venues/ameyoko.jpg",
+      "photo": "/images/venues/photo-ameyoko.jpg",
+      "url": "https://www.hamakura-style.com/works/ameyoko_insyokugai/"
+    },
+    {
+      "name": "ピット・イン",
+      "area": "2024年11月開業予定として確認済み",
+      "logo": null,
+      "photo": null,
+      "url": null
+    }
   ]
 }

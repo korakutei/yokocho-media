@@ -25,6 +25,10 @@ export type Venue = {
   area: string;
   /** 公式サイト掲載の看板ロゴ画像パス。未確認の横丁は null。 */
   logo: string | null;
+  /** 公式サイト掲載の実店舗写真パス。未確認の横丁は null。 */
+  photo: string | null;
+  /** 運営元(浜倉的商店製作所グループ)公式サイトの当該横丁ページURL。未確認の横丁は null。 */
+  url: string | null;
 };
 
 export type VenuesData = {
