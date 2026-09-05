@@ -19,7 +19,7 @@ export default function Digest({ data }: { data: DigestData }) {
         </div>
 
         {/* この一覧は data/digest.json から生成される。
-            日次の自動収集ジョブ（scripts/update-digest.ts 想定）が
+            日次の自動収集ジョブ（scripts/collect-digest.ts、GitHub Actionsで実行）が
             このJSONを書き換えることで、Artifact版と同じ運用フローを再現する。 */}
         {items.length > 0 ? (
           <div className="digest-list">
@@ -53,7 +53,7 @@ export default function Digest({ data }: { data: DigestData }) {
         )}
 
         <p className="digest-note">
-          この一覧は公開情報の要約と出典リンクの集約のみを行っています（本文の転載は行いません）。「横丁ニュース毎日キャッチアップ」タスクにより毎朝7時（JST）に自動更新されます。
+          この一覧は公開情報の要約と出典リンクの集約のみを行っています（本文の転載は行いません）。毎朝7時（JST）に自動収集システムが更新します。
         </p>
       </div>
     </Reveal>

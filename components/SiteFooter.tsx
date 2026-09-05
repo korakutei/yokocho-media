@@ -5,13 +5,13 @@ export default function SiteFooter() {
         <div>
           <p className="footer-mark">横丁メディア</p>
           <p className="footer-note">
-            これはCoworkのArtifactプロトタイプから移行したNext.js版MVPです。掲載情報は公開情報の集約であり、出典を明示しています。デザイン方向性：黒×白×金、和と新。ページ内の写真は現時点では雰囲気を伝えるイメージカットであり、実店舗の写真は掲載許諾取得後に差し替えます。
+            これはCoworkのArtifactプロトタイプから移行したNext.js版MVPです。掲載情報は公開情報の集約であり、出典を明示しています。デザイン方向性：黒×白×金、和と新。Hero・掲載横丁一覧の写真とロゴは浜倉的商店製作所グループから掲載許諾済みの公式素材です。「読む・探す・つながる」の3枚のみ、許諾前の汎用イメージカットです。
           </p>
         </div>
         <div className="footer-status">
-          Prototype Build — Next.js MVP
+          Prototype Build — Next.js MVP（非公開）
           <br />
-          Next: 掲載可否レビュー導線 / 実店舗写真への差し替え / MAP検索
+          Next: 掲載可否レビュー導線 / Pillars写真の実写化 / MAP検索
         </div>
       </div>
     </footer>

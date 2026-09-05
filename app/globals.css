@@ -300,7 +300,8 @@ section.raised .venue{background:var(--bg-raised);}
 .venue-mark-empty{
   height:40px;color:var(--paper-dim);background:transparent;
   border:1px dashed var(--line-strong);font-family:var(--font-label);
-  font-size:10.5px;letter-spacing:0.1em;
+  font-size:10.5px;letter-spacing:0.1em;display:flex;align-items:center;
+  justify-content:center;padding:0 12px;
 }
 .venue-name{font-family:var(--font-display);font-weight:700;font-size:16px;}
 .venue-area{

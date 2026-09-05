@@ -1,10 +1,25 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "横丁メディア",
   description:
     "日本全国の横丁の「今」を毎日拾い集め、記録し、伝えていくためのメディア・プロトタイプ（Next.js版）。",
+  // 公開前のプロトタイプのため検索エンジンには乗せない。公開判断が出たら外すこと。
+  robots: { index: false, follow: false },
+  openGraph: {
+    title: "横丁メディア",
+    description:
+      "日本全国の横丁の「今」を毎日拾い集め、記録し、伝えていくためのメディア・プロトタイプ。",
+    locale: "ja_JP",
+    type: "website",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#17130f",
 };
 
 export default function RootLayout({

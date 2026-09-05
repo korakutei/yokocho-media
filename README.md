@@ -21,6 +21,10 @@ npm run start
 
 Vercel等にそのままデプロイ可能な構成です（next.config.jsは最小限）。
 
+**注意:** `app/layout.tsx` の `metadata.robots` を `{ index: false, follow: false }` に
+設定し、検索エンジンにインデックスされないようにしています（クローズド運用中のため）。
+一般公開の判断が出たら、この設定を外すこと。
+
 ## ディレクトリ構成
 
 ```
