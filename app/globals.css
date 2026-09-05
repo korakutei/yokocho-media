@@ -43,25 +43,26 @@ a{color:inherit;}
 @media (max-width:640px){.wrap{padding:0 20px;}}
 
 /* ---------- hero ---------- */
-.hero{
+.hero{position:relative;overflow:hidden;}
+.hero-photo{
   position:relative;
-  min-height:100svh;
+  min-height:72svh;
   display:flex;
   flex-direction:column;
   justify-content:center;
   overflow:hidden;
   background:
     linear-gradient(115deg, rgba(23,19,15,0.94) 0%, rgba(23,19,15,0.86) 32%, rgba(23,19,15,0.52) 62%, rgba(23,19,15,0.26) 100%),
-    linear-gradient(to bottom, rgba(23,19,15,0.1), rgba(23,19,15,0.7) 82%, var(--bg) 100%),
+    linear-gradient(to bottom, rgba(23,19,15,0.1), rgba(23,19,15,0.85) 96%, var(--bg) 100%),
     radial-gradient(ellipse 620px 420px at 18% 8%, rgba(184,146,63,0.24), transparent 60%),
     radial-gradient(ellipse 520px 420px at 86% 18%, rgba(92,113,146,0.16), transparent 60%),
     radial-gradient(ellipse 900px 700px at 50% 100%, rgba(184,146,63,0.10), transparent 65%),
-    url("/images/hero-shibuya.jpg");
+    url("/images/hero-cover.jpg");
   background-repeat:no-repeat, no-repeat, repeat, repeat, repeat, no-repeat;
   background-size:cover, cover, auto, auto, auto, cover;
-  background-position:center, center, center, center, center, center 38%;
+  background-position:center, center, center, center, center, center 30%;
 }
-.hero::before{
+.hero-photo::before{
   content:"";
   position:absolute;inset:0;
   background-image:linear-gradient(var(--line) 1px, transparent 1px);
@@ -71,8 +72,15 @@ a{color:inherit;}
   mask-image:linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
 }
 @media (min-width:761px) and (hover:hover) and (prefers-reduced-motion: no-preference){
-  .hero{background-attachment:fixed;}
+  .hero-photo{background-attachment:fixed;}
 }
+.hero-photo-tag{
+  position:absolute;top:20px;right:20px;z-index:2;
+  font-family:var(--font-label);font-size:9.5px;letter-spacing:0.14em;
+  color:var(--paper-dim);background:rgba(23,19,15,0.55);border:1px solid var(--line-strong);
+  padding:3px 8px;border-radius:2px;text-transform:uppercase;
+}
+.hero-top{position:relative;z-index:1;}
 .lantern-row{
   position:absolute;top:0;left:0;right:0;
   display:flex;justify-content:space-between;padding:0 8%;
@@ -181,6 +189,28 @@ h1.wordmark{
   display:block;font-family:var(--font-body);font-size:22px;font-weight:700;
   color:var(--gold-bright);letter-spacing:0;
 }
+
+/* ---------- hero: japan map band ---------- */
+.hero-map-band{
+  position:relative;background:var(--bg);
+  padding:60px 0 72px;display:flex;flex-direction:column;align-items:center;
+}
+.hero-map-caption{
+  font-family:var(--font-label);font-size:12px;letter-spacing:0.16em;
+  color:var(--gold);text-transform:uppercase;margin:0 0 20px;text-align:center;
+}
+.japan-map{width:100%;max-width:400px;height:auto;margin:0 auto;}
+.japan-map-island{fill:var(--line-strong);}
+.japan-map-pin-glow{
+  fill:var(--gold);opacity:0.3;
+  animation:pin-glow-pulse 3.2s ease-in-out infinite;
+  animation-delay:var(--pin-delay,0s);
+}
+.japan-map-pin-dot{fill:var(--gold-bright);}
+@keyframes pin-glow-pulse{0%,100%{opacity:0.18;}50%{opacity:0.55;}}
+@media (prefers-reduced-motion:reduce){.japan-map-pin-glow{animation:none;opacity:0.35;}}
+.hero-bottom{margin-top:40px;display:flex;flex-direction:column;align-items:center;text-align:center;}
+.hero-bottom .hero-meta{justify-content:center;}
 .scroll-cue{
   position:absolute;bottom:36px;left:28px;
   font-family:var(--font-label);font-size:11px;letter-spacing:0.3em;color:var(--paper-dim);
@@ -450,6 +480,7 @@ footer{padding:64px 0 48px;border-top:1px solid var(--line);}
 .footer-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;}
 .footer-mark{font-family:var(--font-display);font-weight:700;font-size:24px;color:var(--gold-bright);}
 .footer-note{max-width:420px;font-size:13px;color:var(--paper-dim);}
+.footer-note a{color:var(--gold);text-decoration:underline;text-underline-offset:2px;}
 .footer-status{
   font-family:var(--font-label);font-size:11.5px;letter-spacing:0.08em;
   color:var(--paper-dim);text-transform:uppercase;

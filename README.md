@@ -59,22 +59,31 @@ scripts/
 .github/workflows/
   digest-daily.yml … 毎朝7時（JST）に collect-digest.ts を実行するGitHub Actions
 public/images/
-  hero-shibuya.jpg     … Hero背景（浜倉的商店製作所グループ公式サイトより掲載許諾済み）
+  hero-cover.jpg       … Hero背景（未許諾の汎用イメージカット、下記参照）
+  hero-shibuya.jpg     … 旧Hero背景（渋谷横丁の公式サイト掲載画像、掲載許諾済み。
+                          現在は未使用だが venues/shibuya の詳細ページ用素材とは別物として残置）
   pillar-*.jpg         … 3本柱カードのイメージカット（下記参照、未許諾の汎用素材）
-  venues/*.jpg         … 各横丁の公式ロゴ（浜倉的商店製作所グループ公式サイトより掲載許諾済み）
+  venues/*.jpg         … 各横丁の公式ロゴ・写真（浜倉的商店製作所グループ公式サイトより掲載許諾済み）
 ```
+
+## 日本地図イラストについて
+
+Hero下部の「全国各地に、横丁の灯りがある」の地図（`components/JapanMap.tsx`）は、
+Wikimedia Commons「[Blank map of Japan new.svg](https://commons.wikimedia.org/wiki/File:Blank_map_of_Japan_new.svg)」
+（作成:Lincun、修正:Erida539, YasutoTakenaka、CC BY-SA 3.0）の輪郭パスを抽出して使用。
+クレジットは `SiteFooter.tsx` に表示している(CC BY-SA 3.0の表示義務のため、削除しないこと)。
+ピンは雰囲気演出であり、正確な店舗所在地を示す機能地図ではない（東京周辺のみ実際の掲載
+横丁が集中しているため、他よりわずかに大きく表示）。
 
 ## 写真について
 
 写真の由来が2系統ある点に注意。
 
-**1. 浜倉的商店製作所グループから掲載許諾済みの素材**（`hero-shibuya.jpg`, `venues/*.jpg`）
+**1. 浜倉的商店製作所グループから掲載許諾済みの素材**（`venues/*.jpg`）
 
 企業から掲載許諾を得た上で、公式サイト（https://www.hamakura-style.com/ ）の
 各横丁ページから取得した素材。
 
-- Hero背景：渋谷横丁の公式サイト掲載画像（オープン時の完成イメージ／CGパース。
-  実写真ではない点に留意）
 - Venuesセクションの各カードは `/venues/[slug]` の横丁詳細ページへの内部リンク。
   詳細ページ側で `photo`（代表写真）+ `gallery`（追加写真2枚程度）+ `logo`
   （毛筆ロゴ）+ `url`（運営元公式サイトへの外部リンク、副次的な導線として設置）
@@ -91,11 +100,12 @@ public/images/
 - **立ち寿司横丁は都内に複数店舗を展開するブランドであり、単一の「横丁」施設
   ではない点にも留意**（venues.jsonの `area` が未確定なのはこのため）
 
-**2. 未許諾の汎用イメージカット**（`pillar-*.jpg`）
+**2. 未許諾の汎用イメージカット**（`hero-cover.jpg`, `pillar-*.jpg`）
 
-Pillars（読む・探す・つながる）カードの3枚は、実在の横丁を指すものではない
-雰囲気カットで、掲載許諾は取得していない。各カードに小さく「イメージ」ラベルを
-表示している（`Pillars.tsx` / `globals.css` の `.pillar-photo-tag`）。実店舗写真に
+Hero背景と、Pillars（読む・探す・つながる）カードの3枚は、実在の横丁を指すもの
+ではない雰囲気カットで、掲載許諾は取得していない。それぞれ「イメージ」ラベルを
+表示している（`Hero.tsx` の `.hero-photo-tag`、`Pillars.tsx` / `globals.css` の
+`.pillar-photo-tag`）。実店舗写真に
 差し替える際は、`public/images/` の該当ファイルを置き換え、`Pillars.tsx` の
 `alt` テキストも実際の状況に合わせて更新すること。
 
