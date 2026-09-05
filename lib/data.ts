@@ -1,6 +1,7 @@
 import digestJson from "@/data/digest.json";
 import venuesJson from "@/data/venues.json";
-import type { DigestData, Venue, VenuesData } from "./types";
+import articlesJson from "@/data/articles.json";
+import type { Article, ArticlesData, DigestData, Venue, VenuesData } from "./types";
 
 // 現状はビルド時にバンドルされる静的JSONを読み込むだけのシンプルな実装。
 // 将来、日次の自動収集ジョブ（scripts/update-digest.ts、または外部CMS/DB）から
@@ -22,4 +23,12 @@ export function getLinkableVenues(): Venue[] {
 
 export function getVenueBySlug(slug: string): Venue | undefined {
   return getVenues().venues.find((v) => v.slug === slug);
+}
+
+export function getArticles(): Article[] {
+  return (articlesJson as ArticlesData).articles;
+}
+
+export function getArticleBySlug(slug: string): Article | undefined {
+  return getArticles().find((a) => a.slug === slug);
 }

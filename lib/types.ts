@@ -39,3 +39,19 @@ export type VenuesData = {
   operator: string;
   venues: Venue[];
 };
+
+export type Article = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  heroImage: string;
+  /** 関連する横丁のslug(venues.jsonのslugと対応)。関連横丁がない場合はnull。 */
+  relatedVenueSlug: string | null;
+  publishedLabel: string;
+  /** 段落ごとの本文。 */
+  body: string[];
+};
+
+export type ArticlesData = {
+  articles: Article[];
+};
