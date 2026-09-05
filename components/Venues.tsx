@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "./Reveal";
 import type { Venue, VenuesData } from "@/lib/types";
 
@@ -32,21 +33,16 @@ function VenueCard({ venue }: { venue: Venue }) {
       <div className="venue-body">
         <p className="venue-name">{venue.name}</p>
         <span className="venue-area">{venue.area}</span>
-        {venue.url && <span className="venue-link">公式サイトで見る ↗</span>}
+        {venue.slug && <span className="venue-link">詳しく見る →</span>}
       </div>
     </>
   );
 
-  if (venue.url) {
+  if (venue.slug) {
     return (
-      <a
-        className="venue"
-        href={venue.url}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <Link className="venue" href={`/venues/${venue.slug}`}>
         {inner}
-      </a>
+      </Link>
     );
   }
 
@@ -63,7 +59,7 @@ export default function Venues({ data }: { data: VenuesData }) {
             <h2>プロトタイプ掲載対象の横丁</h2>
           </div>
           <p className="lede">
-            まずは浜倉的商店製作所グループの横丁群から掲載を開始する方針です。カードから各横丁の公式サイトへ移動できます。
+            まずは浜倉的商店製作所グループの横丁群から掲載を開始する方針です。カードから各横丁の詳細ページへ移動できます。
           </p>
         </div>
         <div className="venue-meta">

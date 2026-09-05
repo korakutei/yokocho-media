@@ -21,12 +21,16 @@ export type DigestData = {
 };
 
 export type Venue = {
+  /** 詳細ページ(/venues/[slug])用のURLスラッグ。未確認の横丁は null(詳細ページを作らない)。 */
+  slug: string | null;
   name: string;
   area: string;
   /** 公式サイト掲載の看板ロゴ画像パス。未確認の横丁は null。 */
   logo: string | null;
-  /** 公式サイト掲載の実店舗写真パス。未確認の横丁は null。 */
+  /** 公式サイト掲載の実店舗写真パス(代表カット)。未確認の横丁は null。 */
   photo: string | null;
+  /** 詳細ページのギャラリー用追加写真パス。0件のこともある。 */
+  gallery: string[];
   /** 運営元(浜倉的商店製作所グループ)公式サイトの当該横丁ページURL。未確認の横丁は null。 */
   url: string | null;
 };

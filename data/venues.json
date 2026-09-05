@@ -2,80 +2,102 @@
   "operator": "株式会社浜倉的商店製作所グループ",
   "venues": [
     {
+      "slug": "ebisu",
       "name": "恵比寿横丁",
       "area": "渋谷区・恵比寿",
       "logo": "/images/venues/ebisu.jpg",
       "photo": "/images/venues/photo-ebisu.jpg",
+      "gallery": ["/images/venues/gallery/ebisu_1.jpg", "/images/venues/gallery/ebisu_2.jpg"],
       "url": "https://www.hamakura-style.com/works/ebisu_yokocho/"
     },
     {
+      "slug": "shibuya",
       "name": "渋谷横丁",
       "area": "渋谷区・渋谷",
       "logo": "/images/venues/shibuya.jpg",
       "photo": "/images/venues/photo-shibuya.jpg",
+      "gallery": ["/images/venues/gallery/shibuya_1.jpg", "/images/venues/gallery/shibuya_2.jpg"],
       "url": "https://www.hamakura-style.com/works/shibuyayokocho/"
     },
     {
+      "slug": "omiya",
       "name": "大宮横丁",
       "area": "さいたま市・大宮",
       "logo": "/images/venues/omiya.jpg",
       "photo": "/images/venues/photo-omiya.jpg",
+      "gallery": ["/images/venues/gallery/omiya_1.jpg", "/images/venues/gallery/omiya_2.jpg"],
       "url": "https://www.hamakura-style.com/works/omiyayokocho/"
     },
     {
+      "slug": "yurakucho",
       "name": "有楽町産直横丁",
       "area": "千代田区・有楽町",
       "logo": "/images/venues/yurakucho.jpg",
       "photo": "/images/venues/photo-yurakucho.jpg",
+      "gallery": ["/images/venues/gallery/yurakucho_1.jpg", "/images/venues/gallery/yurakucho_2.jpg"],
       "url": "https://www.hamakura-style.com/works/yurakuchosanchokuyokocho/"
     },
     {
+      "slug": "ryunomiyako",
       "name": "龍乃都飲食街",
       "area": "新宿区・新宿東口",
       "logo": "/images/venues/ryunomiyako.jpg",
       "photo": "/images/venues/photo-ryunomiyako.jpg",
+      "gallery": ["/images/venues/gallery/ryunomiyako_1.jpg", "/images/venues/gallery/ryunomiyako_2.jpg"],
       "url": "https://www.hamakura-style.com/works/ryunomiyakoinshokugai/"
     },
     {
+      "slug": "kabukihall",
       "name": "新宿カブキHALL",
       "area": "新宿区・歌舞伎町",
       "logo": "/images/venues/kabukihall.jpg",
       "photo": "/images/venues/photo-kabukihall.jpg",
+      "gallery": ["/images/venues/gallery/kabukihall_1.jpg", "/images/venues/gallery/kabukihall_2.jpg"],
       "url": "https://www.hamakura-style.com/works/kabukihall/"
     },
     {
+      "slug": "shinbashi",
       "name": "新橋ガード下横丁",
       "area": "港区・新橋",
       "logo": "/images/venues/shinbashi.jpg",
       "photo": "/images/venues/photo-shinbashi.jpg",
+      "gallery": ["/images/venues/gallery/shinbashi_1.jpg", "/images/venues/gallery/shinbashi_2.jpg"],
       "url": "https://www.hamakura-style.com/works/shinbashi_yokocho/"
     },
     {
+      "slug": "tachizushi",
       "name": "立ち寿司横丁",
       "area": "— エリア確認中",
       "logo": "/images/venues/tachizushi.jpg",
       "photo": "/images/venues/photo-tachizushi.jpg",
+      "gallery": ["/images/venues/gallery/tachizushi_1.jpg", "/images/venues/gallery/tachizushi_2.jpg"],
       "url": "https://www.hamakura-style.com/works/tachizushiyokocho/"
     },
     {
+      "slug": "hama",
       "name": "ハマ横丁",
       "area": "— エリア確認中",
       "logo": "/images/venues/hama.jpg",
       "photo": "/images/venues/photo-hama.jpg",
+      "gallery": ["/images/venues/gallery/hama_1.jpg"],
       "url": "https://www.hamakura-style.com/works/hama_yokocho/"
     },
     {
+      "slug": "ameyoko",
       "name": "アメ横ガード下飲食街",
       "area": "台東区・上野",
       "logo": "/images/venues/ameyoko.jpg",
       "photo": "/images/venues/photo-ameyoko.jpg",
+      "gallery": ["/images/venues/gallery/ameyoko_1.jpg", "/images/venues/gallery/ameyoko_2.jpg"],
       "url": "https://www.hamakura-style.com/works/ameyoko_insyokugai/"
     },
     {
+      "slug": null,
       "name": "ピット・イン",
       "area": "2024年11月開業予定として確認済み",
       "logo": null,
       "photo": null,
+      "gallery": [],
       "url": null
     }
   ]

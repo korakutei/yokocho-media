@@ -337,6 +337,42 @@ section.raised .venue{background:var(--bg-raised);}
 .venue:hover .venue-link{opacity:1;transform:translateY(0);}
 .venue-note{margin-top:20px;font-size:12px;color:var(--paper-dim);opacity:0.8;}
 
+/* ---------- venue detail page ---------- */
+.venue-detail-hero{
+  position:relative;min-height:64vh;display:flex;align-items:flex-end;
+  overflow:hidden;background:var(--bg);
+}
+.venue-detail-hero img{object-fit:cover;filter:brightness(0.75) saturate(0.95);}
+.venue-detail-hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to bottom, rgba(23,19,15,0.15), rgba(23,19,15,0.92) 100%);
+}
+.venue-detail-hero-content{position:relative;z-index:1;width:100%;padding-bottom:48px;}
+.venue-detail-back{
+  display:inline-block;margin-bottom:24px;font-family:var(--font-label);
+  font-size:12px;letter-spacing:0.06em;color:var(--paper-dim);text-decoration:none;
+}
+.venue-detail-back:hover{color:var(--gold-bright);}
+.venue-detail-mark{margin-bottom:16px;}
+.venue-detail-name{
+  font-family:var(--font-display);font-weight:800;
+  font-size:clamp(32px,6vw,56px);margin:0 0 8px;color:var(--paper);
+}
+.venue-detail-area{
+  font-family:var(--font-label);font-size:13px;letter-spacing:0.08em;color:var(--paper-dim);
+}
+.venue-detail-body{padding-top:56px;padding-bottom:80px;}
+.venue-detail-meta{
+  font-family:var(--font-label);font-size:12.5px;letter-spacing:0.06em;
+  color:var(--paper-dim);margin-bottom:24px;
+}
+.venue-detail-cta{margin-top:0;margin-bottom:40px;}
+.venue-detail-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:40px;}
+@media (max-width:640px){.venue-detail-gallery{grid-template-columns:1fr;}}
+.venue-detail-gallery-item{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:4px;}
+.venue-detail-gallery-item img{object-fit:cover;}
+.venue-detail-note{font-size:12.5px;color:var(--paper-dim);opacity:0.8;max-width:60ch;}
+
 /* ---------- footer ---------- */
 footer{padding:64px 0 48px;border-top:1px solid var(--line);}
 .footer-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;}
