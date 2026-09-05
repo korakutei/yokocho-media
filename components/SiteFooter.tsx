@@ -19,7 +19,7 @@ export default function SiteFooter() {
         <div className="footer-status">
           Prototype Build — Next.js MVP（非公開）
           <br />
-          Next: 掲載可否レビュー導線 / Pillars写真の実写化 / MAP検索
+          Next: 全国横丁ディレクトリの許諾・情報更新フロー整備 / 試験掲載中の横丁への許諾取得 / Pillars写真の実写化
         </div>
       </div>
     </footer>

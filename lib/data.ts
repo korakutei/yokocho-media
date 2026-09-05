@@ -1,7 +1,15 @@
 import digestJson from "@/data/digest.json";
 import venuesJson from "@/data/venues.json";
 import articlesJson from "@/data/articles.json";
-import type { Article, ArticlesData, DigestData, Venue, VenuesData } from "./types";
+import yokochoDirectoryJson from "@/data/yokocho-directory.json";
+import type {
+  Article,
+  ArticlesData,
+  DigestData,
+  Venue,
+  VenuesData,
+  YokochoDirectoryData,
+} from "./types";
 
 // 現状はビルド時にバンドルされる静的JSONを読み込むだけのシンプルな実装。
 // 将来、日次の自動収集ジョブ（scripts/update-digest.ts、または外部CMS/DB）から
@@ -31,4 +39,8 @@ export function getArticles(): Article[] {
 
 export function getArticleBySlug(slug: string): Article | undefined {
   return getArticles().find((a) => a.slug === slug);
+}
+
+export function getYokochoDirectory(): YokochoDirectoryData {
+  return yokochoDirectoryJson as YokochoDirectoryData;
 }

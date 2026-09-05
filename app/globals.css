@@ -26,15 +26,18 @@
   --font-label: "Big Shoulders Display", "Zen Kaku Gothic New", sans-serif;
 }
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
 body{
   margin:0;
+  overflow-x:hidden;
   background:var(--bg);
   color:var(--paper);
   font-family:var(--font-body);
   line-height:1.8;
   -webkit-font-smoothing:antialiased;
+  -webkit-tap-highlight-color:transparent;
 }
+a, button{-webkit-tap-highlight-color:transparent;}
 img{max-width:100%;}
 a{color:inherit;}
 ::selection{background:var(--gold);color:#17130f;}
@@ -46,33 +49,30 @@ a{color:inherit;}
 .hero{position:relative;overflow:hidden;}
 .hero-photo{
   position:relative;
-  min-height:72svh;
+  min-height:90vh;
+  min-height:90svh;
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:flex-start;
   overflow:hidden;
+  padding-top:28px;
   background:
-    linear-gradient(115deg, rgba(23,19,15,0.94) 0%, rgba(23,19,15,0.86) 32%, rgba(23,19,15,0.52) 62%, rgba(23,19,15,0.26) 100%),
-    linear-gradient(to bottom, rgba(23,19,15,0.1), rgba(23,19,15,0.85) 96%, var(--bg) 100%),
-    radial-gradient(ellipse 620px 420px at 18% 8%, rgba(184,146,63,0.24), transparent 60%),
-    radial-gradient(ellipse 520px 420px at 86% 18%, rgba(92,113,146,0.16), transparent 60%),
-    radial-gradient(ellipse 900px 700px at 50% 100%, rgba(184,146,63,0.10), transparent 65%),
+    radial-gradient(ellipse 620px 360px at 4% 0%, rgba(23,19,15,0.88), transparent 62%),
+    linear-gradient(to bottom, rgba(23,19,15,0.02) 0%, rgba(23,19,15,0.1) 60%, rgba(23,19,15,0.82) 94%, var(--bg) 100%),
     url("/images/hero-cover.jpg");
-  background-repeat:no-repeat, no-repeat, repeat, repeat, repeat, no-repeat;
-  background-size:cover, cover, auto, auto, auto, cover;
-  background-position:center, center, center, center, center, center 30%;
-}
-.hero-photo::before{
-  content:"";
-  position:absolute;inset:0;
-  background-image:linear-gradient(var(--line) 1px, transparent 1px);
-  background-size:100% 64px;
-  opacity:0.35;
-  pointer-events:none;
-  mask-image:linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  background-repeat:no-repeat, no-repeat, no-repeat;
+  background-size:cover, cover, cover;
+  background-position:center, center, center 28%;
 }
 @media (min-width:761px) and (hover:hover) and (prefers-reduced-motion: no-preference){
   .hero-photo{background-attachment:fixed;}
+}
+@media (max-width:640px){
+  .hero-photo{
+    min-height:auto;
+    aspect-ratio:4/5;
+    background-position:center, center, 62% 22%;
+  }
 }
 .hero-photo-tag{
   position:absolute;top:20px;right:20px;z-index:2;
@@ -80,7 +80,21 @@ a{color:inherit;}
   color:var(--paper-dim);background:rgba(23,19,15,0.55);border:1px solid var(--line-strong);
   padding:3px 8px;border-radius:2px;text-transform:uppercase;
 }
-.hero-top{position:relative;z-index:1;}
+.hero-top-mini{position:relative;z-index:1;}
+.hero .hero-top-mini .eyebrow{font-size:10px;margin-bottom:8px;}
+.hero-top-mini h1.wordmark{
+  font-size:clamp(24px,4.2vw,38px);
+  line-height:1;
+  margin:0;
+  letter-spacing:0.01em;
+}
+.hero-top-mini .wordmark-en{
+  font-size:8.5px;
+  letter-spacing:0.4em;
+  margin-top:8px;
+}
+.hero-photo-copy{position:relative;z-index:1;margin-top:auto;padding-bottom:44px;}
+.hero-photo-copy .hero-copy{margin-top:0;font-size:16.5px;text-shadow:0 2px 12px rgba(23,19,15,0.7);}
 .lantern-row{
   position:absolute;top:0;left:0;right:0;
   display:flex;justify-content:space-between;padding:0 8%;
@@ -181,25 +195,29 @@ h1.wordmark{
   text-decoration:none;transition:background 0.2s ease, transform 0.2s ease;
 }
 .hero-cta:hover{background:var(--paper);transform:translateY(-1px);}
-.hero-meta{
-  margin-top:44px;display:flex;gap:28px;flex-wrap:wrap;
-  font-family:var(--font-label);font-size:13px;letter-spacing:0.06em;color:var(--paper-dim);
-}
-.hero-meta b{
-  display:block;font-family:var(--font-body);font-size:22px;font-weight:700;
-  color:var(--gold-bright);letter-spacing:0;
-}
 
 /* ---------- hero: japan map band ---------- */
 .hero-map-band{
   position:relative;background:var(--bg);
-  padding:60px 0 72px;display:flex;flex-direction:column;align-items:center;
+  padding:64px 0 72px;display:flex;flex-direction:column;align-items:center;
 }
 .hero-map-caption{
-  font-family:var(--font-label);font-size:12px;letter-spacing:0.16em;
-  color:var(--gold);text-transform:uppercase;margin:0 0 20px;text-align:center;
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(24px,4.2vw,36px);line-height:1.35;
+  color:var(--paper);text-transform:none;margin:0 0 36px;text-align:center;
+  max-width:680px;padding:0 20px;
 }
-.japan-map{width:100%;max-width:400px;height:auto;margin:0 auto;}
+.hero-map-caption strong{color:var(--gold-bright);}
+.hero-map-lede{
+  font-size:13.5px;line-height:1.9;color:var(--paper-dim);text-align:center;
+  max-width:480px;margin:-20px 20px 40px;
+}
+.hero-map-scene{
+  display:flex;align-items:center;justify-content:center;gap:4vw;
+  width:100%;max-width:1100px;margin:0 auto;padding:0 20px;
+}
+@media (max-width:760px){.hero-map-scene{flex-direction:column;gap:28px;}}
+.japan-map{width:100%;max-width:400px;height:auto;margin:0 auto;flex-shrink:0;}
 .japan-map-island{fill:var(--line-strong);}
 .japan-map-pin-glow{
   fill:var(--gold);opacity:0.3;
@@ -209,8 +227,66 @@ h1.wordmark{
 .japan-map-pin-dot{fill:var(--gold-bright);}
 @keyframes pin-glow-pulse{0%,100%{opacity:0.18;}50%{opacity:0.55;}}
 @media (prefers-reduced-motion:reduce){.japan-map-pin-glow{animation:none;opacity:0.35;}}
-.hero-bottom{margin-top:40px;display:flex;flex-direction:column;align-items:center;text-align:center;}
-.hero-bottom .hero-meta{justify-content:center;}
+.japan-map-inset-box{fill:none;stroke:var(--line-strong);stroke-width:2;stroke-dasharray:4 5;}
+.japan-map-inset-label{
+  font-family:var(--font-label);font-size:15px;letter-spacing:0.1em;fill:var(--paper-dim);
+}
+
+/* ---------- hero: side photo panels + bottom banner ---------- */
+.hero-map-panel{
+  position:relative;flex-shrink:0;overflow:hidden;border-radius:4px;
+  width:clamp(110px,16vw,210px);aspect-ratio:560/732;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+@media (max-width:760px){.hero-map-panel{width:min(280px,70vw);}}
+.hero-map-panel img{object-fit:cover;filter:saturate(0.95) brightness(0.82);}
+.hero-map-panel::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom, transparent 40%, rgba(23,19,15,0.92) 100%);
+}
+.hero-map-panel-caption{
+  position:absolute;left:14px;right:14px;bottom:14px;z-index:1;
+  font-family:var(--font-display);font-weight:700;font-size:13px;line-height:1.6;
+  color:var(--paper);
+}
+.hero-map-banner{
+  position:relative;width:100%;max-width:1100px;margin:44px auto 0;
+  aspect-ratio:1400/502;overflow:hidden;border-radius:4px;
+}
+@media (max-width:760px){.hero-map-banner{aspect-ratio:4/5;margin-top:32px;}}
+.hero-map-banner img{object-fit:cover;filter:saturate(0.95) brightness(0.78);}
+.hero-map-banner::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(23,19,15,0.88), transparent 55%);
+}
+.hero-map-banner-caption{
+  position:absolute;left:24px;bottom:18px;right:24px;z-index:1;
+  font-family:var(--font-display);font-weight:700;font-size:clamp(15px,2.2vw,20px);
+  color:var(--paper);
+}
+
+.hero-bottom{margin-top:44px;display:flex;flex-direction:column;align-items:center;text-align:center;}
+.hero-stats{
+  margin-top:8px;display:flex;background:var(--bg);
+  border:1px solid var(--line-strong);border-radius:6px;overflow:hidden;
+}
+.hero-stat{
+  padding:18px 28px;text-align:center;
+  border-left:1px solid var(--line);
+}
+.hero-stat:first-child{border-left:none;}
+.hero-stat b{
+  display:block;font-family:var(--font-display);font-weight:700;
+  font-size:30px;color:var(--gold-bright);line-height:1;
+}
+.hero-stat span{
+  display:block;margin-top:9px;font-family:var(--font-label);font-size:10.5px;
+  letter-spacing:0.1em;color:var(--paper-dim);white-space:nowrap;
+}
+@media (max-width:480px){
+  .hero-stat{padding:16px 14px;}
+  .hero-stat b{font-size:24px;}
+}
 .scroll-cue{
   position:absolute;bottom:36px;left:28px;
   font-family:var(--font-label);font-size:11px;letter-spacing:0.3em;color:var(--paper-dim);
@@ -394,6 +470,12 @@ section.raised .venue{background:var(--bg-raised);}
 }
 .venue:hover .venue-link{opacity:1;transform:translateY(0);}
 .venue-note{margin-top:20px;font-size:12px;color:var(--paper-dim);opacity:0.8;}
+.venue-directory-link{
+  display:inline-block;margin-top:24px;font-family:var(--font-label);font-size:12.5px;
+  letter-spacing:0.06em;color:var(--gold-bright);text-decoration:none;
+  border-bottom:1px solid var(--gold-bright);padding-bottom:2px;
+}
+.venue-directory-link:hover{color:var(--paper);border-color:var(--paper);}
 
 /* ---------- venue detail page ---------- */
 .venue-detail-hero{
@@ -473,6 +555,69 @@ section.raised .venue{background:var(--bg-raised);}
 }
 .article-related-name{
   font-family:var(--font-display);font-weight:700;font-size:17px;color:var(--gold-bright);
+}
+
+/* ---------- travel: nationwide yokocho directory ---------- */
+.directory-index{padding:96px 0;}
+.directory-meta{
+  margin:-20px 0 56px;font-size:13px;color:var(--paper-dim);opacity:0.85;
+  max-width:70ch;
+}
+.directory-region{margin-bottom:52px;}
+.directory-region-title{
+  font-family:var(--font-display);font-weight:700;font-size:20px;
+  color:var(--gold-bright);margin:0 0 18px;padding-bottom:10px;
+  border-bottom:1px solid var(--line-strong);
+}
+.directory-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+@media (max-width:760px){.directory-list{grid-template-columns:1fr;}}
+.directory-item{
+  position:relative;display:block;background:var(--bg);padding:18px 20px 44px;
+  text-decoration:none;color:inherit;transition:background 0.2s ease;
+}
+.directory-item:hover{background:rgba(184,146,63,0.06);}
+.directory-item-disabled{cursor:default;padding-bottom:36px;}
+.directory-item-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+.directory-item-name{font-family:var(--font-display);font-weight:700;font-size:16px;color:var(--paper);}
+.directory-item-rank{
+  flex-shrink:0;font-family:var(--font-label);font-size:9.5px;letter-spacing:0.06em;
+  color:var(--gold);border:1px solid var(--gold);border-radius:2px;padding:2px 6px;white-space:nowrap;
+}
+.directory-item-area{
+  display:block;margin-top:6px;font-family:var(--font-label);font-size:10.5px;
+  letter-spacing:0.04em;color:var(--paper-dim);
+}
+.directory-item-feature{margin:10px 0 0;font-size:13px;line-height:1.7;color:var(--paper-dim);}
+.directory-item-link{
+  position:absolute;left:20px;bottom:16px;font-family:var(--font-label);font-size:10.5px;
+  letter-spacing:0.08em;color:var(--gold);
+}
+.directory-item-link-soon{color:var(--paper-dim);opacity:0.6;}
+.directory-note{margin-top:36px;font-size:12px;color:var(--paper-dim);opacity:0.8;max-width:70ch;}
+
+/* ---------- urano profile ---------- */
+.urano-grid{
+  display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:center;
+}
+@media (max-width:640px){.urano-grid{grid-template-columns:1fr;gap:24px;}}
+.urano-photo{
+  position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:4px;
+  max-width:260px;
+}
+.urano-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(0.95) brightness(0.94);}
+.urano-role{
+  font-family:var(--font-label);font-size:12px;letter-spacing:0.16em;
+  color:var(--gold);text-transform:uppercase;margin:8px 0 4px;
+}
+.urano-role-en{
+  display:inline-block;margin-left:10px;font-size:10.5px;letter-spacing:0.2em;
+  color:var(--paper-dim);opacity:0.75;
+}
+.urano-name{
+  font-family:var(--font-display);font-weight:800;font-size:clamp(26px,4vw,36px);margin:0 0 20px;
+}
+.urano-comment{
+  max-width:56ch;font-size:15.5px;line-height:2;color:var(--paper-dim);margin:0;
 }
 
 /* ---------- footer ---------- */

@@ -7,8 +7,13 @@
  * SiteFooter に表示している。
  *
  * ピンはイメージ演出であり、正確な店舗所在地を示す機能地図ではない
- * (実際の掲載横丁一覧は #venues セクション参照)。東京周辺のみ、実際に
- * 掲載横丁が集中しているため他よりわずかに大きく表示している。
+ * (実際の掲載横丁一覧は #venues セクション参照)。2026-09-05、掲載13地域
+ * (札幌・仙台・東京・千葉・神奈川・名古屋・京都・大阪・岡山・広島・福岡・
+ * 鹿児島・沖縄)に合わせてピン配置を全面的に見直した。沖縄は元データの
+ * 輪郭パスに含まれないため、日本地図の一般的な慣習に倣い別枠(インセット)
+ * で表示している。座標はレンダリングして目視で陸地上に乗っているか確認
+ * しながら較正したもの(旧バージョンの「広島」ピンは実際には大阪の東側
+ * ＝紀伊半島付近に誤配置されていたため、今回西側の中国地方沿いに修正した)。
  */
 
 const ISLANDS = [
@@ -21,11 +26,23 @@ const ISLANDS = [
 const PINS = [
   { x: 630, y: 145, label: "札幌", size: 1 },
   { x: 600, y: 350, label: "仙台", size: 1 },
-  { x: 645, y: 490, label: "東京・埼玉", size: 1.7 },
-  { x: 555, y: 545, label: "大阪", size: 1 },
-  { x: 595, y: 590, label: "広島", size: 1.2 },
+  { x: 645, y: 490, label: "東京", size: 1.4 },
+  { x: 708, y: 500, label: "千葉", size: 1 },
+  { x: 612, y: 535, label: "神奈川", size: 1 },
+  { x: 583, y: 515, label: "名古屋", size: 1 },
+  { x: 530, y: 520, label: "京都", size: 1 },
+  { x: 520, y: 558, label: "大阪", size: 1.2 },
+  { x: 503, y: 588, label: "岡山", size: 1 },
+  { x: 458, y: 622, label: "広島", size: 1 },
   { x: 430, y: 760, label: "福岡", size: 1 },
+  { x: 140, y: 890, label: "鹿児島", size: 1 },
 ];
+
+/**
+ * 沖縄は元データ(Blank map of Japan new.svg)の輪郭パスに含まれていないため、
+ * 一般的な日本地図の慣習に倣い、別枠(インセット)で表示する。
+ */
+const OKINAWA_INSET = { x: 92, y: 962, label: "沖縄" };
 
 export default function JapanMap() {
   return (
@@ -33,7 +50,7 @@ export default function JapanMap() {
       className="japan-map"
       viewBox="0 0 1024 1024"
       role="img"
-      aria-label="日本地図に横丁の賑わいを示す光の点が全国に散らばっているイラスト"
+      aria-label="日本地図に、札幌から沖縄まで全国各地の横丁の賑わいを示す光の点が散らばっているイラスト"
     >
       {ISLANDS.map((d, i) => (
         <path key={i} d={d} className="japan-map-island" />
@@ -42,7 +59,7 @@ export default function JapanMap() {
         <g
           key={pin.label}
           className="japan-map-pin"
-          style={{ ["--pin-delay" as string]: `${i * 0.7}s` }}
+          style={{ ["--pin-delay" as string]: `${i * 0.5}s` }}
         >
           <circle
             cx={pin.x}
@@ -58,6 +75,42 @@ export default function JapanMap() {
           />
         </g>
       ))}
+
+      <g className="japan-map-inset">
+        <rect
+          x={OKINAWA_INSET.x - 62}
+          y={OKINAWA_INSET.y - 34}
+          width={124}
+          height={68}
+          rx={4}
+          className="japan-map-inset-box"
+        />
+        <text
+          x={OKINAWA_INSET.x}
+          y={OKINAWA_INSET.y - 16}
+          textAnchor="middle"
+          className="japan-map-inset-label"
+        >
+          沖縄
+        </text>
+        <g
+          className="japan-map-pin"
+          style={{ ["--pin-delay" as string]: `${PINS.length * 0.5}s` }}
+        >
+          <circle
+            cx={OKINAWA_INSET.x}
+            cy={OKINAWA_INSET.y + 10}
+            r={14}
+            className="japan-map-pin-glow"
+          />
+          <circle
+            cx={OKINAWA_INSET.x}
+            cy={OKINAWA_INSET.y + 10}
+            r={4}
+            className="japan-map-pin-dot"
+          />
+        </g>
+      </g>
     </svg>
   );
 }

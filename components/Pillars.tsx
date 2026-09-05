@@ -15,12 +15,12 @@ const pillars = [
   },
   {
     jp: "探す・行く",
-    en: "Find — Map Search",
-    body: "気になる横丁を写真とアクセス情報から探す。地図表示は今後追加予定。",
+    en: "Find — Travel × Yokocho",
+    body: "旅先の横丁を探す。全国各地の横丁・屋台村を地域ごとに一覧できる、横丁ツーリズムのディレクトリ。",
     photo: "/images/pillar-find.jpg",
     alt: "店先のメニューを覗き込み今夜行く店を選ぶ旅行者たちの様子を伝えるイメージカット",
-    href: "/#venues",
-    linkLabel: "横丁を探す →",
+    href: "/travel",
+    linkLabel: "全国の横丁を見る →",
   },
   {
     jp: "つながる",

@@ -1,0 +1,94 @@
+{
+  "updatedLabel": "2026-09-05 時点（一次調査ベース）",
+  "regions": [
+    {
+      "region": "北海道・東北",
+      "items": [
+        { "name": "元祖さっぽろラーメン横丁", "pref": "北海道", "area": "札幌市中央区・すすきの", "genre": "ラーメン", "feature": "味噌ラーメン発祥地の一つ。1951年前身、1971年に現在地で再出発", "rank": "A・公式", "url": "https://www.ganso-yokocho.com/rekishi/" },
+        { "name": "新ラーメン横丁", "pref": "北海道", "area": "札幌市中央区・すすきの", "genre": "ラーメン", "feature": "すすきのの夜食文化を支える一角", "rank": "C・要再確認", "url": null },
+        { "name": "函館ひかりの屋台大門横丁", "pref": "北海道", "area": "函館市", "genre": "海鮮・居酒屋", "feature": "函館駅徒歩約7分、海鮮と地酒で交流", "rank": "A", "url": "https://www.visit-hokkaido.jp/" },
+        { "name": "小樽屋台村レンガ横丁", "pref": "北海道", "area": "小樽市", "genre": "居酒屋", "feature": "運河沿いのレンガ景観、はしご酒", "rank": "A・公式", "url": "https://otaruyataimura.jp/" },
+        { "name": "小樽屋台村ろまん横丁", "pref": "北海道", "area": "小樽市", "genre": "居酒屋・バル", "feature": "小樽観光との回遊を意識した屋台村", "rank": "A・公式", "url": "https://otaruyataimura.jp/" },
+        { "name": "北の屋台", "pref": "北海道", "area": "帯広市", "genre": "郷土料理・多国籍", "feature": "2001年開業。十勝食材と店主との交流が名物", "rank": "A・公式", "url": "https://kitanoyatai.com/" },
+        { "name": "八戸屋台村みろく横丁", "pref": "青森県", "area": "八戸市", "genre": "屋台・郷土料理", "feature": "2002年開業。せんべい汁と地酒、八戸8横丁の中心", "rank": "A", "url": "https://aomori-tourism.com/spot/detail_457.html" },
+        { "name": "花小路", "pref": "青森県", "area": "八戸市中心街", "genre": "居酒屋等", "feature": "八戸8横丁の一つ、約180mの路地", "rank": "A", "url": "https://visithachinohe.com/stories/hachinohe-yokocho-arukikata/" },
+        { "name": "ロー丁れんさ街", "pref": "青森県", "area": "八戸市中心街", "genre": "居酒屋・スナック", "feature": "八戸8横丁の一つ", "rank": "A", "url": "https://visithachinohe.com/stories/hachinohe-yokocho-arukikata/" },
+        { "name": "長横町れんさ街", "pref": "青森県", "area": "八戸市中心街", "genre": "居酒屋", "feature": "飲み歩き文化が根付く一角", "rank": "A", "url": "https://visithachinohe.com/stories/hachinohe-yokocho-arukikata/" },
+        { "name": "たぬき小路（八戸）", "pref": "青森県", "area": "八戸市中心街", "genre": "酒場", "feature": "細街路ならではの親密感", "rank": "A", "url": "https://visithachinohe.com/stories/hachinohe-yokocho-arukikata/" },
+        { "name": "ハーモニカ横町（八戸）", "pref": "青森県", "area": "八戸市中心街", "genre": "酒場", "feature": "八戸8横丁の一つ", "rank": "A", "url": "https://visithachinohe.com/stories/hachinohe-yokocho-arukikata/" },
+        { "name": "五番街（八戸）", "pref": "青森県", "area": "八戸市中心街", "genre": "酒場", "feature": "八戸8横丁の一つ", "rank": "A", "url": "https://visithachinohe.com/stories/hachinohe-yokocho-arukikata/" },
+        { "name": "八戸昭和通り", "pref": "青森県", "area": "八戸市中心街", "genre": "酒場", "feature": "昭和レトロな雰囲気が残る通り", "rank": "A", "url": "https://visithachinohe.com/stories/hachinohe-yokocho-arukikata/" },
+        { "name": "盛岡横丁", "pref": "岩手県", "area": "盛岡市", "genre": "飲食・居酒屋", "feature": "映画館通り地下の飲食街", "rank": "A・公式", "url": "https://moriokayokocho.com/" },
+        { "name": "文化横丁", "pref": "宮城県", "area": "仙台市青葉区・一番町", "genre": "和食・酒場・バー", "feature": "1924年起源とされる戦前史。赤提灯が並ぶ", "rank": "A", "url": "https://jl-db.nfaj.go.jp/location/040100232/" },
+        { "name": "壱弐参横丁", "pref": "宮城県", "area": "仙台市青葉区・一番町", "genre": "飲食・物販", "feature": "1946年公設市場起源。100店超とされる多業種街", "rank": "A", "url": "https://www.sentabi.jp/spots/232" },
+        { "name": "秋田屋台村たばこ座横丁", "pref": "秋田県", "area": "秋田市", "genre": "郷土料理・酒場", "feature": "江戸期「煙草座」に由来する地名", "rank": "A/B", "url": "https://www.akita-yataimura.jp/" },
+        { "name": "酒田柳小路屋台村北前横丁", "pref": "山形県", "area": "酒田市", "genre": "屋台・郷土食", "feature": "2015年開業。北前船文化と地酒", "rank": "A", "url": "https://sakata-kankou.com/spot/30646" },
+        { "name": "山形屋台村ほっとなる横丁", "pref": "山形県", "area": "山形市", "genre": "屋台・郷土食", "feature": "中心市街地再生・創業支援の拠点", "rank": "A", "url": "https://www.hotnaru-yokocho.jp/concept/" },
+        { "name": "ふくしま屋台村こらんしょ横丁", "pref": "福島県", "area": "福島市", "genre": "屋台・居酒屋", "feature": "2006年、商工会議所青年部発の屋台村", "rank": "A/B", "url": "https://www.koransyo.com/whats/62.html" }
+      ]
+    },
+    {
+      "region": "関東",
+      "items": [
+        { "name": "宇都宮屋台横丁", "pref": "栃木県", "area": "宇都宮市中心部", "genre": "屋台・餃子等", "feature": "餃子の街と横丁文化の接続", "rank": "B", "url": "https://www.jalan.net/news/article/365688/" },
+        { "name": "神栖横丁", "pref": "茨城県", "area": "神栖市", "genre": "多業態居酒屋", "feature": "テラス・イベントで「人がつながる」を掲げる", "rank": "A・観光協会", "url": "https://www.kamisu-kanko.jp/taberu-page/kamisuyokocho.html" },
+        { "name": "菓子屋横丁", "pref": "埼玉県", "area": "川越市", "genre": "駄菓子・菓子", "feature": "「かおり風景100選」。夜飲みだけが横丁ではない好例", "rank": "A", "url": "https://koedo.or.jp/spot_003/" },
+        { "name": "柏の葉かけだし横丁", "pref": "千葉県", "area": "柏市・柏の葉キャンパス", "genre": "居酒屋・多国籍", "feature": "2018年開業、高架下の創業支援型横丁", "rank": "B", "url": "https://4travel.jp/dm_travelogue_list-chiho-kanto.html?tag=115717" },
+        { "name": "新宿ゴールデン街", "pref": "東京都", "area": "新宿区", "genre": "小型バー", "feature": "6路地・200店超とされる、世界的に知られる文化人街", "rank": "A/B", "url": "https://goldengai.jp/" },
+        { "name": "ほぼ新宿のれん街", "pref": "東京都", "area": "渋谷区・代々木", "genre": "酒場・専門店", "feature": "古民家を活かしたNEO横丁", "rank": "B", "url": "https://www.jalan.net/news/article/365688/" },
+        { "name": "新宿横丁", "pref": "東京都", "area": "新宿区・新宿三丁目", "genre": "酒場", "feature": "2022年開業の進化系横丁", "rank": "B", "url": "https://www.timeout.jp/tokyo/ja/restaurants/shinjuku-yokocho-guide" },
+        { "name": "ハモニカ横丁（吉祥寺）", "pref": "東京都", "area": "武蔵野市・吉祥寺", "genre": "酒場・惣菜・物販", "feature": "戦後市場系。昼夜で表情が変わる100店超の密集地", "rank": "B＋写真一次", "url": "https://www.fun-japan.jp/jp/articles/8348" },
+        { "name": "アメヤ横丁", "pref": "東京都", "area": "台東区・上野〜御徒町", "genre": "市場・物販・飲食", "feature": "戦後闇市系。多文化と食べ歩きの街", "rank": "A/B", "url": "https://www.jreast.co.jp/tokyomovinground/contents/town/039.html" },
+        { "name": "大井町東小路飲食店街", "pref": "東京都", "area": "品川区・大井町", "genre": "小料理・中華等", "feature": "極細路地に残る昭和の空気", "rank": "B", "url": "https://www.jalan.net/news/article/365688/" },
+        { "name": "浅草ホッピー通り", "pref": "東京都", "area": "台東区・浅草", "genre": "煮込み・大衆酒場", "feature": "昼から飲める、浅草回遊の起点", "rank": "B", "url": "https://www.apahotel.com/articles/yokocho/" },
+        { "name": "浅草横町", "pref": "東京都", "area": "台東区・浅草", "genre": "酒場・イベント", "feature": "祭・踊りなどNEO系の企画が特徴", "rank": "B", "url": "https://www.fun-japan.jp/jp/articles/8348" },
+        { "name": "カメクロ横丁", "pref": "東京都", "area": "江東区・亀戸", "genre": "飲食・酒場", "feature": "2022年開業、商業施設型の新しい横丁", "rank": "B", "url": "https://www.fun-japan.jp/jp/articles/8348" },
+        { "name": "虎ノ門横丁", "pref": "東京都", "area": "港区・虎ノ門ヒルズ", "genre": "名店・和洋中", "feature": "2020年開業。名店集積型という別モデル", "rank": "A・施設公式", "url": "https://www.toranomonhills.com/toranomonyokocho/" },
+        { "name": "横浜西口一番街", "pref": "神奈川県", "area": "横浜市・横浜駅西口", "genre": "酒場", "feature": "横浜駅前のNEO横丁", "rank": "B・要再確認", "url": "https://www.kanagawa-kankou.or.jp/spot/list?categoryIds=137" }
+      ]
+    },
+    {
+      "region": "中部",
+      "items": [
+        { "name": "甲府ぐるめ横丁", "pref": "山梨県", "area": "甲府市", "genre": "酒場・ワイン等", "feature": "2015年開業。ワイン・地域食による中心街再生", "rank": "A", "url": "https://kofu-tourism.com/gourmet/444" },
+        { "name": "はしご横丁", "pref": "長野県", "area": "松本市", "genre": "小規模飲食", "feature": "2004年、裏町ではしご酒を楽しむ路地", "rank": "A・国ロケDB", "url": "https://jl-db.nfaj.go.jp/location/200200017/" },
+        { "name": "でこなる横丁", "pref": "岐阜県", "area": "高山市・高山駅徒歩8分", "genre": "郷土食・多業態", "feature": "公式サイトが「異文化交流を楽しもう」と訴求する訪日客人気スポット", "rank": "A・観光公式", "url": "https://www.hidatakayama.or.jp/eat/detail_3008.html" },
+        { "name": "青葉横丁", "pref": "静岡県", "area": "静岡市", "genre": "静岡おでん", "feature": "黒はんぺんと赤提灯、戦後屋台系の名店街", "rank": "A・観光公式", "url": "https://www.visit-shizuoka.com/spot/detail_463.html" },
+        { "name": "青葉おでん街", "pref": "静岡県", "area": "静岡市", "genre": "静岡おでん", "feature": "小さなカウンターで店主・常連と会話を楽しむ", "rank": "A", "url": "https://www.visit-shizuoka.com/spot/detail_463.html" },
+        { "name": "駅前横丁（名古屋）", "pref": "愛知県", "area": "名古屋市・名古屋駅徒歩圏", "genre": "酒場", "feature": "柳橋市場南、昭和感の残る17店の一角", "rank": "A・愛知観光", "url": "https://www.aichi-now.jp/spots/" },
+        { "name": "大門横丁（名古屋）", "pref": "愛知県", "area": "名古屋市・名古屋駅周辺", "genre": "酒場", "feature": "細路地に昭和の空気が残る", "rank": "A", "url": "https://www.aichi-now.jp/spots/" },
+        { "name": "神宮小路", "pref": "愛知県", "area": "名古屋市・神宮前駅近接", "genre": "酒場", "feature": "熱田神宮門前で味わう夜", "rank": "A", "url": "https://www.aichi-now.jp/spots/" },
+        { "name": "金シャチ横丁", "pref": "愛知県", "area": "名古屋市・名古屋城駅周辺", "genre": "名古屋めし・物販", "feature": "2018年開業。名古屋城と義直・宗春の世界観", "rank": "A", "url": "https://www.aichi-now.jp/" },
+        { "name": "おかげ横丁", "pref": "三重県", "area": "伊勢市・内宮前", "genre": "郷土食・菓子・物販", "feature": "1993年。伊勢参りの町並みを再現した文化観光の総合体験", "rank": "A", "url": "https://jl-db.nfaj.go.jp/location/240100012/" },
+        { "name": "かにや横丁", "pref": "新潟県", "area": "糸魚川市・道の駅能生内", "genre": "カニ・海鮮", "feature": "ベニズワイガニの直売で知られる", "rank": "A・県観光", "url": "https://niigata-kankou.or.jp/spot/7004" },
+        { "name": "寺泊魚の市場通り（魚のアメ横）", "pref": "新潟県", "area": "長岡市・寺泊", "genre": "海産物・食堂", "feature": "浜焼きとQR翻訳対応で訪日客にも人気", "rank": "A・県観光", "url": "https://niigata-kankou.or.jp/spot/5823" },
+        { "name": "金沢中央味食街", "pref": "石川県", "area": "金沢市・片町周辺", "genre": "小料理・バー", "feature": "昭和型の小規模飲食街", "rank": "C・要現地確認", "url": null }
+      ]
+    },
+    {
+      "region": "関西・中国・四国",
+      "items": [
+        { "name": "法善寺横丁", "pref": "大阪府", "area": "大阪市・なんば徒歩圏", "genre": "割烹・酒場等", "feature": "石畳と水掛不動、大阪の夜を象徴する石畳の路地", "rank": "A", "url": "https://osaka-info.jp/spot/service_aeaaaae/" },
+        { "name": "ジャンジャン横丁", "pref": "大阪府", "area": "大阪市・動物園前/新今宮", "genre": "串カツ・寿司等", "feature": "新世界の庶民文化を今に伝える約180mの通り", "rank": "A", "url": "https://osaka-info.jp/spot/service_aeaaaae/" },
+        { "name": "なにわ食いしんぼ横丁", "pref": "大阪府", "area": "大阪市・大阪港/天保山", "genre": "大阪名物", "feature": "昭和大阪の街並みを再現した観光施設", "rank": "B", "url": "https://www.jalan.net/news/article/365688/" },
+        { "name": "滝見小路", "pref": "大阪府", "area": "大阪市・梅田徒歩圏", "genre": "飲食", "feature": "昭和初期の風景を再現した飲食街", "rank": "A/B", "url": "https://osaka-info.jp/zh-CHS/spot/genre.html?cat=36&genre=246" },
+        { "name": "広島ほのぼの横丁", "pref": "広島県", "area": "広島市・広島駅徒歩圏", "genre": "焼鳥・天ぷら・寿司等", "feature": "駅前ビル型の横丁", "rank": "B", "url": "https://matcha-jp.com/jp/22757" },
+        { "name": "大洲ポコペン横丁", "pref": "愛媛県", "area": "大洲市", "genre": "屋台・物販", "feature": "昭和30年代の街並みを再現", "rank": "A・国ロケDB", "url": "https://jl-db.nfaj.go.jp/location/380100006/" },
+        { "name": "ひろめ市場", "pref": "高知県", "area": "高知市・大橋通徒歩圏", "genre": "飲食・鮮魚・物販", "feature": "1998年。相席そのものが名物、カツオと昼飲みの聖地", "rank": "B/A", "url": "https://shikoku-tourism.com/feature/shikokururi/01" }
+      ]
+    },
+    {
+      "region": "九州・沖縄",
+      "items": [
+        { "name": "福岡・天神屋台", "pref": "福岡県", "area": "福岡市・天神周辺", "genre": "屋台・多業態", "feature": "都心にあり初心者も入りやすい屋台街", "rank": "A", "url": "https://yokanavi.com/yatai" },
+        { "name": "福岡・長浜屋台街", "pref": "福岡県", "area": "福岡市・赤坂駅徒歩10〜12分", "genre": "屋台・ラーメン等", "feature": "市場近くで再整備が進む屋台街", "rank": "A", "url": "https://yokanavi.com/features/274219" },
+        { "name": "熊本屋台村", "pref": "熊本県", "area": "熊本市・通町筋徒歩約2分", "genre": "郷土食・酒場", "feature": "2022年開業。球磨焼酎とイベント広場を備える現代型", "rank": "A・公式/観光", "url": "https://kumamotoyataimura.com/" },
+        { "name": "戸尾市場街・とんねる横丁", "pref": "長崎県", "area": "佐世保市・佐世保駅徒歩圏", "genre": "市場・海産物・食堂", "feature": "戦時中の防空壕を活かした、日本遺産級の重層的な歴史を持つ市場", "rank": "A・観光協会", "url": "https://www.sasebo99.com/spot/61224" },
+        { "name": "かごっまふるさと屋台村バスチカ", "pref": "鹿児島県", "area": "鹿児島市・鹿児島中央駅近接", "genre": "黒豚・地鶏・海鮮・奄美", "feature": "焼酎と郷土食が明快なテーマ", "rank": "A・県観光", "url": "https://www.kagoshima-kankou.com/guide/70250" },
+        { "name": "鹿児島中央駅ぐるめ横丁", "pref": "鹿児島県", "area": "鹿児島市・鹿児島中央駅改札正面", "genre": "鹿児島名物", "feature": "駅直結、みやげ横丁併設", "rank": "A", "url": "https://www.kagoshima-kankou.com/guide/70109" },
+        { "name": "国際通り屋台村", "pref": "沖縄県", "area": "那覇市・牧志駅徒歩圏", "genre": "沖縄料理・創作", "feature": "21店。島文化・音楽・舞踊が交流を生む", "rank": "A・公式", "url": "https://kokusaidoori-yataimura.okinawa/" },
+        { "name": "島風ちゃんぷるーヴィレッジ", "pref": "沖縄県", "area": "那覇市・松山地区", "genre": "居酒屋中心", "feature": "2026年8月開業。多層階NEO屋台村、若手支援がテーマ", "rank": "B・事業者発表", "url": "https://prtimes.jp/main/html/rd/p/000000037.000108003.html" }
+      ]
+    }
+  ]
+}

@@ -40,7 +40,19 @@ export default function Reveal({
       { threshold: 0.12 }
     );
     io.observe(el);
-    return () => io.disconnect();
+    // 画像読み込み中のレイアウトシフト等でIntersectionObserverの初回判定を
+    // 取りこぼした場合の保険。要素が既に画面内(またはすぐ下)にあれば
+    // 少し待って強制的に表示する(コンテンツが永久に非表示のままになるのを防ぐ)。
+    const fallback = window.setTimeout(() => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 400) {
+        setVisible(true);
+      }
+    }, 1000);
+    return () => {
+      io.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, []);
 
   return createElement(
