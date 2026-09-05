@@ -1,5 +1,6 @@
 import Image from "next/image";
 import JapanMap from "./JapanMap";
+import { withBase } from "@/lib/basePath";
 
 type HeroProps = {
   digestCount: number;
@@ -10,7 +11,12 @@ type HeroProps = {
 export default function Hero({ digestCount, venueCount, updatedAt }: HeroProps) {
   return (
     <header className="hero">
-      <div className="hero-photo">
+      <div
+        className="hero-photo"
+        style={{
+          ["--hero-bg-image" as string]: `url(${withBase("/images/hero-cover.jpg")})`,
+        }}
+      >
         <div className="lantern-row" aria-hidden="true">
           <span className="lantern"></span>
           <span className="lantern"></span>
@@ -56,7 +62,7 @@ export default function Hero({ digestCount, venueCount, updatedAt }: HeroProps) 
         <div className="hero-map-scene">
           <div className="hero-map-panel hero-map-panel-left" aria-hidden="true">
             <Image
-              src="/images/connect/panel-left.jpg"
+              src={withBase("/images/connect/panel-left.jpg")}
               alt=""
               fill
               sizes="(max-width: 900px) 30vw, 220px"
@@ -72,7 +78,7 @@ export default function Hero({ digestCount, venueCount, updatedAt }: HeroProps) 
 
           <div className="hero-map-panel hero-map-panel-right" aria-hidden="true">
             <Image
-              src="/images/connect/panel-right.jpg"
+              src={withBase("/images/connect/panel-right.jpg")}
               alt=""
               fill
               sizes="(max-width: 900px) 30vw, 220px"
@@ -87,7 +93,7 @@ export default function Hero({ digestCount, venueCount, updatedAt }: HeroProps) 
 
         <div className="hero-map-banner" aria-hidden="true">
           <Image
-            src="/images/connect/panel-bottom.jpg"
+            src={withBase("/images/connect/panel-bottom.jpg")}
             alt=""
             fill
             sizes="100vw"

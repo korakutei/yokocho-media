@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getLinkableVenues, getVenueBySlug } from "@/lib/data";
+import { withBase } from "@/lib/basePath";
 import SiteFooter from "@/components/SiteFooter";
 
 export function generateStaticParams() {
@@ -31,7 +32,7 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
       <article>
         <header className="venue-detail-hero">
           <Image
-            src={venue.photo}
+            src={withBase(venue.photo)}
             alt={`${venue.name}の様子`}
             fill
             sizes="100vw"
@@ -44,7 +45,7 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
             {venue.logo && (
               <span className="venue-mark venue-detail-mark">
                 <Image
-                  src={venue.logo}
+                  src={withBase(venue.logo)}
                   alt={`${venue.name} 公式ロゴ`}
                   width={600}
                   height={135}
@@ -77,7 +78,7 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
               {venue.gallery.map((src) => (
                 <div className="venue-detail-gallery-item" key={src}>
                   <Image
-                    src={src}
+                    src={withBase(src)}
                     alt={`${venue.name}の店内・通りの様子`}
                     fill
                     sizes="(max-width: 760px) 100vw, 50vw"

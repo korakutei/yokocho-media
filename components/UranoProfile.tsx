@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
+import { withBase } from "@/lib/basePath";
 
 export default function UranoProfile() {
   return (
@@ -7,7 +8,7 @@ export default function UranoProfile() {
       <div className="wrap urano-grid">
         <div className="urano-photo">
           <Image
-            src="/images/urano-yuji.jpg"
+            src={withBase("/images/urano-yuji.jpg")}
             alt="交流師・浦野雄次"
             width={700}
             height={1052}

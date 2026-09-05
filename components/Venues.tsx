@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getYokochoDirectory } from "@/lib/data";
+import { withBase } from "@/lib/basePath";
 import Reveal from "./Reveal";
 import type { Venue, VenuesData } from "@/lib/types";
 
@@ -10,7 +11,7 @@ function VenueCard({ venue }: { venue: Venue }) {
       <div className="venue-photo">
         {venue.photo ? (
           <Image
-            src={venue.photo}
+            src={withBase(venue.photo)}
             alt={`${venue.name}の店内・通りの様子`}
             fill
             sizes="(max-width: 760px) 100vw, 33vw"
@@ -24,7 +25,7 @@ function VenueCard({ venue }: { venue: Venue }) {
         {venue.logo && (
           <span className="venue-mark">
             <Image
-              src={venue.logo}
+              src={withBase(venue.logo)}
               alt={`${venue.name} 公式ロゴ`}
               width={600}
               height={135}

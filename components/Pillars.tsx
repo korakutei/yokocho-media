@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
 import ConnectSignup from "./ConnectSignup";
+import { withBase } from "@/lib/basePath";
 
 const pillars = [
   {
@@ -62,7 +63,7 @@ export default function Pillars() {
               <div className="pillar-photo">
                 <span className="pillar-photo-tag">イメージ</span>
                 <Image
-                  src={p.photo}
+                  src={withBase(p.photo)}
                   alt={p.alt}
                   fill
                   sizes="(max-width: 760px) 100vw, 33vw"

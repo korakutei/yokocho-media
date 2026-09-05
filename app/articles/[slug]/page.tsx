@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getArticleBySlug, getArticles, getVenueBySlug } from "@/lib/data";
+import { withBase } from "@/lib/basePath";
 import SiteFooter from "@/components/SiteFooter";
 
 export function generateStaticParams() {
@@ -35,7 +36,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       <article>
         <header className="venue-detail-hero">
           <Image
-            src={article.heroImage}
+            src={withBase(article.heroImage)}
             alt={article.title}
             fill
             sizes="100vw"

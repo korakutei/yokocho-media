@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getArticles } from "@/lib/data";
+import { withBase } from "@/lib/basePath";
 import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
@@ -34,7 +35,7 @@ export default function ArticlesPage() {
               >
                 <div className="article-card-photo">
                   <Image
-                    src={article.heroImage}
+                    src={withBase(article.heroImage)}
                     alt={article.title}
                     fill
                     sizes="(max-width: 760px) 100vw, 50vw"
