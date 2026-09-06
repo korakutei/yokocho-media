@@ -9,7 +9,13 @@
       "photo": "/images/venues/photo-grandhammer.jpg",
       "gallery": [],
       "url": "https://grandhammer.jp/",
-      "status": "licensed"
+      "status": "licensed",
+      "tags": ["友人", "デート", "観光", "初心者歓迎", "NEO横丁"],
+      "specs": { "solo": 5, "beginner": 5, "social": 5, "lively": 5, "local": 5, "price": "¥¥¥", "duration": "3〜5時間" },
+      "editorComment": "浜倉グループ最大規模、9フロア約2,500坪の「縦型横丁」。屋上BBQから水族館バーまで、一晩で何度でも表情を変える。",
+      "hours": null,
+      "lat": 35.6665,
+      "lng": 139.758
     },
     {
       "slug": "ebisu",
