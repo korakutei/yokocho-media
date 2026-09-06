@@ -686,15 +686,28 @@ section.raised .venue{background:var(--bg-raised);}
   color:var(--gold);text-transform:uppercase;margin:8px 0 4px;
 }
 .urano-role-en{
-  display:inline-block;margin-left:10px;font-size:10.5px;letter-spacing:0.2em;
-  color:var(--paper-dim);opacity:0.75;
+  display:inline-block;margin-left:10px;font-size:10.5px;letter-spacing:0.1em;
+  color:var(--paper-dim);opacity:0.75;text-transform:none;
 }
 .urano-name{
   font-family:var(--font-display);font-weight:800;font-size:clamp(26px,4vw,36px);margin:0 0 20px;
 }
 .urano-comment{
-  max-width:56ch;font-size:15.5px;line-height:2;color:var(--paper-dim);margin:0;
+  max-width:56ch;font-size:15.5px;line-height:2;color:var(--paper-dim);margin:0 0 18px;
 }
+.urano-comment:last-of-type{margin-bottom:0;}
+.urano-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.urano-tag{
+  font-family:var(--font-label);font-size:10.5px;letter-spacing:0.04em;
+  padding:4px 12px;border-radius:999px;background:rgba(184,146,63,0.12);
+  color:var(--gold-bright);border:1px solid rgba(184,146,63,0.3);
+}
+.urano-links{display:flex;flex-wrap:wrap;gap:20px;margin-top:18px;}
+.urano-link{
+  font-family:var(--font-label);font-size:12px;letter-spacing:0.04em;
+  color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;
+}
+.urano-link:hover{color:var(--paper);border-color:var(--paper);}
 
 /* ---------- footer ---------- */
 footer{padding:64px 0 48px;border-top:1px solid var(--line);}
