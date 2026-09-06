@@ -5,6 +5,15 @@ import { notFound } from "next/navigation";
 import { getLinkableVenues, getVenueBySlug } from "@/lib/data";
 import { withBase } from "@/lib/basePath";
 import SiteFooter from "@/components/SiteFooter";
+import { StarRating } from "@/components/VenueExplorer";
+
+const SPEC_LABELS: Record<string, string> = {
+  solo: "一人飲み適性",
+  beginner: "初心者向け",
+  social: "交流度",
+  lively: "にぎやかさ",
+  local: "ローカル感",
+};
 
 export function generateStaticParams() {
   return getLinkableVenues().map((venue) => ({ slug: venue.slug }));
@@ -62,15 +71,63 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
             <span>運営：{`株式会社浜倉的商店製作所グループ`}</span>
           </div>
 
-          {venue.url && (
-            <a
-              className="hero-cta venue-detail-cta"
-              href={venue.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              公式サイトで営業時間・アクセスを見る ↗
-            </a>
+          <div className="venue-detail-hours-banner">
+            {venue.hours ? (
+              <p>
+                <strong>営業時間：</strong>
+                {venue.hours}
+              </p>
+            ) : (
+              <p>
+                営業時間は最新の公式サイトでご確認ください（今夜行けるかは公式サイトで即判断できます）。
+              </p>
+            )}
+            {venue.url && (
+              <a
+                className="hero-cta venue-detail-cta"
+                href={venue.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                公式サイトで営業時間・アクセスを見る ↗
+              </a>
+            )}
+          </div>
+
+          {venue.tags && venue.tags.length > 0 && (
+            <div className="venue-tags venue-detail-tags">
+              {venue.tags.map((tag) => (
+                <span className="venue-tag" key={tag}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {venue.editorComment && (
+            <p className="venue-editor-comment venue-detail-editor-comment">
+              「{venue.editorComment}」
+              <span className="venue-detail-editor-label">— 編集部おすすめコメント</span>
+            </p>
+          )}
+
+          {venue.specs && (
+            <div className="venue-detail-specs-grid">
+              {(["solo", "beginner", "social", "lively", "local"] as const).map((key) => (
+                <div className="venue-detail-spec" key={key}>
+                  <span className="venue-detail-spec-label">{SPEC_LABELS[key]}</span>
+                  <StarRating value={venue.specs![key]} />
+                </div>
+              ))}
+              <div className="venue-detail-spec">
+                <span className="venue-detail-spec-label">価格帯</span>
+                <span className="venue-detail-spec-value">{venue.specs.price}</span>
+              </div>
+              <div className="venue-detail-spec">
+                <span className="venue-detail-spec-label">滞在目安</span>
+                <span className="venue-detail-spec-value">{venue.specs.duration}</span>
+              </div>
+            </div>
           )}
 
           {venue.gallery.length > 0 && (
@@ -90,7 +147,7 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
           )}
 
           <p className="venue-detail-note">
-            写真・ロゴは浜倉的商店製作所グループ公式サイトより掲載許諾済みです。営業時間・料金等の最新情報は公式サイトでご確認ください。
+            写真・ロゴは浜倉的商店製作所グループ公式サイトより掲載許諾済みです。営業時間・料金等の最新情報は公式サイトでご確認ください。タグ・スペック・編集部コメントは編集部による現地取材前の目安であり、確定情報ではありません。
           </p>
         </div>
       </article>

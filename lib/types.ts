@@ -40,6 +40,48 @@ export type Venue = {
   status: "licensed" | "research";
   /** research時の運営者名(表示用)。licensedはVenuesData.operatorを一括表示するためnullでよい。 */
   operatorName?: string | null;
+
+  /**
+   * 以下、2026-09-06追加。「探す・比較する・決める」強化のための項目。
+   * 現地取材前の編集部による目安評価のため、licensed横丁のうちエリアが
+   * 確定しているもの(=写真・エリアとも確認済み)にのみ付与している。
+   * research横丁(未許諾・未確認)には現時点では付与しない。
+   */
+
+  /** 目的別タグ(利用シーン)。例: "一人飲み" "デート" "友人" "観光" "昭和レトロ" "地酒" "昼飲み"。 */
+  tags?: string[];
+
+  /** 編集部による定性評価(1〜5の目安値)。「交流度」はヨコチョナビ独自の差別化指標。 */
+  specs?: {
+    /** 一人飲み適性 */
+    solo: number;
+    /** 初心者向け度(入りやすさ) */
+    beginner: number;
+    /** 交流度(店主・他の客との交流のしやすさ、独自指標) */
+    social: number;
+    /** にぎやかさ */
+    lively: number;
+    /** ローカル感(地元客の多さ) */
+    local: number;
+    /** 価格帯目安("¥"〜"¥¥¥") */
+    price: string;
+    /** 滞在目安(例: "1〜2時間") */
+    duration: string;
+  };
+
+  /** 編集部おすすめコメント(一言紹介)。 */
+  editorComment?: string | null;
+
+  /**
+   * 営業時間(公式サイト等で確認できた場合のみ記載)。未確認はnullとし、
+   * UI側は「公式サイトでご確認ください」という誠実な表示にフォールバックする
+   * (裏取りできていない時間を表示して来店機会を損なわせないため)。
+   */
+  hours?: string | null;
+
+  /** 現在地からの距離順ソート用の概算緯度・経度(エリア中心程度の精度)。未確認のエリアはnull。 */
+  lat?: number | null;
+  lng?: number | null;
 };
 
 export type VenuesData = {

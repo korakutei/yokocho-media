@@ -198,13 +198,20 @@ h1.wordmark{
 }
 .hero-copy{max-width:520px;margin-top:34px;font-size:17px;color:var(--paper-dim);}
 .hero-copy strong{color:var(--paper);font-weight:500;}
+.hero-cta-row{
+  margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
+}
 .hero-cta{
-  display:inline-block;margin-top:28px;padding:12px 26px;
+  display:inline-block;padding:12px 26px;
   font-family:var(--font-label);font-size:13px;letter-spacing:0.08em;
   color:var(--bg);background:var(--gold-bright);border-radius:2px;
   text-decoration:none;transition:background 0.2s ease, transform 0.2s ease;
 }
 .hero-cta:hover{background:var(--paper);transform:translateY(-1px);}
+.hero-cta-secondary{
+  background:transparent;color:var(--paper);border:1px solid var(--line-strong);
+}
+.hero-cta-secondary:hover{background:rgba(242,233,216,0.08);border-color:var(--paper-dim);}
 
 /* ---------- hero: japan map band ---------- */
 .hero-map-band{
@@ -474,6 +481,59 @@ section.raised .venue{background:var(--bg-raised);}
 }
 .venue-directory-link:hover{color:var(--paper);border-color:var(--paper);}
 
+/* ---------- venue explorer: tag filter + 現在地から探す ---------- */
+.venue-toolbar{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+  gap:14px;margin-bottom:24px;
+}
+.venue-tagfilter{display:flex;flex-wrap:wrap;gap:8px;}
+.tag-chip{
+  font-family:var(--font-label);font-size:11.5px;letter-spacing:0.04em;
+  padding:6px 14px;border:1px solid var(--line-strong);border-radius:999px;
+  background:transparent;color:var(--paper-dim);cursor:pointer;
+  transition:border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.tag-chip:hover{border-color:var(--gold);color:var(--paper);}
+.tag-chip-active{background:var(--gold-bright);border-color:var(--gold-bright);color:var(--bg);}
+.tag-chip-active:hover{color:var(--bg);}
+.locate-button{
+  font-family:var(--font-label);font-size:11.5px;letter-spacing:0.04em;
+  padding:8px 16px;border:1px solid var(--gold);border-radius:2px;
+  background:transparent;color:var(--gold-bright);cursor:pointer;white-space:nowrap;
+  transition:background 0.2s ease, color 0.2s ease;
+}
+.locate-button:hover{background:var(--gold-bright);color:var(--bg);}
+.locate-button:disabled{opacity:0.6;cursor:default;}
+.locate-error{
+  margin:-12px 0 24px;font-size:12px;color:var(--ember);opacity:0.9;max-width:60ch;
+}
+
+/* ---------- venue card: tags / stars / specs / comment ---------- */
+.venue-quick-specs{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px;
+}
+.venue-star-rating{letter-spacing:1px;font-size:12px;}
+.venue-star-rating .star-filled{color:var(--gold-bright);}
+.venue-star-rating .star-empty{color:var(--line-strong);}
+.venue-quick-specs-sub{
+  font-family:var(--font-label);font-size:10.5px;letter-spacing:0.04em;color:var(--paper-dim);
+}
+.venue-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.venue-tag{
+  font-family:var(--font-label);font-size:9.5px;letter-spacing:0.04em;
+  padding:3px 9px;border-radius:999px;background:rgba(184,146,63,0.12);
+  color:var(--gold-bright);border:1px solid rgba(184,146,63,0.3);
+}
+.venue-editor-comment{
+  margin:10px 0 0;font-size:12px;line-height:1.7;color:var(--paper-dim);
+  font-style:italic;
+}
+.venue-distance-badge{
+  position:absolute;top:12px;right:12px;z-index:1;
+  font-family:var(--font-label);font-size:9.5px;letter-spacing:0.06em;
+  color:var(--bg);background:var(--gold-bright);padding:3px 8px;border-radius:2px;
+}
+
 /* ---------- venue detail page ---------- */
 .venue-detail-hero{
   position:relative;min-height:64vh;display:flex;align-items:flex-end;
@@ -503,7 +563,26 @@ section.raised .venue{background:var(--bg-raised);}
   font-family:var(--font-label);font-size:12.5px;letter-spacing:0.06em;
   color:var(--paper-dim);margin-bottom:24px;
 }
-.venue-detail-cta{margin-top:0;margin-bottom:40px;}
+.venue-detail-cta{margin-top:0;margin-bottom:0;}
+.venue-detail-hours-banner{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+  padding:18px 22px;margin-bottom:28px;border:1px solid var(--line-strong);border-radius:4px;
+  background:rgba(184,146,63,0.06);
+}
+.venue-detail-hours-banner p{margin:0;font-size:13.5px;color:var(--paper-dim);max-width:46ch;}
+.venue-detail-hours-banner strong{color:var(--paper);}
+.venue-detail-tags{margin-bottom:20px;}
+.venue-detail-editor-comment{font-size:14px;margin-bottom:32px;}
+.venue-detail-editor-label{display:block;margin-top:6px;font-style:normal;font-family:var(--font-label);font-size:10px;letter-spacing:0.05em;color:var(--gold-bright);}
+.venue-detail-specs-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px 24px;
+  margin-bottom:40px;padding:20px 22px;border:1px solid var(--line-strong);border-radius:4px;
+}
+@media (max-width:640px){.venue-detail-specs-grid{grid-template-columns:repeat(2,1fr);}}
+.venue-detail-spec{display:flex;flex-direction:column;gap:6px;}
+.venue-detail-spec-label{font-family:var(--font-label);font-size:10.5px;letter-spacing:0.04em;color:var(--paper-dim);}
+.venue-detail-spec-value{font-size:14px;color:var(--paper);}
+.venue-detail-spec .venue-star-rating{font-size:14px;}
 .venue-detail-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:40px;}
 @media (max-width:640px){.venue-detail-gallery{grid-template-columns:1fr;}}
 .venue-detail-gallery-item{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:4px;}

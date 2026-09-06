@@ -9,7 +9,13 @@
       "photo": "/images/venues/photo-ebisu.jpg",
       "gallery": ["/images/venues/gallery/ebisu_1.jpg", "/images/venues/gallery/ebisu_2.jpg"],
       "url": "https://www.hamakura-style.com/works/ebisu_yokocho/",
-      "status": "licensed"
+      "status": "licensed",
+      "tags": ["友人", "観光", "地酒"],
+      "specs": { "solo": 3, "beginner": 4, "social": 5, "lively": 5, "local": 3, "price": "¥¥", "duration": "2〜3時間" },
+      "editorComment": "横丁ブームの原点。隣の席と自然に会話が生まれる距離感を体験してほしい。",
+      "hours": null,
+      "lat": 35.6467,
+      "lng": 139.7100
     },
     {
       "slug": "shibuya",
@@ -19,7 +25,13 @@
       "photo": "/images/venues/photo-shibuya.jpg",
       "gallery": ["/images/venues/gallery/shibuya_1.jpg", "/images/venues/gallery/shibuya_2.jpg"],
       "url": "https://www.hamakura-style.com/works/shibuyayokocho/",
-      "status": "licensed"
+      "status": "licensed",
+      "tags": ["友人", "デート", "観光"],
+      "specs": { "solo": 3, "beginner": 5, "social": 4, "lively": 5, "local": 2, "price": "¥¥", "duration": "2〜3時間" },
+      "editorComment": "全国の郷土食を一箇所で。初めての横丁体験にちょうどいい入りやすさ。",
+      "hours": null,
+      "lat": 35.6598,
+      "lng": 139.7006
     },
     {
       "slug": "omiya",
@@ -29,7 +41,13 @@
       "photo": "/images/venues/photo-omiya.jpg",
       "gallery": ["/images/venues/gallery/omiya_1.jpg", "/images/venues/gallery/omiya_2.jpg"],
       "url": "https://www.hamakura-style.com/works/omiyayokocho/",
-      "status": "licensed"
+      "status": "licensed",
+      "tags": ["友人", "昭和レトロ", "地酒"],
+      "specs": { "solo": 3, "beginner": 3, "social": 4, "lively": 3, "local": 4, "price": "¥¥", "duration": "1〜2時間" },
+      "editorComment": "地元客と観光客が入り混じる、大宮らしい距離感の横丁。",
+      "hours": null,
+      "lat": 35.9068,
+      "lng": 139.6236
     },
     {
       "slug": "yurakucho",
@@ -39,7 +57,13 @@
       "photo": "/images/venues/photo-yurakucho.jpg",
       "gallery": ["/images/venues/gallery/yurakucho_1.jpg", "/images/venues/gallery/yurakucho_2.jpg"],
       "url": "https://www.hamakura-style.com/works/yurakuchosanchokuyokocho/",
-      "status": "licensed"
+      "status": "licensed",
+      "tags": ["一人飲み", "昼飲み", "地酒"],
+      "specs": { "solo": 4, "beginner": 4, "social": 3, "lively": 3, "local": 3, "price": "¥¥", "duration": "1〜2時間" },
+      "editorComment": "各地の産直食材を肴に、一人でふらっと立ち寄りやすい。",
+      "hours": null,
+      "lat": 35.6749,
+      "lng": 139.7628
     },
     {
       "slug": "ryunomiyako",
@@ -49,7 +73,13 @@
       "photo": "/images/venues/photo-ryunomiyako.jpg",
       "gallery": ["/images/venues/gallery/ryunomiyako_1.jpg", "/images/venues/gallery/ryunomiyako_2.jpg"],
       "url": "https://www.hamakura-style.com/works/ryunomiyakoinshokugai/",
-      "status": "licensed"
+      "status": "licensed",
+      "tags": ["友人", "デート", "観光"],
+      "specs": { "solo": 2, "beginner": 5, "social": 4, "lively": 5, "local": 2, "price": "¥¥¥", "duration": "2〜3時間" },
+      "editorComment": "多層階のエンタメ空間。グループでの利用に向いている大型横丁。",
+      "hours": null,
+      "lat": 35.6905,
+      "lng": 139.7040
     },
     {
       "slug": "kabukihall",
@@ -59,7 +89,13 @@
       "photo": "/images/venues/photo-kabukihall.jpg",
       "gallery": ["/images/venues/gallery/kabukihall_1.jpg", "/images/venues/gallery/kabukihall_2.jpg"],
       "url": "https://www.hamakura-style.com/works/kabukihall/",
-      "status": "licensed"
+      "status": "licensed",
+      "tags": ["友人", "観光"],
+      "specs": { "solo": 2, "beginner": 4, "social": 4, "lively": 5, "local": 2, "price": "¥¥¥", "duration": "2〜4時間" },
+      "editorComment": "音楽と映像演出が加わったナイトエンタメ横丁。夜が深まるほど盛り上がる。",
+      "hours": null,
+      "lat": 35.6941,
+      "lng": 139.7016
     },
     {
       "slug": "shinbashi",
@@ -69,7 +105,13 @@
       "photo": "/images/venues/photo-shinbashi.jpg",
       "gallery": ["/images/venues/gallery/shinbashi_1.jpg", "/images/venues/gallery/shinbashi_2.jpg"],
       "url": "https://www.hamakura-style.com/works/shinbashi_yokocho/",
-      "status": "licensed"
+      "status": "licensed",
+      "tags": ["一人飲み", "昭和レトロ", "昼飲み", "地酒"],
+      "specs": { "solo": 5, "beginner": 3, "social": 4, "lively": 3, "local": 5, "price": "¥", "duration": "1〜2時間" },
+      "editorComment": "サラリーマン文化そのままの、ガード下らしい一人飲みの聖地。",
+      "hours": null,
+      "lat": 35.6665,
+      "lng": 139.7583
     },
     {
       "slug": "tachizushi",
@@ -99,7 +141,13 @@
       "photo": "/images/venues/photo-ameyoko.jpg",
       "gallery": ["/images/venues/gallery/ameyoko_1.jpg", "/images/venues/gallery/ameyoko_2.jpg"],
       "url": "https://www.hamakura-style.com/works/ameyoko_insyokugai/",
-      "status": "licensed"
+      "status": "licensed",
+      "tags": ["観光", "昼飲み", "昭和レトロ"],
+      "specs": { "solo": 4, "beginner": 4, "social": 3, "lively": 4, "local": 4, "price": "¥", "duration": "1時間程度" },
+      "editorComment": "昼から飲める、上野散策のついでに寄れる気軽さが魅力。",
+      "hours": null,
+      "lat": 35.7092,
+      "lng": 139.7742
     },
     {
       "slug": null,

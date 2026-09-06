@@ -101,9 +101,17 @@ export default function Hero({ digestCount, venueCount, updatedAt }: HeroProps) 
         </div>
 
         <div className="wrap hero-bottom">
-          <a className="hero-cta" href="#venues">
-            今夜行ける横丁を探す →
-          </a>
+          <div className="hero-cta-row">
+            <a className="hero-cta" href="#venues">
+              今夜行ける横丁を探す →
+            </a>
+            <a className="hero-cta hero-cta-secondary" href={`${withBase("/")}?geo=1#venues`}>
+              📍 現在地から探す
+            </a>
+            <a className="hero-cta hero-cta-secondary" href="#venues">
+              目的から探す
+            </a>
+          </div>
           <div className="hero-stats">
             <div className="hero-stat">
               <b>{digestCount}</b>
