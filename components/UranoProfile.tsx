@@ -16,7 +16,7 @@ export default function UranoProfile() {
           />
         </div>
         <div className="urano-body">
-          <p className="section-num">04 / Person</p>
+          <p className="section-num">06 / Person</p>
           <p className="urano-role">
             横丁交流師
             <span className="urano-role-en">YOKOCHO CONNECTOR</span>

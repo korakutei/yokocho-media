@@ -1,7 +1,9 @@
 import Hero from "@/components/Hero";
+import MoodSearch from "@/components/MoodSearch";
+import MapSection from "@/components/MapSection";
+import Venues from "@/components/Venues";
 import Pillars from "@/components/Pillars";
 import Digest from "@/components/Digest";
-import Venues from "@/components/Venues";
 import UranoProfile from "@/components/UranoProfile";
 import SiteFooter from "@/components/SiteFooter";
 import { getDigest, getVenues } from "@/lib/data";
@@ -22,9 +24,11 @@ export default function HomePage() {
         venueCount={venues.venues.length}
         updatedAt={toDotDate(digest.updatedAt)}
       />
-      <Pillars />
       <Digest data={digest} />
+      <MoodSearch data={venues} />
+      <MapSection />
       <Venues data={venues} />
+      <Pillars />
       <UranoProfile />
       <SiteFooter />
     </>

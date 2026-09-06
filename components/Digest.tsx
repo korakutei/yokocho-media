@@ -9,7 +9,7 @@ export default function Digest({ data }: { data: DigestData }) {
       <div className="wrap">
         <div className="section-head">
           <div>
-            <p className="section-num">02 / Digest</p>
+            <p className="section-num">01 / Digest</p>
             <h2>本日の横丁ニュース</h2>
           </div>
           <p className="digest-updated">

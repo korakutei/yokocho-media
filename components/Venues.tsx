@@ -17,7 +17,7 @@ export default function Venues({ data }: { data: VenuesData }) {
       <div className="wrap">
         <div className="section-head">
           <div>
-            <p className="section-num">03 / Venues</p>
+            <p className="section-num">04 / Venues</p>
             <h2>今夜、灯りをくぐれる横丁</h2>
           </div>
           <p className="lede">

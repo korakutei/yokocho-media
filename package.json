@@ -4,7 +4,7 @@
   "private": true,
   "description": "ヨコチョナビ（旧:横丁メディア構想）— 全国の横丁の「今」を毎日集めて伝え、各横丁への入口となるメディアのNext.js実装（MVP）",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

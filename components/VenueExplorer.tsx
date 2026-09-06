@@ -76,9 +76,7 @@ function VenueCard({
         {venue.specs && (
           <div className="venue-quick-specs">
             <StarRating value={venue.specs.social} />
-            <span className="venue-quick-specs-sub">
-              {venue.specs.price}・{venue.specs.duration}
-            </span>
+            <span className="venue-quick-specs-sub">{venue.specs.price}</span>
           </div>
         )}
 
@@ -164,13 +162,18 @@ export default function VenueExplorer({ venues }: { venues: Venue[] }) {
     );
   }
 
-  // Hero の「現在地から探す」から /?geo=1#venues で遷移してきた場合、
-  // 自動で現在地取得を開始する(トップから1タップで最短到達させるための導線)。
+  // Hero/MoodSearch の「現在地から探す」「気分タグ」から
+  // /?geo=1#venues や /?tag=<値>#venues で遷移してきた場合、
+  // 自動で現在地取得・タグ絞り込みを開始する(トップから1タップで最短到達させるための導線)。
   useEffect(() => {
     if (typeof window === "undefined") return;
     const params = new URLSearchParams(window.location.search);
     if (params.get("geo") === "1") {
       handleLocate();
+    }
+    const tagParam = params.get("tag");
+    if (tagParam && allTags.includes(tagParam)) {
+      setActiveTag(tagParam);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

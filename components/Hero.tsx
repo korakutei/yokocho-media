@@ -1,5 +1,3 @@
-import Image from "next/image";
-import JapanMap from "./JapanMap";
 import { withBase } from "@/lib/basePath";
 
 type HeroProps = {
@@ -41,90 +39,37 @@ export default function Hero({ digestCount, venueCount, updatedAt }: HeroProps) 
             ヨコチョナビ
             <span className="wordmark-en">YOKOCHO NAVI</span>
           </h1>
-          <p className="hero-copy">
-            今夜、どの横丁の灯りをくぐろう。<strong>全国の横丁の「今」</strong>
-            を毎朝更新——迷ったら、ここから探せばいい。
+          <p className="hero-copy">今夜、知らない横丁へ。</p>
+          <p className="hero-subcopy">
+            全国の横丁を、地図から、人から、気分から。あなたの「今夜」を見つける横丁ガイド。
           </p>
+          <div className="hero-cta-row">
+            <a className="hero-cta" href="#venues">
+              横丁を探す →
+            </a>
+            <a
+              className="hero-cta hero-cta-secondary"
+              href={`${withBase("/")}?geo=1#venues`}
+            >
+              📍 現在地から探す
+            </a>
+          </div>
         </div>
       </div>
 
-      <div className="hero-map-band">
-        <p className="hero-map-caption">
-          <strong>全国各地に、</strong>横丁の灯りがある。
-        </p>
-        <p className="hero-map-lede">
-          路地の先に、人がいて、味があって、物語がある。日本のどこかで、きっとまた。
-        </p>
-
-        <div className="hero-map-scene">
-          <div className="hero-map-panel hero-map-panel-left" aria-hidden="true">
-            <Image
-              src={withBase("/images/connect/panel-left.jpg")}
-              alt=""
-              fill
-              sizes="(max-width: 900px) 30vw, 220px"
-            />
-            <span className="hero-map-panel-caption">
-              あの街の、あの横丁で。
-              <br />
-              また、乾杯しよう。
-            </span>
+      <div className="wrap hero-bottom">
+        <div className="hero-stats">
+          <div className="hero-stat">
+            <b>{digestCount}</b>
+            <span>本日の収集記事</span>
           </div>
-
-          <JapanMap />
-
-          <div className="hero-map-panel hero-map-panel-right" aria-hidden="true">
-            <Image
-              src={withBase("/images/connect/panel-right.jpg")}
-              alt=""
-              fill
-              sizes="(max-width: 900px) 30vw, 220px"
-            />
-            <span className="hero-map-panel-caption">
-              知らない街で、
-              <br />
-              好きな横丁ができる。
-            </span>
+          <div className="hero-stat">
+            <b>{venueCount}</b>
+            <span>掲載横丁数</span>
           </div>
-        </div>
-
-        <div className="hero-map-banner" aria-hidden="true">
-          <Image
-            src={withBase("/images/connect/panel-bottom.jpg")}
-            alt=""
-            fill
-            sizes="100vw"
-          />
-          <span className="hero-map-banner-caption">
-            横丁は、いつも旅のそばにある。
-          </span>
-        </div>
-
-        <div className="wrap hero-bottom">
-          <div className="hero-cta-row">
-            <a className="hero-cta" href="#venues">
-              今夜行ける横丁を探す →
-            </a>
-            <a className="hero-cta hero-cta-secondary" href={`${withBase("/")}?geo=1#venues`}>
-              📍 現在地から探す
-            </a>
-            <a className="hero-cta hero-cta-secondary" href="#venues">
-              目的から探す
-            </a>
-          </div>
-          <div className="hero-stats">
-            <div className="hero-stat">
-              <b>{digestCount}</b>
-              <span>本日の収集記事</span>
-            </div>
-            <div className="hero-stat">
-              <b>{venueCount}</b>
-              <span>掲載横丁数</span>
-            </div>
-            <div className="hero-stat">
-              <b>{updatedAt}</b>
-              <span>最終更新</span>
-            </div>
+          <div className="hero-stat">
+            <b>{updatedAt}</b>
+            <span>最終更新</span>
           </div>
         </div>
       </div>

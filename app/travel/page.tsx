@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getYokochoDirectory } from "@/lib/data";
+import { REGION_ANCHOR_IDS } from "@/lib/regions";
 import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
@@ -33,7 +34,11 @@ export default function TravelPage() {
           </p>
 
           {directory.regions.map((region) => (
-            <div className="directory-region" key={region.region}>
+            <div
+              className="directory-region"
+              id={REGION_ANCHOR_IDS[region.region]}
+              key={region.region}
+            >
               <h3 className="directory-region-title">{region.region}</h3>
               <div className="directory-list">
                 {region.items.map((item) => {

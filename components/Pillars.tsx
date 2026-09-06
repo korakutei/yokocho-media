@@ -40,7 +40,7 @@ export default function Pillars() {
       <div className="wrap">
         <div className="section-head">
           <div>
-            <p className="section-num">01 / Concept</p>
+            <p className="section-num">05 / Concept</p>
             <h2>読む、探す、つながる。</h2>
           </div>
           <p className="lede">
