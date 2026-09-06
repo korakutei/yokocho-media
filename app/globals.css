@@ -228,19 +228,6 @@ h1.wordmark{
 }
 @media (max-width:760px){.hero-map-scene{flex-direction:column;gap:28px;}}
 .japan-map{width:100%;max-width:400px;height:auto;margin:0 auto;flex-shrink:0;}
-.japan-map-island{fill:var(--line-strong);}
-.japan-map-pin-glow{
-  fill:var(--gold);opacity:0.3;
-  animation:pin-glow-pulse 3.2s ease-in-out infinite;
-  animation-delay:var(--pin-delay,0s);
-}
-.japan-map-pin-dot{fill:var(--gold-bright);}
-@keyframes pin-glow-pulse{0%,100%{opacity:0.18;}50%{opacity:0.55;}}
-@media (prefers-reduced-motion:reduce){.japan-map-pin-glow{animation:none;opacity:0.35;}}
-.japan-map-inset-box{fill:none;stroke:var(--line-strong);stroke-width:2;stroke-dasharray:4 5;}
-.japan-map-inset-label{
-  font-family:var(--font-label);font-size:15px;letter-spacing:0.1em;fill:var(--paper-dim);
-}
 
 /* ---------- hero: side photo panels + bottom banner ---------- */
 .hero-map-panel{

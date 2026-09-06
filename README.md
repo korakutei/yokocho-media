@@ -41,7 +41,7 @@ app/
   venues/[slug]/page.tsx … 横丁詳細ページ（下記「読む・探す・つながるの実装状況」参照）
 components/
   Hero.tsx         … ファーストビュー（写真・ワードマーク・日本地図・件数）
-  JapanMap.tsx     … Hero内の日本地図イラスト（下記「日本地図イラストについて」参照）
+  JapanMap.tsx     … Hero内の日本地図イラスト（画像埋め込み。下記「日本地図イラストについて」参照）
   Pillars.tsx      … 「読む・探す・つながる」3本柱
   Digest.tsx       … 「本日の横丁ニュース」一覧（data/digest.jsonを描画）
   Venues.tsx       … 掲載横丁一覧（data/venues.jsonを描画。licensed/research混在）
@@ -66,6 +66,7 @@ public/images/
                           現在は未使用だが venues/shibuya の詳細ページ用素材とは別物として残置）
   pillar-*.jpg         … 3本柱カードのイメージカット（下記参照、未許諾の汎用素材）
   connect/circle-*.jpg … Hero地図両サイドの円形イメージ写真（下記参照、未許諾の汎用素材）
+  japan-map-illustration.png … Hero内の日本地図イラスト（下記参照、未許諾の汎用イメージ）
   urano-yuji.jpg       … 交流師・浦野雄次氏のプロフィール写真（本人提供）
   venues/*.jpg         … 各横丁の公式ロゴ・写真（浜倉的商店製作所グループ公式サイトより掲載許諾済み）
 ```
@@ -73,13 +74,22 @@ public/images/
 ## 日本地図イラストについて
 
 Hero下部の「全国各地に、横丁の灯りがある」の地図（`components/JapanMap.tsx`）は、
-Wikimedia Commons「[Blank map of Japan new.svg](https://commons.wikimedia.org/wiki/File:Blank_map_of_Japan_new.svg)」
-（作成:Lincun、修正:Erida539, YasutoTakenaka、CC BY-SA 3.0）の輪郭パスを抽出して使用。
-クレジットは `SiteFooter.tsx` に表示している(CC BY-SA 3.0の表示義務のため、削除しないこと)。
-ピンは雰囲気演出であり、正確な店舗所在地を示す機能地図ではない。掲載13地域
+2026-09-06以降、`public/images/japan-map-illustration.png`（デザイン提供の
+未許諾イメージイラスト、`SiteFooter.tsx`の「汎用イメージカット」に含めて表記）を
+そのまま表示する方式に変更した。
+
+**変更前の経緯**：当初はWikimedia Commons「Blank map of Japan new.svg」
+（CC BY-SA 3.0）の輪郭パスを抽出したSVGを自作し、13地域
 （札幌・仙台・東京・千葉・神奈川・名古屋・京都・大阪・岡山・広島・福岡・鹿児島・沖縄）
-に合わせて配置しており、沖縄のみ元データに島の形状が含まれないため破線枠の
-インセット表示にしている（詳細は下記「Heroの日本地図・ビジュアル刷新」参照）。
+のピン座標を目視較正していたが、実際の陸地形状とのズレ（特に鹿児島・大阪・京都周辺）が
+繰り返し発生し、座標計算による較正では実用上安定しなかった。ユーザーから提供された
+「あらかじめ正しい位置に光の点が配置されたイラスト画像」を採用することで、この問題を
+根本的に解消した（CC BY-SA由来のSVGパスデータは削除済み、`SiteFooter.tsx`の
+Wikimedia表示義務クレジットも撤去済み）。
+
+ピンは雰囲気演出であり、正確な店舗所在地を示す機能地図ではない。画像差し替えの際は
+`public/images/japan-map-illustration.png`を置き換え、`components/JapanMap.tsx`の
+`width`/`height`（Next.js Imageの必須プロパティ）を新しい画像の実寸に合わせて更新すること。
 
 ## 写真について
 
