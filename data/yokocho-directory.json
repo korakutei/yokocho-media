@@ -1,5 +1,5 @@
 {
-  "updatedLabel": "2026-09-05 時点（一次調査ベース）",
+  "updatedLabel": "2026-09-07 時点（一次調査ベース）",
   "regions": [
     {
       "region": "北海道・東北",
@@ -44,7 +44,26 @@
         { "name": "浅草横町", "pref": "東京都", "area": "台東区・浅草", "genre": "酒場・イベント", "feature": "祭・踊りなどNEO系の企画が特徴", "rank": "B", "url": "https://www.fun-japan.jp/jp/articles/8348" },
         { "name": "カメクロ横丁", "pref": "東京都", "area": "江東区・亀戸", "genre": "飲食・酒場", "feature": "2022年開業、商業施設型の新しい横丁", "rank": "B", "url": "https://www.fun-japan.jp/jp/articles/8348" },
         { "name": "虎ノ門横丁", "pref": "東京都", "area": "港区・虎ノ門ヒルズ", "genre": "名店・和洋中", "feature": "2020年開業。名店集積型という別モデル", "rank": "A・施設公式", "url": "https://www.toranomonhills.com/toranomonyokocho/" },
-        { "name": "横浜西口一番街", "pref": "神奈川県", "area": "横浜市・横浜駅西口", "genre": "酒場", "feature": "横浜駅前のNEO横丁", "rank": "B・要再確認", "url": "https://www.kanagawa-kankou.or.jp/spot/list?categoryIds=137" }
+        { "name": "横浜西口一番街", "pref": "神奈川県", "area": "横浜市・横浜駅西口", "genre": "酒場", "feature": "横浜駅前のNEO横丁", "rank": "B・要再確認", "url": "https://www.kanagawa-kankou.or.jp/spot/list?categoryIds=137" },
+        { "name": "新宿西口思い出横丁", "pref": "東京都", "area": "新宿区・新宿駅西口", "genre": "もつ焼き・大衆酒場", "feature": "JR新宿駅至近に約60の飲食店が密集する、典型的な戦後型飲み屋横丁", "rank": "A・公式", "url": "https://shinjuku-omoide.com/" },
+        { "name": "渋谷のんべい横丁", "pref": "東京都", "area": "渋谷区・渋谷駅", "genre": "焼鳥・小料理・バー", "feature": "渋谷駅徒歩数分、「横丁」そのものと言える小規模酒場集積", "rank": "A・公式", "url": "http://www.nonbei.tokyo/"},
+        { "name": "北千住・飲み屋横丁（飲み横）", "pref": "東京都", "area": "足立区・北千住駅", "genre": "大衆酒場・焼鳥", "feature": "足立区観光交流協会が「飲み屋横丁」として紹介する駅前酒場街", "rank": "A・観光協会", "url": "https://www.adachikanko.net/recommend/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%E9%A3%B2%E3%81%BF%E6%A8%AA%E3%80%80%E7%89%B9%E9%9B%86"},
+        { "name": "三軒茶屋・三角地帯", "pref": "東京都", "area": "世田谷区・三軒茶屋駅", "genre": "居酒屋・多国籍料理", "feature": "固有名は「横丁」ではないが、複数の細街路からなる世田谷随一の飲み屋街", "rank": "B", "url": "https://www.kanko-setagaya.jp/activity/view/577" },
+        { "name": "赤羽OK横丁", "pref": "東京都", "area": "北区・赤羽駅", "genre": "大衆居酒屋・焼鳥・スナック", "feature": "100m未満の細い横丁に多数の飲食店が集積する、赤羽の代表的なはしご酒導線", "rank": "A", "url": "https://www.tokyonightstory.com/spot/okyokocho/" },
+        { "name": "山王小路飲食店街（地獄谷）", "pref": "東京都", "area": "大田区・大森駅", "genre": "居酒屋・バー・スナック", "feature": "大田区商店街連合会に正式登録された飲食店街で、現在も酒場営業を確認", "rank": "A・商店会", "url": "https://otakushoren.com/street/100313" },
+        { "name": "蒲田東急駅前通り会（バーボンロード）", "pref": "東京都", "area": "大田区・蒲田駅", "genre": "居酒屋・バー・ビストロ", "feature": "駅沿いの細街路に約60店規模が集まる、蒲田を代表する飲み屋街", "rank": "B", "url": "https://www.o-2.jp/feature/202408_02_kamatabourbonroad/" },
+        { "name": "美久仁小路", "pref": "東京都", "area": "豊島区・池袋駅", "genre": "大衆酒場・小料理・スナック", "feature": "戦後由来の細い飲食路地で、池袋東口の古い横丁群の生き残り", "rank": "A", "url": "https://www.i-tenpo.com/news/town/12814" },
+        { "name": "亀戸横丁", "pref": "東京都", "area": "江東区・亀戸駅", "genre": "焼鳥・串揚げ・多国籍料理", "feature": "亀戸5丁目の独立した多店舗型横丁。既掲載「カメクロ横丁」とは別施設", "rank": "A・公式SNS", "url": "https://x.com/kameidoyoko" },
+        { "name": "本多横丁", "pref": "東京都", "area": "新宿区・神楽坂（飯田橋駅）", "genre": "鴨料理・和食・寿司・BAR", "feature": "神楽坂最大規模とされる横丁。商店会確認済みの現役飲食街", "rank": "A・商店会", "url": "https://www.enjoytokyo.jp/spot/l_20050767/" },
+        { "name": "大一市場", "pref": "東京都", "area": "杉並区・高円寺駅", "genre": "多国籍料理・焼鳥・ビストロ", "feature": "旧市場を転用した小横丁。2026年も11店舗の現役飲食店を確認", "rank": "B", "url": "https://www.instagram.com/p/Daj8cs5kp8j/" },
+        { "name": "立石仲見世商店街", "pref": "東京都", "area": "葛飾区・京成立石駅", "genre": "もつ焼き・おでん・串揚げ等", "feature": "「せんべろ」の飲食集積として横丁的な性格が強い。再開発進行中のため訪問前の営業確認推奨", "rank": "B・要再確認", "url": "https://www.tateishinakamise.jp/%E5%BA%97%E8%88%97%E9%85%8D%E7%BD%AE%E5%9B%B3/"},
+        { "name": "都橋商店街（ハーモニカ横丁）", "pref": "神奈川県", "area": "横浜市中区・桜木町駅", "genre": "BAR・スナック", "feature": "2層の曲面建築に約60の小規模飲食店が集積。既掲載「野毛たべもの横丁」とは別施設", "rank": "A・公式", "url": "https://www.noge-miyakobashi.com/" },
+        { "name": "若松マーケット", "pref": "神奈川県", "area": "横須賀市・横須賀中央駅", "genre": "居酒屋・BAR・スナック", "feature": "駅徒歩1分、昭和の酒場・スナックが密集する明瞭な飲み屋街", "rank": "A・公式", "url": "https://wakamatsu-market.jp/" },
+        { "name": "溝の口西口商店街", "pref": "神奈川県", "area": "川崎市高津区・溝の口駅", "genre": "居酒屋・焼肉・もつ焼き", "feature": "狭い昭和的商店街に居酒屋が集中。東急も「ディープな昼飲み」と特集", "rank": "B", "url": "https://www.tokyu.co.jp/area/mizonokuchi/article/arti-01KVPAT1GWR2SF4109TB2P65MA/" },
+        { "name": "夜市横丁", "pref": "栃木県", "area": "宇都宮市・東武宇都宮駅", "genre": "餃子・焼鳥・串料理等", "feature": "宇都宮観光ナビが現役横丁として公式掲載。既掲載「宇都宮屋台横丁」とは別施設", "rank": "A・観光公式", "url": "https://www.utsunomiya-cvb.org/spot/detail_30056.html" },
+        { "name": "東口屋台村", "pref": "栃木県", "area": "宇都宮市・JR宇都宮駅", "genre": "屋台風・ラーメン・天ぷら等", "feature": "JR宇都宮駅から徒歩約5〜6分、16店舗の屋台風飲食街", "rank": "A・公式", "url": "https://www.higashiguchi-yataimura.com/" },
+        { "name": "呑龍横丁", "pref": "群馬県", "area": "前橋市・中央前橋駅周辺", "genre": "焼鳥・小料理・ジンギスカン等", "feature": "公式が「新しき良き歓楽街」と位置付ける昭和型横丁", "rank": "A・公式", "url": "https://donryu-yokocho.com/" },
+        { "name": "塙山キャバレー", "pref": "茨城県", "area": "日立市・常陸多賀駅", "genre": "小規模居酒屋・スナック", "feature": "茨城県公式が「昭和の面影を残した飲み屋街」と明記。2026年も現役12軒を確認", "rank": "A・県公式", "url": "https://www.ibarakiguide.jp/ibaraki-fc/location.php?code=733&mode=detail" }
       ]
     },
     {
@@ -74,7 +93,18 @@
         { "name": "滝見小路", "pref": "大阪府", "area": "大阪市・梅田徒歩圏", "genre": "飲食", "feature": "昭和初期の風景を再現した飲食街", "rank": "A/B", "url": "https://osaka-info.jp/zh-CHS/spot/genre.html?cat=36&genre=246" },
         { "name": "広島ほのぼの横丁", "pref": "広島県", "area": "広島市・広島駅徒歩圏", "genre": "焼鳥・天ぷら・寿司等", "feature": "駅前ビル型の横丁", "rank": "B", "url": "https://matcha-jp.com/jp/22757" },
         { "name": "大洲ポコペン横丁", "pref": "愛媛県", "area": "大洲市", "genre": "屋台・物販", "feature": "昭和30年代の街並みを再現", "rank": "A・国ロケDB", "url": "https://jl-db.nfaj.go.jp/location/380100006/" },
-        { "name": "ひろめ市場", "pref": "高知県", "area": "高知市・大橋通徒歩圏", "genre": "飲食・鮮魚・物販", "feature": "1998年。相席そのものが名物、カツオと昼飲みの聖地", "rank": "B/A", "url": "https://shikoku-tourism.com/feature/shikokururi/01" }
+        { "name": "ひろめ市場", "pref": "高知県", "area": "高知市・大橋通徒歩圏", "genre": "飲食・鮮魚・物販", "feature": "1998年。相席そのものが名物、カツオと昼飲みの聖地", "rank": "B/A", "url": "https://shikoku-tourism.com/feature/shikokururi/01" },
+        { "name": "新梅田食道街", "pref": "大阪府", "area": "大阪市北区・大阪駅/大阪梅田駅", "genre": "串カツ・立ち飲み・洋食等", "feature": "「横丁」の名称ではないが、100店近い飲食店が狭い通路に集まる大阪屈指の飲食街", "rank": "B・公式", "url": "https://shinume.com/" },
+        { "name": "お初天神裏参道", "pref": "大阪府", "area": "大阪市北区・東梅田駅", "genre": "ワインバー・イタリアン・寿司等", "feature": "公式が「ハシゴ酒」を訴求するバルストリート。多業態店が細路地に連続", "rank": "A・公式", "url": "https://ohatsu-urasan.com/" },
+        { "name": "裏天満ちょうちん通り", "pref": "大阪府", "area": "大阪市北区・天満駅", "genre": "大衆酒場・立ち飲み・海鮮", "feature": "狭い路地沿いに飲食店が密集し、昼飲み・はしご酒の街として現役", "rank": "A", "url": "https://media.kepco.co.jp/town-and-life/17815641" },
+        { "name": "ウラなんば", "pref": "大阪府", "area": "大阪市中央区・なんば駅/日本橋駅", "genre": "立ち飲み・大衆酒場・海鮮等", "feature": "単一路地ではなく面的な飲み屋街だが、100店超の飲食集積を持つ", "rank": "B", "url": "https://osaka-info.jp/spot/gastronomy-urananba/" },
+        { "name": "裏天王寺（阪和商店街）", "pref": "大阪府", "area": "大阪市天王寺区・天王寺駅", "genre": "立ち飲み・大衆食堂", "feature": "天王寺駅北側の短いアーケード・路地に酒場が集中する大阪型の裏路地飲み屋街", "rank": "B", "url": "https://media.kepco.co.jp/town-and-life/17784123" },
+        { "name": "リド飲食街", "pref": "京都府", "area": "京都市下京区・京都駅", "genre": "おばんざい・串カツ・ワインバー", "feature": "京都駅から約5分、細い通路に小規模酒場が重なるパッサージュ型酒場街", "rank": "A", "url": "https://sakabanashi.takarashuzo.co.jp/cat1/lidoinshokugai_231110" },
+        { "name": "四富会館", "pref": "京都府", "area": "京都市中京区・京都河原町駅", "genre": "日本酒・タイ料理・割烹・バー", "feature": "京都独自の「会館飲み」の代表格。中央の狭い通路両側に現在13軒が営業", "rank": "A", "url": "https://souda-kyoto.jp/guide/theme/kaikan-nomi/index.html" },
+        { "name": "折鶴会館", "pref": "京都府", "area": "京都市右京区・西院駅", "genre": "立ち飲み・酒場", "feature": "阪急西院駅裏に複数の小酒場が並ぶ、京都「会館飲み」の代表格", "rank": "A", "url": "https://brutus.jp/post-118951/" },
+        { "name": "たかせ会館", "pref": "京都府", "area": "京都市中京区・京都河原町駅", "genre": "BAR・小料理", "feature": "四富・折鶴と並ぶ代表的な「会館飲み」スポット。狭い空間に酒場が集中", "rank": "A", "url": "https://brutus.jp/post-118951/" },
+        { "name": "姫路のれん街", "pref": "兵庫県", "area": "姫路市・姫路駅", "genre": "おでん・串カツ・浜焼き等", "feature": "公式が「呑み屋横丁」型の空間として展開。JR姫路駅徒歩30秒", "rank": "A・公式", "url": "http://himeji-noren.jp/"},
+        { "name": "わかやまじゃんじゃん横丁", "pref": "和歌山県", "area": "和歌山市・宮前駅/JR和歌山駅からバス", "genre": "喫茶・飲食店", "feature": "和歌山市が正式に「じゃんじゃん横丁」として紹介する昭和レトロな飲食路地", "rank": "A・市公式", "url": "https://www.city.wakayama.wakayama.jp/kankou/commissionfilm/1003287/1006655/1006741.html" }
       ]
     },
     {
