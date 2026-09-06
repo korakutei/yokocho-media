@@ -93,6 +93,9 @@ export default function Venues({ data }: { data: VenuesData }) {
           <span>掲載横丁数：{data.venues.length}（プロトタイプ時点）</span>
           <span>うち掲載許諾済み：{licensedVenues.length} / 試験掲載：{researchVenues.length}</span>
         </div>
+        <Link className="venue-directory-link" href="/travel">
+          旅先の横丁を探すなら——全国{directoryCount}横丁のディレクトリを見る →
+        </Link>
         <div className="venue-grid">
           {data.venues.map((venue) => (
             <VenueCard venue={venue} key={venue.name} />
@@ -101,9 +104,6 @@ export default function Venues({ data }: { data: VenuesData }) {
         <p className="venue-note">
           {data.operator}の横丁群は、写真・ロゴを含め公式サイトより掲載許諾済みです（ピット・インのみ運営元サイト上で確認が取れていないため、確認が取れ次第反映します）。「試験掲載」表記の横丁は、運営者への掲載許諾取得前に公開情報をもとに試験的に掲載しているものです。写真は未掲載、内容の正確性は今後の確認・許諾取得に伴い更新されます。掲載を望まれない場合はお申し出ください。
         </p>
-        <Link className="venue-directory-link" href="/travel">
-          旅先の横丁を探すなら——全国{directoryCount}横丁のディレクトリを見る →
-        </Link>
       </div>
     </Reveal>
   );

@@ -41,9 +41,6 @@ export default function Hero({ digestCount, venueCount, updatedAt }: HeroProps) 
             ヨコチョナビ
             <span className="wordmark-en">YOKOCHO NAVI</span>
           </h1>
-        </div>
-
-        <div className="wrap hero-photo-copy">
           <p className="hero-copy">
             今夜、どの横丁の灯りをくぐろう。<strong>全国の横丁の「今」</strong>
             を毎朝更新——迷ったら、ここから探せばいい。
