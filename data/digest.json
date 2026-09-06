@@ -1,18 +1,7 @@
 {
-  "updatedAt": "2026-09-06",
-  "updatedLabel": "2026年9月6日 更新",
+  "updatedAt": "2026-09-07",
+  "updatedLabel": "2026年9月7日 更新",
   "items": [
-    {
-      "id": "sannomiya-yokocho-otona-natsumatsuri-2026",
-      "date": "09.06",
-      "tag": "イベント",
-      "isNew": true,
-      "title": "神戸・三宮横丁で「大人の夏祭り2026」9月6日開催、入場無料",
-      "desc": "三宮横丁(神戸市中央区・JR高架下)で、7店舗参加の縁日企画やドリンク半額イベントを含む「大人の夏祭り2026」が9月6日12:00〜23:00に開催される。入場無料。",
-      "confidence": null,
-      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000008.000168380.html",
-      "sourceName": "PR TIMES(株式会社Mare)"
-    },
     {
       "id": "shibuya-snack-yokocho",
       "date": "09.01",
@@ -33,7 +22,9 @@
       "desc": "三重県伊勢市のおかげ横丁で、全国の招き猫作家による作品展示・実演・絵付け体験などを行う「第32回来る福招き猫まつり」が9月19日〜29日に開催される。29日の「来る福の日」には招き猫巡行等も予定。",
       "confidence": null,
       "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000023.000123773.html",
-      "sourceName": "PR TIMES(株式会社伊勢福)"
+      "sourceName": "PR TIMES(株式会社伊勢福)",
+      "startDate": "2026-09-19",
+      "endDate": "2026-09-29"
     },
     {
       "id": "mall505-yokocho",
@@ -55,7 +46,35 @@
       "desc": "横川商店街の飲食店32店を専用チケットで巡れる恒例のはしご酒企画。開催期間は9月1日から14日まで。",
       "confidence": "中（「横丁」を名乗る施設ではなく商店街主催のはしご酒企画である点に留意）",
       "sourceUrl": "https://hiroshima.keizai.biz/headline/4711",
-      "sourceName": "広島経済新聞"
+      "sourceName": "広島経済新聞",
+      "startDate": "2026-09-01",
+      "endDate": "2026-09-14"
+    },
+    {
+      "id": "solamachi-yokocho-2026",
+      "date": "09.04",
+      "tag": "イベント",
+      "isNew": true,
+      "title": "「ソラマチ横丁2026」東京スカイツリータウンで9月4〜7日開催",
+      "desc": "俳優・角野卓造さんプロデュースの居酒屋イベント「ソラマチ横丁2026〜酒とおつまみ 居酒屋カドノ〜」が、東京スカイツリータウン4階スカイアリーナで9月4日〜7日(11:00〜21:00、最終日は20:00まで)に開催される。昭和レトロな「呑み横丁」を再現し、墨田区商店街連合会協力の3店舗も出店。入場無料。",
+      "confidence": null,
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000320.000041446.html",
+      "sourceName": "PR TIMES(東京スカイツリータウン)",
+      "startDate": "2026-09-04",
+      "endDate": "2026-09-07"
+    },
+    {
+      "id": "koikoi-yokocho-hangry-joes",
+      "date": "09.08",
+      "tag": "新施設",
+      "isNew": true,
+      "title": "横浜中華街「鯉恋横丁」にHangry Joe's Tokyoが9月8日出店",
+      "desc": "横浜中華街のフードコート型横丁「鯉恋横丁」(2026年7月15日グランドオープン、全170席・飲食店10店舗)に、Hangry Joe's Tokyoがブランド初のフードコート出店として9月8日にオープンする。",
+      "confidence": null,
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000008.000143495.html",
+      "sourceName": "PR TIMES(ハングリィジョーズホットチキンジャパン株式会社)",
+      "startDate": "2026-09-08",
+      "endDate": "2026-09-08"
     }
   ]
 }
