@@ -1,17 +1,39 @@
 {
-  "updatedAt": "2026-09-04",
-  "updatedLabel": "2026年9月4日 更新",
+  "updatedAt": "2026-09-06",
+  "updatedLabel": "2026年9月6日 更新",
   "items": [
+    {
+      "id": "sannomiya-yokocho-otona-natsumatsuri-2026",
+      "date": "09.06",
+      "tag": "イベント",
+      "isNew": true,
+      "title": "神戸・三宮横丁で「大人の夏祭り2026」9月6日開催、入場無料",
+      "desc": "三宮横丁(神戸市中央区・JR高架下)で、7店舗参加の縁日企画やドリンク半額イベントを含む「大人の夏祭り2026」が9月6日12:00〜23:00に開催される。入場無料。",
+      "confidence": null,
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000008.000168380.html",
+      "sourceName": "PR TIMES(株式会社Mare)"
+    },
     {
       "id": "shibuya-snack-yokocho",
       "date": "09.01",
       "tag": "新規開業",
-      "isNew": true,
+      "isNew": false,
       "title": "渋谷に「渋谷スナック横丁」、2026年12月上旬オープンへ",
       "desc": "東急・東急レクリエーションが渋谷ヒカリエ隣接の再開発予定地で、スナック風トレーラーハウス4台からなる期間限定施設の開業を発表。浜倉系とは別系統の新規横丁プロジェクトで、2026年12月上旬のオープンを予定している。",
       "confidence": null,
       "sourceUrl": "https://www.ryutsuu.biz/store/s090176.html",
       "sourceName": "流通ニュース"
+    },
+    {
+      "id": "okage-yokocho-manekineko-matsuri-32",
+      "date": "09.19",
+      "tag": "イベント",
+      "isNew": true,
+      "title": "伊勢・おかげ横丁「第32回来る福招き猫まつり」9月19〜29日開催",
+      "desc": "三重県伊勢市のおかげ横丁で、全国の招き猫作家による作品展示・実演・絵付け体験などを行う「第32回来る福招き猫まつり」が9月19日〜29日に開催される。29日の「来る福の日」には招き猫巡行等も予定。",
+      "confidence": null,
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000023.000123773.html",
+      "sourceName": "PR TIMES(株式会社伊勢福)"
     },
     {
       "id": "mall505-yokocho",
@@ -28,7 +50,7 @@
       "id": "yokogawa-hashigozake-2026",
       "date": "開催中",
       "tag": "イベント",
-      "isNew": true,
+      "isNew": false,
       "title": "広島「横川はしご酒2026」開催中（9/1〜14、32店参加）",
       "desc": "横川商店街の飲食店32店を専用チケットで巡れる恒例のはしご酒企画。開催期間は9月1日から14日まで。",
       "confidence": "中（「横丁」を名乗る施設ではなく商店街主催のはしご酒企画である点に留意）",
