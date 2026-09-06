@@ -29,18 +29,55 @@ function StarRating({ value }: { value: number }) {
   );
 }
 
+const MAX_IMAGE_RETRIES = 2;
+
+/**
+ * next/image(unoptimized)は読み込み失敗時に自動再試行しない。GitHub Pages配信下で
+ * 一時的なネットワーク不調が起きても「壊れた画像アイコン」のまま固定されてしまうため、
+ * onErrorで最大2回まで(キャッシュを迂回する軽いクエリ付きで)再取得を試みる。
+ */
+function RetryImage({
+  src,
+  alt,
+  ...rest
+}: React.ComponentProps<typeof Image> & { src: string }) {
+  const [attempt, setAttempt] = useState(0);
+  const [failed, setFailed] = useState(false);
+
+  if (failed) return null;
+
+  return (
+    <Image
+      {...rest}
+      alt={alt}
+      src={attempt === 0 ? src : `${src}?retry=${attempt}`}
+      onError={() => {
+        if (attempt < MAX_IMAGE_RETRIES) {
+          setAttempt((n) => n + 1);
+        } else {
+          setFailed(true);
+        }
+      }}
+    />
+  );
+}
+
 function VenueCard({
   venue,
   distanceKm,
+  hidden,
+  order,
 }: {
   venue: Venue;
   distanceKm?: number;
+  hidden: boolean;
+  order: number;
 }) {
   const inner = (
     <>
       <div className="venue-photo">
         {venue.photo ? (
-          <Image
+          <RetryImage
             src={withBase(venue.photo)}
             alt={`${venue.name}の店内・通りの様子`}
             fill
@@ -54,7 +91,7 @@ function VenueCard({
         )}
         {venue.logo && (
           <span className="venue-mark">
-            <Image
+            <RetryImage
               src={withBase(venue.logo)}
               alt={`${venue.name} 公式ロゴ`}
               width={600}
@@ -102,9 +139,11 @@ function VenueCard({
     </>
   );
 
+  const style = { order, display: hidden ? "none" : undefined } as const;
+
   if (venue.slug) {
     return (
-      <Link className="venue" href={`/venues/${venue.slug}`}>
+      <Link className="venue" href={`/venues/${venue.slug}`} style={style} aria-hidden={hidden}>
         {inner}
       </Link>
     );
@@ -117,13 +156,19 @@ function VenueCard({
         href={venue.url}
         target="_blank"
         rel="noopener noreferrer"
+        style={style}
+        aria-hidden={hidden}
       >
         {inner}
       </a>
     );
   }
 
-  return <div className="venue venue-disabled">{inner}</div>;
+  return (
+    <div className="venue venue-disabled" style={style} aria-hidden={hidden}>
+      {inner}
+    </div>
+  );
 }
 
 type GeoState = "idle" | "loading" | "done" | "error";
@@ -178,14 +223,34 @@ export default function VenueExplorer({ venues }: { venues: Venue[] }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  let list = activeTag ? venues.filter((v) => v.tags?.includes(activeTag)) : venues;
-  if (geoState === "done") {
-    list = [...list].sort((a, b) => {
-      const da = distances[a.name] ?? Infinity;
-      const db = distances[b.name] ?? Infinity;
-      return da - db;
+  // タグ絞り込み・現在地ソートは、配列からの除外(=アンマウント)ではなく
+  // display:none + CSS order の切り替えで実現する。以前は絞り込みのたびに
+  // 対象カードがDOMから外れ、再表示のたびに<Image>が最初から再マウント/再取得
+  // されていた。タグを連続でホッピングすると同じ画像に何度も新規リクエストが
+  // 走り、GitHub Pages配信下での一時的な取得失敗が「壊れた画像」のまま固定される
+  // 不具合につながっていたため、常に全件マウントしたまま出し分ける方式に変更した。
+  const visible = useMemo(() => {
+    const set = new Set<string>();
+    venues.forEach((v) => {
+      if (!activeTag || v.tags?.includes(activeTag)) set.add(v.name);
     });
-  }
+    return set;
+  }, [venues, activeTag]);
+
+  const orderOf = useMemo(() => {
+    const map = new Map<string, number>();
+    if (geoState === "done") {
+      const sorted = [...venues].sort((a, b) => {
+        const da = distances[a.name] ?? Infinity;
+        const db = distances[b.name] ?? Infinity;
+        return da - db;
+      });
+      sorted.forEach((v, i) => map.set(v.name, i));
+    } else {
+      venues.forEach((v, i) => map.set(v.name, i));
+    }
+    return map;
+  }, [venues, geoState, distances]);
 
   return (
     <div>
@@ -229,8 +294,14 @@ export default function VenueExplorer({ venues }: { venues: Venue[] }) {
       )}
 
       <div className="venue-grid">
-        {list.map((venue) => (
-          <VenueCard venue={venue} key={venue.name} distanceKm={distances[venue.name]} />
+        {venues.map((venue) => (
+          <VenueCard
+            venue={venue}
+            key={venue.name}
+            distanceKm={distances[venue.name]}
+            hidden={!visible.has(venue.name)}
+            order={orderOf.get(venue.name) ?? 0}
+          />
         ))}
       </div>
     </div>
