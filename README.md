@@ -402,6 +402,27 @@ NEO YOKOCHOブランド化・インバウンド導線・徒歩導線・事業者
   （詳細ページ `/venues/grandhammer` も生成される）。タグ・スペック・編集部コメントは
   現地取材前のため、他の`licensed`横丁のうち`tachizushi`/`hama`と同様、まだ付与していない。
 
+### 不具合修正：MoodSearch/MapSectionのリンクが404になる問題（2026-09-06）
+
+ユーザーから「ボタンを押すと404になる」との報告を受け調査。原因は、`next/link`の
+`href`にはNext.jsが`basePath`（GitHub Pages用の`/yokocho-media`）を**自動付与する**にも
+関わらず、`components/MoodSearch.tsx`と`components/MapSection.tsx`で誤って`withBase()`を
+二重に適用していたため（本来`withBase()`は`next/image`の`src`や生の`<a>`タグなど、
+自動付与されない箇所にのみ使うべきもの）。結果として本番URLが
+`/yokocho-media/yokocho-media/travel#...`のように二重になり404していた。
+
+- `MapSection.tsx`：`/travel`への4つの地方リンクは引き続き`next/link`のままとし、
+  誤って付与していた`withBase()`を削除（`next/link`が正しく1回だけ付与する）。
+- `MoodSearch.tsx`：気分タグ・現在地リンクは同一ページ（`/`）へのクエリパラメータ遷移で、
+  `VenueExplorer`側のマウント時`useEffect`で`?tag=`/`?geo=`を拾う設計のため、
+  `next/link`のソフトナビゲーション（同一ルートのため再マウントされず効果が発火しない）
+  ではなく、`Hero.tsx`の現在地ボタンと同じ通常の`<a>`タグ＋`withBase()`に統一した。
+
+再発防止のため、`withBase(`と`<Link`の組み合わせが残っていないか全コンポーネントを
+grep監査し、他に該当箇所がないことを確認。加えて、GitHub Pagesと同じ`/yokocho-media/`
+サブパス構成をローカルに再現し、トップ・`/travel`・横丁詳細ページ上の全内部リンクを
+自動フェッチして200を返すことを検証してからデプロイした。
+
 ### 今後の検討事項（未実装・要設計判断）
 
 - `collect-digest.ts` の `SYSTEM_PROMPT`（掲載基準の初稿）を、Cowork側のmemoryにある

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Reveal from "./Reveal";
 import JapanMap from "./JapanMap";
-import { withBase } from "@/lib/basePath";
 import { REGION_ANCHOR_IDS } from "@/lib/regions";
 
 /**
@@ -63,11 +62,7 @@ export default function MapSection() {
             <Link
               key={region.label}
               className="map-hotspot"
-              href={
-                region.href.startsWith("#")
-                  ? region.href
-                  : withBase(region.href)
-              }
+              href={region.href}
               style={region.style}
             >
               <span className="map-hotspot-label">{region.label}</span>

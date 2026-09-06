@@ -1,8 +1,10 @@
-import Link from "next/link";
 import Reveal from "./Reveal";
 import { withBase } from "@/lib/basePath";
 import type { VenuesData } from "@/lib/types";
 
+// `?tag=`/`?geo=`はこのページ自身(`/`)への遷移で、VenueExplorer側の
+// マウント時useEffectで拾う設計のため、next/link(同一ルート内のソフトナビゲーション)
+// ではなく通常の<a>タグで実際のページ遷移を発生させる(Hero.tsxの現在地ボタンと同じ理由)。
 export default function MoodSearch({ data }: { data: VenuesData }) {
   const tags = Array.from(
     new Set(data.venues.flatMap((v) => v.tags ?? []))
@@ -22,22 +24,22 @@ export default function MoodSearch({ data }: { data: VenuesData }) {
         </div>
         <div className="mood-tags">
           {tags.map((tag) => (
-            <Link
+            <a
               key={tag}
               className="mood-tag"
               href={`${withBase("/")}?tag=${encodeURIComponent(tag)}#venues`}
             >
               {tag}
-            </Link>
+            </a>
           ))}
         </div>
         <div className="mood-actions">
-          <Link className="mood-action" href={`${withBase("/")}?geo=1#venues`}>
+          <a className="mood-action" href={`${withBase("/")}?geo=1#venues`}>
             📍 現在地から探す →
-          </Link>
-          <Link className="mood-action" href="#venues">
+          </a>
+          <a className="mood-action" href="#venues">
             すべての横丁を見る →
-          </Link>
+          </a>
         </div>
       </div>
     </Reveal>
