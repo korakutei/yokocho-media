@@ -3,6 +3,30 @@
   "updatedLabel": "2026年9月19日 更新",
   "items": [
     {
+      "id": "hamamatsucho-neo-yokocho-harukiya-b1",
+      "date": "09.18",
+      "tag": "新施設",
+      "isNew": true,
+      "title": "浜松町ネオ横丁に居酒屋「春木屋 B1」が9月16日オープン",
+      "desc": "浜松町駅から徒歩2分、汐留芝離宮ビルディング地下のフードホール「浜松町ネオ横丁」に、山梨・静岡の厳選食材と地酒を楽しめる居酒屋「春木屋 B1(ハルキヤ ビーワン)」が2026年9月16日にオープンした。",
+      "confidence": null,
+      "sourceUrl": "https://www.value-press.com/pressrelease/380994",
+      "sourceName": "value-press(株式会社favy)"
+    },
+    {
+      "id": "toranomon-yokocho-awasake-week-2026",
+      "date": "09.17",
+      "tag": "イベント",
+      "isNew": true,
+      "title": "虎ノ門横丁で「awa酒 week」10月21〜28日、過去最多24酒蔵が参加",
+      "desc": "虎ノ門ヒルズの「虎ノ門横丁」で、スパークリング日本酒「awa酒」のイベント「awa酒 week at 虎ノ門横丁 2026」が10月21日〜28日に開催される。横丁内16店舗で酒蔵が日替わりでawa酒を提供し、POP UP店舗では全24種を楽しめる。",
+      "confidence": null,
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000005.000150256.html",
+      "sourceName": "PR TIMES(一般社団法人awa酒協会)",
+      "startDate": "2026-10-21",
+      "endDate": "2026-10-28"
+    },
+    {
       "id": "shiodome-yokocho-urbi",
       "date": "09.16",
       "tag": "新施設",
@@ -12,6 +36,19 @@
       "confidence": "中(完全招待制の施設のため、一般客は入店できない点に留意)",
       "sourceUrl": "https://www.value-press.com/pressrelease/381001",
       "sourceName": "value-press(株式会社favy)"
+    },
+    {
+      "id": "noujiru-yokocho-toshima-street-fes-2026",
+      "date": "09.15",
+      "tag": "イベント",
+      "isNew": true,
+      "title": "「脳汁横丁」が池袋に出張、11月1〜3日TOSHIMA STREET FES 2026で登場",
+      "desc": "都市型カルチャーフェス「TOSHIMA STREET FES 2026」(11月1日〜3日)の東口エリア・中池袋公園に、体験型フード企画「脳汁横丁」が出張出店する。入場無料(一部有料エリアあり)。",
+      "confidence": "中(常設の横丁ではなく、フェス内の期間限定出張企画である点に留意)",
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000001015.000060459.html",
+      "sourceName": "PR TIMES",
+      "startDate": "2026-11-01",
+      "endDate": "2026-11-03"
     },
     {
       "id": "shibuya-nikuyokocho-16th",
