@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from "next";
+import SiteHeader from "@/components/SiteHeader";
+import BottomNav from "@/components/BottomNav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -41,7 +43,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <SiteHeader />
+        {children}
+        <BottomNav />
+      </body>
     </html>
   );
 }

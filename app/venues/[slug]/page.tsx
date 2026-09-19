@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { getLinkableVenues, getVenueBySlug } from "@/lib/data";
 import { withBase } from "@/lib/basePath";
 import SiteFooter from "@/components/SiteFooter";
-import { StarRating } from "@/components/VenueExplorer";
+import StarRating from "@/components/StarRating";
 
 const SPEC_LABELS: Record<string, string> = {
   solo: "一人飲み適性",

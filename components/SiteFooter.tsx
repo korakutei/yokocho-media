@@ -1,11 +1,21 @@
+import Image from "next/image";
 import Link from "next/link";
+import { withBase } from "@/lib/basePath";
 
 export default function SiteFooter() {
   return (
     <footer>
       <div className="wrap footer-grid">
         <div>
-          <p className="footer-mark">ヨコチョナビ</p>
+          <p className="footer-mark">
+            <Image
+              src={withBase("/images/brand/logo-horizontal.png")}
+              alt="ヨコチョナビ YOKOCHO NAVI"
+              width={900}
+              height={293}
+              loading="lazy"
+            />
+          </p>
           <p className="footer-note">
             横丁文化を紹介し、各横丁への入口となることを目指す独立系メディアです。
             <br />

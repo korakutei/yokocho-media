@@ -18,6 +18,15 @@ export type DigestItem = {
   confidence: string | null;
   sourceUrl: string;
   sourceName: string;
+  /**
+   * イベントの開始・終了日(ISO "YYYY-MM-DD"、JST基準)。確認できた場合のみ設定する。
+   * lib/eventStatus.ts の判定はこの値が両方揃っている項目にのみ「開催中」等のラベルを付け、
+   * 無い項目には未確認情報を断定表示しない(ラベルなしのまま)。
+   */
+  startDate?: string;
+  endDate?: string;
+  /** 関連する横丁のslug(venues.jsonと対応)。確認できた場合のみ設定し、詳細ページへリンクする。 */
+  relatedVenueSlug?: string | null;
 };
 
 export type DigestData = {
@@ -88,6 +97,20 @@ export type Venue = {
   /** 現在地からの距離順ソート用の概算緯度・経度(エリア中心程度の精度)。未確認のエリアはnull。 */
   lat?: number | null;
   lng?: number | null;
+
+  /** 都道府県(2026-09-07追加)。areaの文言から一意に確定できるもののみ付与。検索の地域ファセット用。 */
+  pref?: string;
+
+  /**
+   * 「こんな過ごし方に」(2026-09-07追加)。根拠が確認できた特徴のみ追加する(推測禁止)。
+   * scope="shop"の場合、特定店舗の特徴であることをshopNameで明示し、横丁全体の特徴と区別する。
+   */
+  waysToEnjoy?: {
+    label: string;
+    note: string;
+    scope: "venue" | "shop";
+    shopName?: string;
+  }[];
 };
 
 export type VenuesData = {

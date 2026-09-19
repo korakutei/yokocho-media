@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { withBase } from "@/lib/basePath";
 
 type HeroProps = {
@@ -35,9 +36,15 @@ export default function Hero({ digestCount, venueCount, updatedAt }: HeroProps) 
 
         <div className="wrap hero-top-mini">
           <p className="eyebrow">Yokocho Navi Prototype</p>
-          <h1 className="wordmark">
-            ヨコチョナビ
-            <span className="wordmark-en">YOKOCHO NAVI</span>
+          <h1 className="wordmark wordmark-logo">
+            {/* ロゴ(Pattern B:横組み)。写真の上でも読めるよう、アイボリーの看板地に載せる */}
+            <Image
+              src={withBase("/images/brand/logo-horizontal.png")}
+              alt="ヨコチョナビ YOKOCHO NAVI"
+              width={900}
+              height={293}
+              priority
+            />
           </h1>
           <p className="hero-copy">今夜、知らない横丁へ。</p>
           <p className="hero-subcopy">

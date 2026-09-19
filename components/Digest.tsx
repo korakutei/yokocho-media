@@ -5,7 +5,7 @@ export default function Digest({ data }: { data: DigestData }) {
   const { items, updatedLabel } = data;
 
   return (
-    <Reveal as="section" className="raised">
+    <Reveal as="section" className="raised" id="digest">
       <div className="wrap">
         <div className="section-head">
           <div>

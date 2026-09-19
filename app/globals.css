@@ -14,6 +14,7 @@
   --bg-raised: #1f1811;
   --bg-raised-2: #251d14;
   --paper: #f2e9d8;
+  --ivory: #f8f1e4; /* ロゴの看板地(ブランドガイドのIvory) */
   --paper-dim: #cfc3ab;
   --gold: #b8923f;
   --gold-bright: #d8b563;
@@ -43,6 +44,100 @@ a{color:inherit;}
 
 .wrap{max-width:1040px;margin:0 auto;padding:0 28px;}
 @media (max-width:640px){.wrap{padding:0 20px;}}
+
+/* ページ内リンクの着地先が、固定ヘッダーに隠れないようにする */
+[id]{scroll-margin-top:64px;}
+
+/* ---------- site header(全ページ共通・固定) ---------- */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  border-bottom:1px solid var(--line);
+}
+/* backdrop-filterを持つ要素は、中のposition:fixed(モバイルメニュー・暗幕)の配置基準になってしまい、
+   メニューがヘッダーの高さに閉じ込められる。そのため背景とぼかしは疑似要素側に持たせる。 */
+.site-header::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:rgba(23,19,15,0.94);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+}
+.site-header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:56px;
+}
+/* ロゴはブランドガイドの配色(焦げ茶+金)のまま、アイボリーの看板地に載せて暗い背景から浮かせる */
+.site-header-logo{
+  display:inline-flex;align-items:center;text-decoration:none;
+  background:var(--ivory);padding:6px 12px;border-radius:4px;
+}
+.site-header-logo img{display:block;height:28px;width:auto;}
+.site-header-nav{display:flex;gap:28px;}
+@media (max-width:760px){.site-header-nav{display:none;}}
+.site-header-link{
+  display:inline-flex;align-items:center;height:56px;
+  font-family:var(--font-label);font-size:12.5px;letter-spacing:0.06em;
+  color:var(--paper-dim);text-decoration:none;
+  border-bottom:2px solid transparent;
+}
+.site-header-link:hover{color:var(--paper);}
+.site-header-link-active{color:var(--gold-bright);font-weight:700;border-bottom-color:var(--gold-bright);}
+
+.site-header-menu-button{
+  display:none;
+  align-items:center;gap:6px;min-height:44px;padding:0 14px;
+  font-family:var(--font-label);font-size:12px;letter-spacing:0.04em;
+  background:transparent;border:1px solid var(--line-strong);border-radius:4px;
+  color:var(--paper);cursor:pointer;
+}
+@media (max-width:760px){.site-header-menu-button{display:inline-flex;}}
+
+.site-header-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:150;
+}
+.site-header-mobile-menu{
+  position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);
+  background:var(--bg-raised);z-index:200;
+  /* 閉じている間は画面外へ移動(transform)させず、定位置のままclip-pathで隠す。
+     画面外に置くとスマホのレイアウト幅が広がり、下部ナビが画面からはみ出すため。
+     visibility:hiddenで、閉じている間はリンクへTabで移動できないようにする(閉じるアニメーション後に隠す)。 */
+  clip-path:inset(0 0 0 100%);
+  visibility:hidden;transition:clip-path 0.25s ease, visibility 0s linear 0.25s;
+  padding:24px 20px;display:flex;flex-direction:column;gap:4px;
+  box-shadow:-8px 0 24px rgba(0,0,0,0.4);
+}
+.site-header-mobile-menu-open{
+  clip-path:inset(0 0 0 -32px); /* 左側の影まで見せる */
+  visibility:visible;transition:clip-path 0.25s ease;
+}
+.site-header-mobile-close{
+  align-self:flex-end;min-height:44px;padding:0 14px;margin-bottom:12px;
+  background:transparent;border:1px solid var(--line-strong);border-radius:4px;
+  color:var(--paper-dim);font-family:var(--font-label);font-size:12px;cursor:pointer;
+}
+.site-header-mobile-link{
+  display:flex;align-items:center;min-height:48px;
+  font-family:var(--font-body);font-size:15px;color:var(--paper);
+  text-decoration:none;border-bottom:1px solid var(--line);
+}
+.site-header-mobile-link-active{color:var(--gold-bright);font-weight:700;}
+
+/* ---------- bottom nav(モバイルのみ・固定) ---------- */
+.bottom-nav{
+  display:none;
+  position:fixed;left:0;right:0;bottom:0;z-index:90;
+  background:rgba(23,19,15,0.97);backdrop-filter:blur(6px);
+  border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+@media (max-width:640px){
+  .bottom-nav{display:flex;}
+  body{padding-bottom:calc(52px + env(safe-area-inset-bottom));}
+}
+.bottom-nav-item{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  min-height:52px;font-family:var(--font-label);font-size:12px;letter-spacing:0.04em;
+  color:var(--paper-dim);text-decoration:none;
+}
+.bottom-nav-item-active{color:var(--gold-bright);font-weight:700;}
 
 /* ---------- hero ---------- */
 .hero{position:relative;overflow:hidden;}
@@ -91,6 +186,14 @@ a{color:inherit;}
   margin:0;
   letter-spacing:0.01em;
 }
+/* ロゴ画像版のwordmark。テキスト用のグラデーション塗り(background-clip:text)を打ち消し、看板地にする */
+.hero-top-mini h1.wordmark-logo{
+  display:inline-block;line-height:0;
+  background:var(--ivory);-webkit-background-clip:border-box;background-clip:border-box;
+  padding:14px 20px;border-radius:4px;
+  box-shadow:0 6px 24px rgba(0,0,0,0.4);
+}
+.wordmark-logo img{display:block;width:clamp(190px,30vw,260px);height:auto;}
 .hero-top-mini .wordmark-en{
   font-size:8.5px;
   letter-spacing:0.4em;
@@ -435,7 +538,7 @@ section.raised .digest-note{background:var(--bg-raised-2);}
   background:var(--bg);
   transition:border-color 0.2s ease, transform 0.2s ease;
 }
-.venue:hover{border-color:var(--gold);transform:translateY(-2px);}
+.venue-card-wrap:hover .venue{border-color:var(--gold);}
 .venue-disabled{cursor:default;}
 .venue-disabled:hover{border-color:var(--line);transform:none;}
 section.raised .venue{background:var(--bg-raised);}
@@ -479,12 +582,42 @@ section.raised .venue{background:var(--bg-raised);}
 }
 .venue-directory-link:hover{color:var(--paper);border-color:var(--paper);}
 
-/* ---------- venue explorer: tag filter + 現在地から探す ---------- */
-.venue-toolbar{
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
-  gap:14px;margin-bottom:24px;
+/* ---------- venue explorer: 検索・ファセット・現在地から探す ---------- */
+.venue-search-row{
+  display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;
+}
+.venue-search-input{
+  flex:1;min-width:200px;min-height:44px;padding:0 16px;
+  font-family:var(--font-body);font-size:14px;color:var(--paper);
+  background:transparent;border:1px solid var(--line-strong);border-radius:2px;
+}
+.venue-search-input::placeholder{color:var(--paper-dim);}
+.venue-search-input:focus{outline:none;border-color:var(--gold);}
+.venue-tagfilter-group{margin-bottom:14px;}
+.venue-tagfilter-label{
+  font-family:var(--font-label);font-size:10.5px;letter-spacing:0.1em;
+  color:var(--paper-dim);margin:0 0 8px;text-transform:uppercase;
 }
 .venue-tagfilter{display:flex;flex-wrap:wrap;gap:8px;}
+.venue-result-row{
+  display:flex;align-items:center;gap:16px;margin:18px 0;
+  font-family:var(--font-label);font-size:12px;letter-spacing:0.04em;color:var(--paper-dim);
+}
+.venue-clear-button{
+  min-height:36px;padding:0 14px;font-family:var(--font-label);font-size:11.5px;
+  color:var(--gold-bright);background:transparent;border:1px solid var(--gold-bright);
+  border-radius:999px;cursor:pointer;
+}
+.venue-clear-button:hover{background:var(--gold-bright);color:var(--bg);}
+.venue-empty-message{
+  padding:24px 0;font-size:13.5px;color:var(--paper-dim);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:20px;
+}
+.venue-empty-message button{
+  margin-left:6px;background:none;border:none;padding:0;
+  color:var(--gold-bright);text-decoration:underline;cursor:pointer;font-size:inherit;
+  min-height:44px;
+}
 .tag-chip{
   display:inline-flex;align-items:center;min-height:40px;
   font-family:var(--font-label);font-size:11.5px;letter-spacing:0.04em;
@@ -508,21 +641,26 @@ section.raised .venue{background:var(--bg-raised);}
   margin:-12px 0 24px;font-size:12px;color:var(--ember);opacity:0.9;max-width:60ch;
 }
 
-/* ---------- venue card: tags / stars / specs / comment ---------- */
-.venue-quick-specs{
-  display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px;
+/* ---------- venue card: 予算・タグ・過ごし方・コメント・保存 ---------- */
+.venue-card-wrap{position:relative;}
+.venue-profile-badge{
+  display:inline-block;margin-top:6px;
+  font-family:var(--font-label);font-size:9px;letter-spacing:0.06em;
+  color:var(--paper-dim);border:1px solid var(--line-strong);border-radius:2px;
+  padding:2px 6px;
 }
-.venue-star-rating{letter-spacing:1px;font-size:12px;}
-.venue-star-rating .star-filled{color:var(--gold-bright);}
-.venue-star-rating .star-empty{color:var(--line-strong);}
-.venue-quick-specs-sub{
-  font-family:var(--font-label);font-size:10.5px;letter-spacing:0.04em;color:var(--paper-dim);
+.venue-budget{
+  margin:10px 0 0;font-family:var(--font-label);font-size:11.5px;letter-spacing:0.02em;
+  color:var(--paper-dim);
 }
 .venue-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
 .venue-tag{
   font-family:var(--font-label);font-size:9.5px;letter-spacing:0.04em;
   padding:3px 9px;border-radius:999px;background:rgba(184,146,63,0.12);
   color:var(--gold-bright);border:1px solid rgba(184,146,63,0.3);
+}
+.venue-ways{
+  margin:10px 0 0;padding-left:18px;font-size:12px;line-height:1.7;color:var(--paper-dim);
 }
 .venue-editor-comment{
   margin:10px 0 0;font-size:12px;line-height:1.7;color:var(--paper-dim);
@@ -533,6 +671,16 @@ section.raised .venue{background:var(--bg-raised);}
   font-family:var(--font-label);font-size:9.5px;letter-spacing:0.06em;
   color:var(--bg);background:var(--gold-bright);padding:3px 8px;border-radius:2px;
 }
+.save-button{
+  display:flex;align-items:center;justify-content:center;width:100%;
+  min-height:44px;margin-top:1px;
+  font-family:var(--font-label);font-size:11.5px;letter-spacing:0.04em;
+  color:var(--paper-dim);background:var(--bg);border:1px solid var(--line);border-top:none;
+  cursor:pointer;
+}
+.save-button:hover{color:var(--paper);border-color:var(--line-strong);}
+.save-button-active{color:var(--gold-bright);border-color:var(--gold-bright);}
+section.raised .save-button{background:var(--bg-raised);}
 
 /* ---------- venue detail page ---------- */
 .venue-detail-hero{
@@ -712,7 +860,11 @@ section.raised .venue{background:var(--bg-raised);}
 /* ---------- footer ---------- */
 footer{padding:64px 0 48px;border-top:1px solid var(--line);}
 .footer-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;}
-.footer-mark{font-family:var(--font-display);font-weight:700;font-size:24px;color:var(--gold-bright);}
+.footer-mark{
+  display:inline-block;margin:0 0 14px;line-height:0;
+  background:var(--ivory);padding:10px 14px;border-radius:4px;
+}
+.footer-mark img{display:block;width:170px;height:auto;}
 .footer-note{max-width:420px;font-size:13px;color:var(--paper-dim);}
 .footer-note a{color:var(--gold);text-decoration:underline;text-underline-offset:2px;}
 .footer-status{
