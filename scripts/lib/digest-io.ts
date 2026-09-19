@@ -53,8 +53,11 @@ function sortTimestamp(item: DigestItem, yearIso: string): number {
       `${yearIso}-${md[1]}-${md[2]}T00:00:00+09:00`
     ).getTime();
   }
-  if (item.startDate) {
-    return new Date(`${item.startDate}T00:00:00+09:00`).getTime();
+  // startDateはDigestItem型に未定義のバージョンとも共存できるよう、
+  // 存在チェックのみで安全に読み取る。
+  const startDate = (item as { startDate?: unknown }).startDate;
+  if (typeof startDate === "string") {
+    return new Date(`${startDate}T00:00:00+09:00`).getTime();
   }
   return 0;
 }
