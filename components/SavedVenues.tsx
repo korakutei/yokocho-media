@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { VenueCard } from "@/components/VenueExplorer";
+import GuideSays from "@/components/guide/GuideSays";
 import { useSavedVenues } from "@/lib/useSavedVenues";
 import type { Venue } from "@/lib/types";
 
@@ -19,10 +20,10 @@ export default function SavedVenues({ venues }: { venues: Venue[] }) {
 
   if (savedVenues.length === 0) {
     return (
-      <p className="venue-empty-message">
-        まだ保存した横丁はありません。気になる横丁のカードで「保存する」を押すと、ここに並びます。
+      <GuideSays pose="wave" size="sm" className="guide-empty">
+        まだ保存した横丁はないみたい。気になる横丁のカードで「保存する」を押すと、ここに並ぶよ。{" "}
         <Link href="/#venues">横丁を探す →</Link>
-      </p>
+      </GuideSays>
     );
   }
 

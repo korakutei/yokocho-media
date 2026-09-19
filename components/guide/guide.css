@@ -1,0 +1,113 @@
+/* ============================================================
+   案内人ヨコチョ(ヨコチョIP)のスタイル。
+   吹き出しはロゴの看板地と同じアイボリー(--ivory)に焦げ茶の文字。
+   キャラクター画像側にアイボリーの縁取りが入っているので、濃色の地にそのまま置く。
+   ============================================================ */
+
+.guide{
+  --guide-h:124px;
+  display:flex;align-items:center;gap:16px;
+}
+.guide-sm{--guide-h:92px;gap:12px;}
+.guide-lg{--guide-h:176px;gap:20px;}
+@media (max-width:640px){
+  .guide-md{--guide-h:104px;}
+  .guide-lg{--guide-h:132px;gap:14px;}
+}
+.guide-figure{
+  flex-shrink:0;height:var(--guide-h);width:auto;
+  filter:drop-shadow(0 8px 16px rgba(0,0,0,0.45));
+}
+.guide-bubble{
+  position:relative;flex:0 1 auto;min-width:0;max-width:30em;
+  padding:12px 18px 13px;border-radius:14px;
+  background:var(--ivory);color:var(--kogecha);
+  box-shadow:0 6px 18px rgba(0,0,0,0.28);
+}
+/* しっぽ(キャラクター側へ向ける) */
+.guide-bubble::before{
+  content:"";position:absolute;left:-9px;top:50%;margin-top:-8px;
+  border-style:solid;border-width:8px 10px 8px 0;
+  border-color:transparent var(--ivory) transparent transparent;
+}
+.guide-name{
+  display:block;font-size:11px;font-weight:700;letter-spacing:0.12em;color:#7a561b;
+}
+.guide-line{margin:2px 0 0;font-size:14.5px;font-weight:500;line-height:1.75;}
+.guide-sm .guide-line{font-size:13.5px;}
+.guide-lg .guide-line{font-size:15.5px;}
+@media (max-width:640px){
+  .guide-line,.guide-lg .guide-line{font-size:14px;}
+}
+.guide-center{justify-content:center;}
+
+/* ---------- 歩く(診断の判定中など) ---------- */
+.guide-toko .guide-figure{animation:guide-toko 0.5s ease-in-out infinite alternate;}
+@keyframes guide-toko{
+  from{transform:translateY(0) rotate(-2deg);}
+  to{transform:translateY(-6px) rotate(2deg);}
+}
+@media (prefers-reduced-motion:reduce){
+  .guide-toko .guide-figure{animation:none;}
+}
+
+/* ---------- ムービー(ヨコチョ診断の入口) ---------- */
+.guide-movie{
+  display:grid;grid-template-columns:minmax(0,240px) 1fr;gap:32px;align-items:center;
+}
+@media (max-width:640px){
+  .guide-movie{grid-template-columns:1fr;gap:18px;justify-items:center;}
+}
+.guide-movie-video{
+  display:block;width:100%;max-width:240px;aspect-ratio:9 / 16;object-fit:cover;
+  background:#0d0a07;border:1px solid var(--line-strong);border-radius:6px;
+  box-shadow:0 18px 40px rgba(0,0,0,0.45);
+}
+.guide-movie-text{margin:0;font-size:14.5px;line-height:2;color:var(--paper-dim);}
+.guide-movie-note{
+  margin:12px 0 0;font-size:12px;line-height:1.8;color:var(--paper-dim);opacity:0.8;
+}
+@media (max-width:640px){
+  .guide-movie-body{max-width:34em;}
+}
+
+/* ---------- 案内人の紹介(ヨコチョナビとは) ---------- */
+.guide-profile{
+  display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;max-width:760px;
+}
+.guide-profile-figure{
+  height:220px;width:auto;filter:drop-shadow(0 10px 20px rgba(0,0,0,0.45));
+}
+.guide-profile-name{
+  margin:0;font-family:var(--font-display);font-weight:800;font-size:clamp(24px,3.4vw,30px);
+}
+.guide-profile-name small{
+  margin-left:12px;font-family:var(--font-label);font-size:12px;font-weight:600;
+  letter-spacing:0.24em;color:var(--gold);text-transform:uppercase;
+}
+.guide-profile-text{margin:14px 0 0;font-size:15px;line-height:2;color:var(--paper-dim);}
+.guide-profile .hero-cta{margin-top:20px;}
+@media (max-width:640px){
+  .guide-profile{grid-template-columns:1fr;gap:20px;justify-items:center;text-align:center;}
+  .guide-profile-figure{height:180px;}
+}
+
+/* ---------- 迷子(404) ---------- */
+.notfound{padding:80px 0 104px;}
+.notfound-inner{max-width:640px;margin:0 auto;text-align:center;}
+.notfound-code{
+  margin:0;font-family:var(--font-label);font-size:13px;letter-spacing:0.28em;color:var(--gold);
+}
+.notfound-title{
+  margin:10px 0 36px;font-family:var(--font-display);font-weight:800;font-size:clamp(28px,5vw,40px);line-height:1.35;
+}
+.notfound-title span{display:inline-block;}
+.notfound .guide{text-align:left;}
+.notfound-actions{margin-top:40px;}
+
+/* ---------- 保存リストが空のとき ---------- */
+.guide-empty{
+  padding:28px 0;margin-bottom:20px;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.guide-empty a{color:var(--kogecha);font-weight:700;}

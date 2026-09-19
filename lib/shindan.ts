@@ -41,6 +41,8 @@ export type ShindanType = {
   description: string;
   /** このタイプ向けの横丁の歩き方。特定の横丁についての事実は書かない。 */
   tips: string[];
+  /** 結果画面で案内人ヨコチョが、おすすめの横丁を紹介するときのセリフ。 */
+  guide: string;
   /** 一緒に横丁へ行くと楽しいタイプ。 */
   partner: { id: ShindanTypeId; reason: string };
   /** 横丁の提案に使う好み。スペック(1〜5)は3を基準に重み付けする。 */
@@ -65,6 +67,8 @@ export const SHINDAN_TYPES: ShindanType[] = [
       "まずは一杯と一品から。長居せず、気に入ったらまた来るのが止まり木流。",
       "店主におすすめを一つ聞いてみると、ほどよい会話のきっかけになる。",
     ],
+    guide:
+      "ひとりの夜にぴったりな、落ち着いて飲めそうな横丁を選んだよ。カウンターの端で、ゆっくりね。",
     partner: {
       id: "showa",
       reason: "静かに飲みたい夜と、レトロな路地の相性は抜群。",
@@ -88,6 +92,8 @@ export const SHINDAN_TYPES: ShindanType[] = [
       "外から覗いて、にぎわっている店を次の目印にしてみよう。",
       "仲間と来たら、店ごとに「おすすめを一品ずつ」頼んでシェアすると楽しい。",
     ],
+    guide:
+      "はしご酒が楽しめそうな横丁を選んだよ。一軒目は軽めにして、胃袋に余白を残しておいてね！",
     partner: {
       id: "koraku",
       reason: "はしごの行く先々で、知り合いを増やしてくれる頼もしい相棒。",
@@ -111,6 +117,8 @@ export const SHINDAN_TYPES: ShindanType[] = [
       "支払い方法は店ごとに違うことも。現金も少し用意しておくと安心。",
       "常連さんの席や流儀には一歩ゆずって。それが長く愛される横丁への礼儀。",
     ],
+    guide:
+      "赤ちょうちんが似合う、懐かしい空気の横丁を選んだよ。昼から行けるところもあるかも。",
     partner: {
       id: "tomarigi",
       reason: "言葉少なに、同じ路地の空気を楽しめる飲み仲間。",
@@ -134,6 +142,8 @@ export const SHINDAN_TYPES: ShindanType[] = [
       "相手のペースも大切に。盛り上がるほど、周りへの気配りを忘れずに。",
       "店主や常連さんに、この横丁でのおすすめの一軒を聞いてみよう。",
     ],
+    guide:
+      "隣の席と自然に話せそうな、人のあたたかい横丁を選んだよ。いい出会いがありますように！",
     partner: {
       id: "hashigo",
       reason: "次の店へ連れ出してくれる冒険家となら、出会いも倍になる。",
@@ -157,6 +167,8 @@ export const SHINDAN_TYPES: ShindanType[] = [
       "盛り上がる時間帯は混みやすい。グループなら早めの集合が安心。",
       "終電の時間だけは最初に確認を。心おきなく楽しむための準備。",
     ],
+    guide:
+      "音と光で盛り上がれそうな、にぎやかな横丁を選んだよ。終電の時間だけは気をつけてね！",
     partner: {
       id: "hajimete",
       reason: "入りやすくにぎやかな横丁は、横丁デビューの案内役にぴったり。",
@@ -180,6 +192,8 @@ export const SHINDAN_TYPES: ShindanType[] = [
       "注文に迷ったら「おすすめは何ですか？」でOK。",
       "まずは1〜2時間の軽い気持ちで。気に入ったら、次は“はしご”に挑戦。",
     ],
+    guide:
+      "はじめてでも入りやすそうな横丁を選んだよ。だいじょうぶ、ぼくがついてるから！",
     partner: {
       id: "koraku",
       reason: "隣の席と話すきっかけをつくってくれる、頼れる先輩。",
@@ -201,12 +215,15 @@ export type ShindanOption = {
 
 export type ShindanQuestion = {
   text: string;
+  /** 質問の前に案内人ヨコチョがかけるひと言。 */
+  guide: string;
   options: ShindanOption[];
 };
 
 export const SHINDAN_QUESTIONS: ShindanQuestion[] = [
   {
     text: "今夜、誰と横丁へ行く？",
+    guide: "まずは、今夜の顔ぶれから教えてね。",
     options: [
       { label: "ひとりで、ふらっと", typePoints: { tomarigi: 3, showa: 1 }, boostTag: "一人飲み" },
       { label: "気心の知れた友人と", typePoints: { hashigo: 2, koraku: 2 }, boostTag: "友人" },
@@ -216,6 +233,7 @@ export const SHINDAN_QUESTIONS: ShindanQuestion[] = [
   },
   {
     text: "横丁でいちばん楽しみなのは？",
+    guide: "横丁の楽しみ方は、人それぞれ。いちばんを選んでね。",
     options: [
       { label: "旨い酒と肴を、じっくり", typePoints: { tomarigi: 2, showa: 1 }, boostTag: "地酒" },
       { label: "隣の席の人との会話", typePoints: { koraku: 3 } },
@@ -225,6 +243,7 @@ export const SHINDAN_QUESTIONS: ShindanQuestion[] = [
   },
   {
     text: "思わず惹かれる景色は？",
+    guide: "目を閉じて、路地の景色を思い浮かべてみて。",
     options: [
       { label: "煤けた赤ちょうちんとガード下", typePoints: { showa: 3, tomarigi: 1 }, boostTag: "昭和レトロ" },
       { label: "ネオンがきらめく、新しい横丁", typePoints: { neon: 2, hajimete: 1 }, boostTag: "NEO横丁" },
@@ -234,6 +253,7 @@ export const SHINDAN_QUESTIONS: ShindanQuestion[] = [
   },
   {
     text: "今夜の予算は？",
+    guide: "お財布とも、ちょっと相談しておこう。",
     options: [
       { label: "千円でほろ酔い（せんべろ）", typePoints: { showa: 3 }, boostTag: "せんべろ" },
       { label: "ほどほどに、3〜4千円くらい", typePoints: { tomarigi: 1, koraku: 1, hajimete: 1 } },
@@ -242,6 +262,7 @@ export const SHINDAN_QUESTIONS: ShindanQuestion[] = [
   },
   {
     text: "飲み始めたい時間は？",
+    guide: "横丁は、時間帯でも表情が変わるんだ。",
     options: [
       { label: "明るいうちから（昼飲み）", typePoints: { showa: 2, tomarigi: 1 }, boostTag: "昼飲み" },
       { label: "仕事帰りに、さくっと", typePoints: { tomarigi: 2, showa: 1 } },
@@ -251,6 +272,7 @@ export const SHINDAN_QUESTIONS: ShindanQuestion[] = [
   },
   {
     text: "隣の知らない人に話しかけられたら？",
+    guide: "横丁は、隣の席との距離が近いんだよね。",
     options: [
       { label: "大歓迎。そのまま乾杯！", typePoints: { koraku: 3, hashigo: 1 } },
       { label: "様子を見つつ、少しなら", typePoints: { hajimete: 2, hashigo: 1, showa: 1 } },
@@ -259,6 +281,7 @@ export const SHINDAN_QUESTIONS: ShindanQuestion[] = [
   },
   {
     text: "これまでの横丁経験は？",
+    guide: "最後の質問！ もうすぐ、きみの横丁に着くよ。",
     options: [
       { label: "ほとんど初めて", typePoints: { hajimete: 3 }, boostTag: "初心者歓迎" },
       { label: "何度か行ったことがある", typePoints: { hashigo: 1, neon: 1, koraku: 1 } },

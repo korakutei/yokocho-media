@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
+import { withBase } from "@/lib/basePath";
+import { GUIDE_NAME, GUIDE_POSES } from "@/lib/guide";
+import "@/components/guide/guide.css";
+
+const guide = GUIDE_POSES.welcome;
 
 export const metadata: Metadata = {
   title: "ヨコチョナビとは — ヨコチョナビ",
@@ -22,6 +29,27 @@ export default function AboutPage() {
             <p>
               横丁は、路地の奥に暖簾をくぐった人だけが出会える、小さな縁と物語の宝庫です。けれど日々どこで何が起きているかは、なかなか外に届きません。ヨコチョナビは、そんな横丁の「今日のにぎわい」と「積み重ねてきた物語」を丁寧にすくい上げ、迷わず・安心して横丁に飛び込めるようにするための案内所です。公になっている情報をもとに要約・出典明記でお届けし、掲載店・横丁の想いを損なわない形でご紹介することを大切にしています。
             </p>
+          </div>
+          <div className="guide-profile">
+            <Image
+              className="guide-profile-figure"
+              src={withBase(guide.src)}
+              width={guide.width}
+              height={guide.height}
+              alt={`案内人${GUIDE_NAME}。笠に「ヨコチョナビ」の提灯を下げ、頭にスズメをのせた法被姿のキャラクター`}
+            />
+            <div>
+              <h3 className="guide-profile-name">
+                案内人 {GUIDE_NAME}
+                <small>Guide</small>
+              </h3>
+              <p className="guide-profile-text">
+                ヨコチョナビの道先案内人です。提灯を片手に、頭にはスズメの相棒をのせて、はじめての横丁でも迷わないよう先を歩きます。ヨコチョ診断などで、あなたを今夜の横丁へごあんないします。
+              </p>
+              <Link href="/shindan" className="hero-cta">
+                ヨコチョ診断をはじめる →
+              </Link>
+            </div>
           </div>
         </div>
       </section>

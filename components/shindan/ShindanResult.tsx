@@ -7,6 +7,7 @@ import {
   type ShindanMatch,
   type ShindanType,
 } from "@/lib/shindan";
+import GuideSays from "@/components/guide/GuideSays";
 import ShindanShare from "./ShindanShare";
 import "./shindan.css";
 
@@ -64,6 +65,9 @@ export default function ShindanResult({
           <h2 className="shindan-block-title">
             相性のいい横丁 <small>Your Yokocho</small>
           </h2>
+          <GuideSays pose="welcome" className="shindan-result-guide">
+            {type.guide}
+          </GuideSays>
           <div className="venue-grid shindan-venues">
             {matches.map(({ venue, matchedTags, highlight }, i) => (
               <Link className="venue" href={`/venues/${venue.slug}`} key={venue.slug}>
@@ -145,6 +149,9 @@ export default function ShindanResult({
       )}
 
       <div className="shindan-actions">
+        <GuideSays pose="back" size="sm" className="shindan-sendoff">
+          こっちこっち！ 気になる横丁が見つかったら、暖簾をくぐりに行こう。結果は仲間にもシェアしてね。
+        </GuideSays>
         <p className="shindan-actions-label">結果をシェアする</p>
         <ShindanShare type={type} />
         <div className="shindan-actions-buttons">

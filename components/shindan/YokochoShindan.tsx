@@ -9,14 +9,19 @@ import {
   matchVenues,
   type ShindanVenue,
 } from "@/lib/shindan";
+import GuideMovie from "@/components/guide/GuideMovie";
+import GuideSays from "@/components/guide/GuideSays";
+import { GUIDE_NAME } from "@/lib/guide";
 import ShindanResult, { ShindanTypeList } from "./ShindanResult";
 import "./shindan.css";
 
-type Step = "intro" | "result" | number;
+type Step = "intro" | "judging" | "result" | number;
 
 const OPTION_KEYS = ["A", "B", "C", "D"];
 /** 選択肢を押してから次の質問へ進むまでの間(選んだ状態を一瞬見せる)。 */
 const ADVANCE_DELAY_MS = 220;
+/** 最後の回答から結果を出すまで、案内人が横丁を探して歩く間。 */
+const JUDGE_DELAY_MS = 1400;
 
 function Lanterns({ answered, current }: { answered: number; current: number | null }) {
   return (
@@ -52,7 +57,14 @@ export default function YokochoShindan({ venues }: { venues: ShindanVenue[] }) {
 
   useEffect(() => () => window.clearTimeout(timerRef.current), []);
 
+  useEffect(() => {
+    if (step !== "judging") return;
+    timerRef.current = window.setTimeout(() => setStep("result"), JUDGE_DELAY_MS);
+    return () => window.clearTimeout(timerRef.current);
+  }, [step]);
+
   function start() {
+    window.clearTimeout(timerRef.current);
     setAnswers([]);
     setPending(null);
     setStep(0);
@@ -65,7 +77,7 @@ export default function YokochoShindan({ venues }: { venues: ShindanVenue[] }) {
       const next = [...answers.slice(0, q), optionIndex];
       setAnswers(next);
       setPending(null);
-      setStep(q + 1 < SHINDAN_QUESTIONS.length ? q + 1 : "result");
+      setStep(q + 1 < SHINDAN_QUESTIONS.length ? q + 1 : "judging");
     }, ADVANCE_DELAY_MS);
   }
 
@@ -95,6 +107,24 @@ export default function YokochoShindan({ venues }: { venues: ShindanVenue[] }) {
     );
   }
 
+  if (step === "judging") {
+    return (
+      <section className="shindan" ref={rootRef}>
+        <div className="wrap">
+          <div className="shindan-inner shindan-center shindan-judging">
+            <Lanterns answered={SHINDAN_QUESTIONS.length} current={null} />
+            <h1 className="shindan-question shindan-heading" tabIndex={-1}>
+              あなたの横丁タイプを判定中…
+            </h1>
+            <GuideSays pose="walk" className="guide-center guide-toko">
+              こっちこっち！ きみにぴったりの横丁を探してるよ。
+            </GuideSays>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   if (step === "intro") {
     return (
       <section className="shindan" ref={rootRef}>
@@ -105,6 +135,9 @@ export default function YokochoShindan({ venues }: { venues: ShindanVenue[] }) {
             <h1 className="shindan-title shindan-heading" tabIndex={-1}>
               ヨコチョ診断
             </h1>
+            <GuideSays pose="wave" size="lg" className="guide-center shindan-intro-guide">
+              こんばんは、案内人の{GUIDE_NAME}だよ。今夜のきみにぴったりの横丁まで、ぼくがごあんないするね！
+            </GuideSays>
             <p className="shindan-lede">
               ひとりで止まり木か、仲間とはしご酒か。{SHINDAN_QUESTIONS.length}
               つの質問に答えるだけで、あなたの「横丁タイプ」と、今夜くぐりたい相性のいい横丁がわかります。
@@ -115,6 +148,12 @@ export default function YokochoShindan({ venues }: { venues: ShindanVenue[] }) {
             <button type="button" className="hero-cta shindan-start" onClick={start}>
               診断をはじめる →
             </button>
+          </div>
+          <div className="shindan-inner shindan-block">
+            <h2 className="shindan-block-title">
+              案内人と、横丁へ。 <small>Guide Movie</small>
+            </h2>
+            <GuideMovie />
           </div>
           <div className="shindan-inner shindan-block">
             <h2 className="shindan-block-title">
@@ -136,6 +175,9 @@ export default function YokochoShindan({ venues }: { venues: ShindanVenue[] }) {
       <div className="wrap">
         <div className="shindan-inner">
           <Lanterns answered={q} current={q} />
+          <GuideSays pose="walk" size="sm" className="shindan-question-guide">
+            {question.guide}
+          </GuideSays>
           <div className="shindan-center">
             <p className="shindan-qnum">
               Q{q + 1} / {SHINDAN_QUESTIONS.length}
