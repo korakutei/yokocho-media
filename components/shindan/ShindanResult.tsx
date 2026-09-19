@@ -147,7 +147,13 @@ export default function ShindanResult({
       <div className="shindan-actions">
         <p className="shindan-actions-label">結果をシェアする</p>
         <ShindanShare type={type} />
-        {actions}
+        <div className="shindan-actions-buttons">
+          {actions}
+          {/* next/linkだと結果画面のスクロール位置を引き継ぎ、トップの途中から表示されることがあるため、通常の<a>で先頭から開く */}
+          <a href={withBase("/")} className="hero-cta hero-cta-secondary">
+            トップに戻る
+          </a>
+        </div>
       </div>
 
       <div className="shindan-block">
