@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import BottomNav from "@/components/BottomNav";
+import { SHARE_IMAGE } from "@/lib/share";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
       "今夜行ける横丁を探す入口。全国の横丁の「今」を毎朝更新して届けるメディア・プロトタイプ。",
     locale: "ja_JP",
     type: "website",
+    images: [SHARE_IMAGE],
   },
 };
 
