@@ -3,26 +3,17 @@
   "updatedLabel": "2026年9月19日 更新",
   "items": [
     {
-      "id": "meieki-dera-yokocho",
-      "date": "09.08",
-      "tag": "新規開業",
-      "isNew": false,
-      "title": "名古屋駅徒歩4分に「名駅でら横丁」誕生へ、2027年10月開業予定",
-      "desc": "店舗流通ネット株式会社は、名古屋駅から徒歩4分の名駅4丁目に、インバウンド対応型の飲食ビル「名駅でら横丁」を開発すると発表した。地上3階建て・延床面積632.68坪で17店舗規模を予定し、居酒屋やラーメン、寿司など多様な飲食業態を集積する。花札や浮世絵など日本文化を感じられる「和モダン」の意匠を取り入れ、訪日観光客向けの飲食体験を提供する。竣工は2027年7月、開業は同年10月を予定している。",
-      "confidence": "低(開業は2027年10月予定と先の話であり、今後計画が変更される可能性がある点に留意)",
-      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000042.000011808.html",
-      "sourceName": "PR TIMES(店舗流通ネット株式会社)"
-    },
-    {
-      "id": "shibuya-snack-yokocho",
-      "date": "09.01",
-      "tag": "新規開業",
-      "isNew": false,
-      "title": "渋谷に「渋谷スナック横丁」、2026年12月上旬オープンへ",
-      "desc": "東急・東急レクリエーションが渋谷ヒカリエ隣接の再開発予定地で、スナック風トレーラーハウス4台からなる期間限定施設の開業を発表。浜倉系とは別系統の新規横丁プロジェクトで、2026年12月上旬のオープンを予定している。",
+      "id": "shibuya-nikuyokocho-16th",
+      "date": "09.29",
+      "tag": "イベント",
+      "isNew": true,
+      "title": "渋谷肉横丁、開業16周年で9月29日に全店食べ飲み放題2,900円",
+      "desc": "渋谷区宇田川町の肉料理専門横丁「渋谷肉横丁」(2010年9月1日開業)が、開業16周年を記念し9月29日17時〜22時に全店舗をはしごできる「食べ飲み放題」を1人2,900円(税込)で実施する。予約不可・当日入口先払い制。",
       "confidence": null,
-      "sourceUrl": "https://www.ryutsuu.biz/store/s090176.html",
-      "sourceName": "流通ニュース"
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000590.000001924.html",
+      "sourceName": "PR TIMES(THE WHY HOW DO COMPANY株式会社)",
+      "startDate": "2026-09-29",
+      "endDate": "2026-09-29"
     },
     {
       "id": "okage-yokocho-manekineko-matsuri-32",
@@ -38,15 +29,26 @@
       "endDate": "2026-09-29"
     },
     {
-      "id": "mall505-yokocho",
-      "date": "08.18",
+      "id": "yaesu-tokyokai-tofrom",
+      "date": "09.10",
+      "tag": "新施設",
+      "isNew": true,
+      "title": "東京駅前「TOFROM YAESU」に路地風飲食ゾーン「YAESU東京界」開業",
+      "desc": "東京駅八重洲口直結の複合施設「TOFROM YAESU TOWER」2階に、東京発祥の名店12店舗を集めた専門店ゾーン「YAESU東京界」が9月10日にオープンした。八重洲の路地の雰囲気を再現した小区画設計で、1軒あたりが小さく軽く一杯から2軒目へ移りやすい構成になっている。",
+      "confidence": "中(公式には「横丁」という名称は使われておらず、「路地」「小箱ゾーン」という表現にとどまる点に留意)",
+      "sourceUrl": "https://travel.watch.impress.co.jp/docs/news/2138883.html",
+      "sourceName": "トラベル Watch"
+    },
+    {
+      "id": "meieki-dera-yokocho",
+      "date": "09.08",
       "tag": "新規開業",
       "isNew": false,
-      "title": "茨城・土浦「モール505横丁」開業、昼から乾杯できる横丁",
-      "desc": "昭和レトロな内装で昼から飲める飲食3店舗が集まる新業態が土浦市に開業した。ランチタイムからの飲酒・食事に対応しており、平日昼から利用できる。",
-      "confidence": null,
-      "sourceUrl": "https://www.atpress.ne.jp/news/5228715",
-      "sourceName": "ATPRESS"
+      "title": "名古屋駅徒歩4分に「名駅でら横丁」誕生へ、2027年10月開業予定",
+      "desc": "店舗流通ネット株式会社は、名古屋駅から徒歩4分の名駅4丁目に、インバウンド対応型の飲食ビル「名駅でら横丁」を開発すると発表した。地上3階建て・延床面積632.68坪で17店舗規模を予定し、居酒屋やラーメン、寿司など多様な飲食業態を集積する。花札や浮世絵など日本文化を感じられる「和モダン」の意匠を取り入れ、訪日観光客向けの飲食体験を提供する。竣工は2027年7月、開業は同年10月を予定している。",
+      "confidence": "低(開業は2027年10月予定と先の話であり、今後計画が変更される可能性がある点に留意)",
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000042.000011808.html",
+      "sourceName": "PR TIMES(店舗流通ネット株式会社)"
     },
     {
       "id": "koikoi-yokocho-hangry-joes",
@@ -62,28 +64,26 @@
       "endDate": "2026-09-08"
     },
     {
-      "id": "yaesu-tokyokai-tofrom",
-      "date": "09.10",
-      "tag": "新施設",
-      "isNew": true,
-      "title": "東京駅前「TOFROM YAESU」に路地風飲食ゾーン「YAESU東京界」開業",
-      "desc": "東京駅八重洲口直結の複合施設「TOFROM YAESU TOWER」2階に、東京発祥の名店12店舗を集めた専門店ゾーン「YAESU東京界」が9月10日にオープンした。八重洲の路地の雰囲気を再現した小区画設計で、1軒あたりが小さく軽く一杯から2軒目へ移りやすい構成になっている。",
-      "confidence": "中(公式には「横丁」という名称は使われておらず、「路地」「小箱ゾーン」という表現にとどまる点に留意)",
-      "sourceUrl": "https://travel.watch.impress.co.jp/docs/news/2138883.html",
-      "sourceName": "トラベル Watch"
+      "id": "shibuya-snack-yokocho",
+      "date": "09.01",
+      "tag": "新規開業",
+      "isNew": false,
+      "title": "渋谷に「渋谷スナック横丁」、2026年12月上旬オープンへ",
+      "desc": "東急・東急レクリエーションが渋谷ヒカリエ隣接の再開発予定地で、スナック風トレーラーハウス4台からなる期間限定施設の開業を発表。浜倉系とは別系統の新規横丁プロジェクトで、2026年12月上旬のオープンを予定している。",
+      "confidence": null,
+      "sourceUrl": "https://www.ryutsuu.biz/store/s090176.html",
+      "sourceName": "流通ニュース"
     },
     {
-      "id": "shibuya-nikuyokocho-16th",
-      "date": "09.29",
-      "tag": "イベント",
-      "isNew": true,
-      "title": "渋谷肉横丁、開業16周年で9月29日に全店食べ飲み放題2,900円",
-      "desc": "渋谷区宇田川町の肉料理専門横丁「渋谷肉横丁」(2010年9月1日開業)が、開業16周年を記念し9月29日17時〜22時に全店舗をはしごできる「食べ飲み放題」を1人2,900円(税込)で実施する。予約不可・当日入口先払い制。",
+      "id": "mall505-yokocho",
+      "date": "08.18",
+      "tag": "新規開業",
+      "isNew": false,
+      "title": "茨城・土浦「モール505横丁」開業、昼から乾杯できる横丁",
+      "desc": "昭和レトロな内装で昼から飲める飲食3店舗が集まる新業態が土浦市に開業した。ランチタイムからの飲酒・食事に対応しており、平日昼から利用できる。",
       "confidence": null,
-      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000590.000001924.html",
-      "sourceName": "PR TIMES(THE WHY HOW DO COMPANY株式会社)",
-      "startDate": "2026-09-29",
-      "endDate": "2026-09-29"
+      "sourceUrl": "https://www.atpress.ne.jp/news/5228715",
+      "sourceName": "ATPRESS"
     }
   ]
 }

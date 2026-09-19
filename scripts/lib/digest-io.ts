@@ -41,8 +41,43 @@ export function readDigest(path: string): DigestData {
   return JSON.parse(readFileSync(path, "utf-8"));
 }
 
+/**
+ * 項目のソート用タイムスタンプを求める。
+ * date が "MM.DD" 形式ならその日付(今年扱い)、"開催中"等の自由記述なら
+ * startDate、どちらもなければ最下位に沈むよう0を返す。
+ */
+function sortTimestamp(item: DigestItem, yearIso: string): number {
+  const md = item.date.match(/^(\d{2})\.(\d{2})$/);
+  if (md) {
+    return new Date(
+      `${yearIso}-${md[1]}-${md[2]}T00:00:00+09:00`
+    ).getTime();
+  }
+  if (item.startDate) {
+    return new Date(`${item.startDate}T00:00:00+09:00`).getTime();
+  }
+  return 0;
+}
+
+/**
+ * 常に日付の新しい項目が一番上に来るよう並び替える(サイトの基本仕様)。
+ * date("MM.DD")の降順。同日はstartDateがあればさらにそれで補正し、
+ * 完全に同値の場合は入力順を維持する(Array#sortは安定ソート)。
+ */
+function sortItemsNewestFirst(items: DigestItem[]): DigestItem[] {
+  const { iso } = todayJst();
+  const year = iso.slice(0, 4);
+  return [...items].sort(
+    (a, b) => sortTimestamp(b, year) - sortTimestamp(a, year)
+  );
+}
+
 export function writeDigest(path: string, items: DigestItem[]): void {
   const { iso, label } = todayJst();
-  const data: DigestData = { updatedAt: iso, updatedLabel: label, items };
+  const data: DigestData = {
+    updatedAt: iso,
+    updatedLabel: label,
+    items: sortItemsNewestFirst(items),
+  };
   writeFileSync(path, JSON.stringify(data, null, 2) + "\n", "utf-8");
 }
