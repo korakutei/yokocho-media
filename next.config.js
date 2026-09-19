@@ -10,6 +10,11 @@ const nextConfig = {
   images: { unoptimized: true },
   basePath,
   assetPrefix: basePath ? `${basePath}/` : undefined,
+  // lib/basePath.ts の withBase() は process.env.GITHUB_PAGES を参照するが、
+  // NEXT_PUBLIC_ 以外の環境変数はブラウザ側のバンドルに埋め込まれない。そのままだと
+  // クライアントコンポーネントで描画し直した画像パス等からbasePathが抜けて404になるため、
+  // ビルド時の値をクライアント側にも明示的に埋め込む。
+  env: { GITHUB_PAGES: isGithubPages ? "true" : "" },
 };
 
 module.exports = nextConfig;
