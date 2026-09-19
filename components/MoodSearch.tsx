@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import ShindanCta from "./shindan/ShindanCta";
 import { withBase } from "@/lib/basePath";
 import type { VenuesData } from "@/lib/types";
 
@@ -41,6 +42,7 @@ export default function MoodSearch({ data }: { data: VenuesData }) {
             すべての横丁を見る →
           </a>
         </div>
+        <ShindanCta />
       </div>
     </Reveal>
   );
