@@ -3,6 +3,17 @@
   "updatedLabel": "2026年9月19日 更新",
   "items": [
     {
+      "id": "shiodome-yokocho-urbi",
+      "date": "09.16",
+      "tag": "新施設",
+      "isNew": true,
+      "title": "汐留横丁に招待制プライベートラウンジ「URB+i」9月16日オープン",
+      "desc": "汐留の商業施設「汐留横丁」(カレッタ汐留B2F、株式会社favy運営)内に、看板なし・入口非公開の招待制プライベートラウンジ「URB+i」が2026年9月16日にオープンした。定員8名で、国内外の経営者・医師・富裕層らを主な対象とし、来店・イベント参加は事前承認制。営業時間は17時〜22時(ラストオーダー21時30分)。",
+      "confidence": "中(完全招待制の施設のため、一般客は入店できない点に留意)",
+      "sourceUrl": "https://www.value-press.com/pressrelease/381001",
+      "sourceName": "value-press(株式会社favy)"
+    },
+    {
       "id": "shibuya-nikuyokocho-16th",
       "date": "09.09",
       "tag": "イベント",
